@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全職上門經驗女導師 Miss Emily | 專業1對1教學</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #fcfbfa; }
+        .page-content { display: none; }
+        .page-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="text-gray-800 flex flex-col min-h-screen">
+    <header class="bg-amber-500 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2 cursor-pointer" onclick="switchPage('home')">
+                <span class="text-2xl">👩‍🏫</span>
+                <span class="font-bold text-lg md:text-xl tracking-wide">全職上門經驗女導師 Miss Emily</span>
+            </div>
+            <nav class="hidden md:flex space-x-6 font-medium">
+                <button onclick="switchPage('home')" class="hover:text-amber-100 transition">關於導師</button>
+                <button onclick="switchPage('math')" class="hover:text-amber-100 transition">數學/珠心算</button>
+                <button onclick="switchPage('english')" class="hover:text-amber-100 transition">英文課程</button>
+                <button onclick="switchPage('chinese')" class="hover:text-amber-100 transition">中文課程</button>
+                <button onclick="switchPage('contact')" class="hover:text-amber-100 transition">服務地區與聯絡</button>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-white text-2xl focus:outline-none"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-amber-600 px-4 py-3 space-y-2">
+            <button onclick="switchPage('home')" class="block w-full text-left text-white py-1">關於導師</button>
+            <button onclick="switchPage('math')" class="block w-full text-left text-white py-1">數學/珠心算</button>
+            <button onclick="switchPage('english')" class="block w-full text-left text-white py-1">英文課程</button>
+            <button onclick="switchPage('chinese')" class="block w-full text-left text-white py-1">中文課程</button>
+            <button onclick="switchPage('contact')" class="block w-full text-left text-white py-1">服務地區與聯絡</button>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-5xl mx-auto px-4 py-8 w-full">
+        <section id="page-home" class="page-content active space-y-8">
+            <div class="bg-amber-100 border-l-4 border-amber-500 p-6 rounded-r-lg shadow-sm">
+                <h1 class="text-2xl md:text-3xl font-bold text-amber-800 mb-2">👩‍🏫 全職上門經驗女導師 Miss Emily</h1>
+                <p class="text-amber-700 text-lg font-medium">貼心上門教學 · 1對1 · 學生家中</p>
+                <p class="text-gray-600 mt-2">課程涵蓋 K2 至小學階段，由基礎起步，循序漸進銜接更高年級。</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                <h2 class="text-xl font-bold text-amber-600 mb-4 border-b pb-2"><i class="fas fa-book-open mr-2"></i>主力課程一覽</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700">
+                    <div class="p-3 bg-amber-50 rounded-lg flex items-center"><i class="fas fa-check text-amber-500 mr-2"></i>🧮 兒童珠心算及數學課程（K2 至小一）</div>
+                    <div class="p-3 bg-amber-50 rounded-lg flex items-center"><i class="fas fa-check text-amber-500 mr-2"></i>✋ 兒童手指速算及數學課程（K2 至小一）</div>
+                    <div class="p-3 bg-amber-50 rounded-lg flex items-center"><i class="fas fa-check text-amber-500 mr-2"></i>🔤 兒童英文拼音課程（K2 至 K3）</div>
+                    <div class="p-3 bg-amber-50 rounded-lg flex items-center"><i class="fas fa-check text-amber-500 mr-2"></i>📖 兒童英文拼音及基礎課程（K3 至小一）</div>
+                    <div class="p-3 bg-amber-50 rounded-lg flex items-center"><i class="fas fa-check text-amber-500 mr-2"></i>📘 小學數學基礎課程（小一至小三）</div>
+                    <div class="p-3 bg-amber-50 rounded-lg flex items-center"><i class="fas fa-check text-amber-500 mr-2"></i>📚 K3 – 小一 中文課程</div>
+                    <div class="p-3 bg-amber-50 rounded-lg flex items-center"><i class="fas fa-check text-amber-500 mr-2"></i>📖 P1 中文課程 (小一全年)</div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 space-y-4">
+                <h2 class="text-xl font-bold text-amber-600 border-b pb-2"><i class="fas fa-user-graduate mr-2"></i>關於 Miss Emily</h2>
+                <p class="leading-relaxed text-gray-700">我是 Miss Emily，全職上門女導師，多年教學經驗，持有專業認證，曾於幼稚園及小學任教珠心算及功課輔導班，專注教導 K2 至小學生。我重視基礎訓練，因材施教，擅長針對學生弱點，幫助學生建立自信與學習興趣，與家長同心協力，引導孩子循序漸進地成長。</p>
+                <p class="leading-relaxed text-gray-700">我會觀察每個孩子的學習狀況，用適合他們的方式引導，採用活動教學方式，融入不同教學元素，讓學習變得生動有趣。我重視時間觀念、責任感與互相尊重，期望與同樣重視這些理念的家長攜手，陪伴孩子穩步成長。</p>
+                <p class="leading-relaxed text-gray-700">多年教學讓我體會到，孩子的進步需要穩定節奏、家長陪伴，以及足夠的成長時間。學習是累積的過程，穩定上課建立習慣，溫故知新鞏固所學，家長輕輕扶持，孩子走得更穩。</p>
+                <div class="bg-amber-50 p-4 rounded-lg mt-4 border border-amber-200">
+                    <p class="font-bold text-amber-800 mb-1"><i class="fas fa-heart mr-2"></i>教學理念：</p>
+                    <p class="text-amber-900 font-medium">融匯創新，奠基扎實；因材施教，穩健前行；多元啟發，循序漸進；學術為本，家長同心。期待與您一起陪孩子走過學習之路。</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                <h2 class="text-xl font-bold text-amber-600 mb-4 border-b pb-2"><i class="fas fa-certificate mr-2"></i>專業資格</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                    <div class="flex items-center space-x-2 text-gray-700"><i class="fas fa-check-circle text-amber-500"></i><span>珠心算導師證書</span></div>
+                    <div class="flex items-center space-x-2 text-gray-700"><i class="fas fa-check-circle text-amber-500"></i><span>實用英語語音學證書（IPA）</span></div>
+                    <div class="flex items-center space-x-2 text-gray-700"><i class="fas fa-check-circle text-amber-500"></i><span>課餘託管導師證書</span></div>
+                    <div class="flex items-center space-x-2 text-gray-700"><i class="fas fa-check-circle text-amber-500"></i><span>Playgroup導師證書</span></div>
+                    <div class="flex items-center space-x-2 text-gray-700"><i class="fas fa-check-circle text-amber-500"></i><span>小學生涯規劃導師證書</span></div>
+                    <div class="flex items-center space-x-2 text-gray-700"><i class="fas fa-check-circle text-amber-500"></i><span>蒙特梭利教學應用基礎證書</span></div>
+                    <div class="flex items-center space-x-2 text-gray-700"><i class="fas fa-check-circle text-amber-500"></i><span>讀寫障礙治療證書</span></div>
+                    <div class="flex items-center space-x-2 text-gray-700"><i class="fas fa-check-circle text-amber-500"></i><span>特殊學習需要青年支援證書</span></div>
+                    <div class="flex items-center space-x-2 text-gray-700"><i class="fas fa-check-circle text-amber-500"></i><span>幼兒Messy play導師證書</span></div>
+                    <div class="flex items-center space-x-2 text-gray-700"><i class="fas fa-check-circle text-amber-500"></i><span>進階會計 Level 2 證書</span></div>
+                    <div class="flex items-center space-x-2 text-gray-700"><i class="fas fa-check-circle text-amber-500"></i><span>中文字母教學導師證書</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-math" class="page-content space-y-6">
+            <h1 class="text-2xl font-bold text-amber-800 border-b-2 border-amber-500 pb-2">🧮 數學及算術系列課程</h1>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 space-y-3">
+                <h2 class="text-xl font-bold text-amber-600">🧮 兒童珠心算及數學課程（K2 至小一）</h2>
+                <p class="text-gray-700 leading-relaxed">課程以珠心算為主，透過算盤建立數感，訓練專注力、記憶力及促進左右腦均衡發展，讓小朋友輕鬆掌握加減概念，對數字更敏感。課堂採用遊戲式教學，融入不同教學元素，讓學習變得生動有趣，並輔以適量練習，鞏固所學。遊戲內容涵蓋數學多個範疇，包括時鐘、貨幣、度量等，讓小朋友輕鬆銜接小一數學。小朋友可報考珠心算國際鑑定考試，證書有助升小面試。</p>
+                <div class="bg-gray-50 p-4 rounded-lg"><p class="font-semibold text-gray-800">📌 內容涵蓋：</p><p class="text-gray-600 mt-1">珠心算概念、算盤運用、加減乘除、滿五／進十／破五進十口訣、心算原理、速算與巧算。</p></div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 space-y-3">
+                <h2 class="text-xl font-bold text-amber-600">✋ 兒童手指速算及數學課程（K2 至小一）</h2>
+                <p class="text-gray-700 leading-relaxed">課程以手指速算為主，從具體操作逐步過渡至心算，訓練手腦協調及計算反應，建立穩固數學基礎。小朋友隨時可用手指練習，無須額外工具，在過程中培養數學思維。課堂採用遊戲式教學，融入不同教學元素，讓學習變得生動有趣，並輔以適量練習，鞏固所學。遊戲內容涵蓋數學多個範疇，包括時鐘、貨幣、度量等，讓小朋友輕鬆銜接小一數學。</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 space-y-3">
+                <h2 class="text-xl font-bold text-amber-600">📘 小學數學基礎課程（小一至小三）</h2>
+                <p class="text-gray-700 leading-relaxed">課程以遊戲式教學為主，融入不同教學元素，讓學習變得生動有趣。透過數學遊戲鞏固學校所學，按程度提供適量練習，讓小朋友掌握計算技巧、應用題、圖形與空間等基礎內容。遊戲涵蓋數學多個範疇，包括加減乘除、時間、貨幣、度量與單位等。課堂彈性調整節奏，定期重溫已學內容，強化記憶。</p>
+                <div class="bg-gray-50 p-4 rounded-lg"><p class="font-semibold text-gray-800">📌 內容涵蓋：</p><p class="text-gray-600 mt-1">加減乘除、應用題、圖形與空間、度量與單位等。</p></div>
+            </div>
+        </section>
+
+        <section id="page-english" class="page-content space-y-6">
+            <h1 class="text-2xl font-bold text-amber-800 border-b-2 border-amber-500 pb-2">🔤 英文系列課程</h1>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 space-y-3">
+                <h2 class="text-xl font-bold text-amber-600">🔤 兒童英文拼音課程（K2 至 K3）</h2>
+                <p class="text-gray-700 leading-relaxed">課程以英文拼音及遊戲式教學為主，融入不同教學元素，讓學習變得生動有趣。透過遊戲讓小朋友掌握字母與聲音的對應關係，達到見字能讀、聽音能辨的能力，讓日後串字更輕鬆，同時建立閱讀興趣。課堂輔以適量練習，鞏固所學。</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2">
+                    <div class="border border-amber-200 p-3 rounded-lg bg-amber-50"><p class="font-bold text-amber-800">Level 1 基礎入門</p><p class="text-sm text-gray-600 mt-1">建立字母與聲音的連結</p></div>
+                    <div class="border border-amber-200 p-3 rounded-lg bg-amber-50"><p class="font-bold text-amber-800">Level 2 進階規則</p><p class="text-sm text-gray-600 mt-1">掌握音節與重音</p></div>
+                    <div class="border border-amber-200 p-3 rounded-lg bg-amber-50"><p class="font-bold text-amber-800">Level 3 高階應用</p><p class="text-sm text-gray-600 mt-1">流暢閱讀與自然表達</p></div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 space-y-3">
+                <h2 class="text-xl font-bold text-amber-600">📖 兒童英文拼音及基礎課程（K3 至小一）</h2>
+                <p class="text-gray-700 leading-relaxed">課程結合英文拼音與基礎文法，採用遊戲式教學，融入不同教學元素，讓學習變得生動有趣，讓小朋友同時掌握拼音及基礎文法概念。</p>
+                <p class="text-gray-700 leading-relaxed">拼音部分涵蓋字母短音、常見組合音、長音、混合音等，可銜接IPA國際音標。文法部分涵蓋基礎文法概念，包括詞彙分類、基本句子結構等。課程同時擴充詞彙量及閱讀理解能力，為升小一英文作準備，建立對英文的信心。課堂輔以適量練習，鞏固所學。</p>
+                <div class="bg-gray-50 p-4 rounded-lg"><p class="font-semibold text-gray-800">📌 英文基礎涵蓋：</p><p class="text-gray-600 mt-1">擴充詞彙量、基礎文法、閱讀理解、見字識讀、聽音識串。</p></div>
+            </div>
+        </section>
+
+        <section id="page-chinese" class="page-content space-y-6">
+            <h1 class="text-2xl font-bold text-amber-800 border-b-2 border-amber-500 pb-2">📚 中文系列課程</h1>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 space-y-3">
+                <h2 class="text-xl font-bold text-amber-600">🔤 K3 中文預備班 (K3升小一)</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>漢字筆劃、筆順、部件加減法</li>
+                    <li>漢字結構：上下/左中右/包圍結構</li>
+                    <li>句子基本結構：二素句 → 三素句 → 四素句</li>
+                    <li>相反詞、部首配詞、簡易閱讀理解</li>
+                    <li>標點符號（逗號、句號、問號、感嘆號）</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 space-y-3">
+                <h2 class="text-xl font-bold text-amber-600">📖 P1 中文課程 (小一全年)</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>量詞、形容詞、反義詞、形近字、同部件字</li>
+                    <li>人稱代詞、結構助詞、語氣助詞</li>
+                    <li>造句、重組句子、選詞填充、改寫句子</li>
+                    <li>寫作訓練：二素句 → 三素句 → 四素句，行為句</li>
+                    <li>閱讀理解，附練習</li>
+                </ul>
+            </div>
+            <div class="bg-amber-50 p-6 rounded-xl border border-amber-200 space-y-2">
+                <h3 class="text-lg font-bold text-amber-800 mb-2">✨ 課程特色</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-700">
+                    <p>• 循序漸進，由淺入深</p>
+                    <p>• 採用遊戲式教學，愉快學習，愛上中文</p>
+                    <p>• 1對1教導，專注指導</p>
+                    <p>• 貼近學校，輕鬆應付</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-contact" class="page-content space-y-6">
+            <h1 class="text-2xl font-bold text-amber-800 border-b-2 border-amber-500 pb-2">📍 上門地區與聯絡方式</h1>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 space-y-4">
+                <h2 class="text-xl font-bold text-amber-600"><i class="fas fa-map-marker-alt mr-2"></i>上門服務地區</h2>
+                <div class="p-4 bg-green-50 border border-green-200 rounded-lg">
+                    <p class="font-bold text-green-800 mb-1">✅ 優先地區（上門面授，輕鐵／西鐵沿線）：</p>
+                    <p class="text-green-900">天水圍、元朗、屯門</p>
+                    <p class="text-sm text-green-700 mt-1">（區內如需轉乘小巴或村巴則不設上門；巴士可直達之地點可考慮）</p>
+                </div>
+                <div class="p-4 bg-red-50 border border-red-200 rounded-lg">
+                    <p class="font-bold text-red-800 mb-1">❌ 不設上門地區：</p>
+                    <p class="text-red-900">需轉乘小巴或村巴之地區</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 space-y-4">
+                <h2 class="text-xl font-bold text-amber-600"><i class="fas fa-paper-plane mr-2"></i>聯絡方法</h2>
+                <p class="text-gray-700">歡迎家長直接 PM Miss Emily 查詢課程或預約時間：</p>
+                <div class="p-4 bg-blue-50 border border-blue-200 rounded-lg flex items-center space-x-3">
+                    <i class="fab fa-facebook text-3xl text-blue-600"></i>
+                    <div>
+                        <p class="text-sm text-gray-500">Facebook 專頁：</p>
+                        <p class="font-bold text-blue-900">香港全職經驗上門女導師 Miss Emily</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-6 mt-12 text-center text-sm">
+        <p>© 全職上門經驗女導師 Miss Emily. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function switchPage(pageId) {
+            document.querySelectorAll('.page-content').forEach(page => { page.classList.remove('active'); });
+            const targetPage = document.getElementById('page-' + pageId);
+            if(targetPage) { targetPage.classList.add('active'); }
+            document.getElementById('mobile-menu').classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
