@@ -17,24 +17,24 @@
 <body class="text-gray-800 flex flex-col min-h-screen">
     <!-- Header Navigation -->
     <header class="bg-amber-500 text-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2 cursor-pointer shrink-0" onclick="switchPage('home')">
-                <span class="text-3xl">👩‍🏫</span>
-                <span class="font-bold text-xl md:text-2xl tracking-wide">全職經驗上門女導師 Miss Emily</span>
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2 cursor-pointer shrink-0 mr-4" onclick="switchPage('home')">
+                <span class="text-2xl md:text-3xl">👩‍🏫</span>
+                <span class="font-bold text-lg md:text-xl whitespace-nowrap">全職經驗上門女導師 Miss Emily</span>
             </div>
             
-            <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex flex-wrap space-x-3 text-base font-medium">
-                <button onclick="switchPage('home')" class="hover:text-amber-100 px-2 py-1">關於導師</button>
-                <button onclick="switchPage('abacus-benefits')" class="bg-amber-600 hover:bg-amber-700 text-white font-bold px-3 py-1 rounded transition">💡 珠心算的好處</button>
-                <button onclick="switchPage('abacus-math')" class="hover:text-amber-100 px-2 py-1">珠心算及數學</button>
-                <button onclick="switchPage('finger-math')" class="hover:text-amber-100 px-2 py-1">手指速算</button>
-                <button onclick="switchPage('phonics')" class="hover:text-amber-100 px-2 py-1">英文拼音</button>
-                <button onclick="switchPage('eng-foundation')" class="hover:text-amber-100 px-2 py-1">拼音及基礎</button>
-                <button onclick="switchPage('primary-math')" class="hover:text-amber-100 px-2 py-1">小學數學</button>
-                <button onclick="switchPage('k3-chinese')" class="hover:text-amber-100 px-2 py-1">K3 中文</button>
-                <button onclick="switchPage('p1-chinese')" class="hover:text-amber-100 px-2 py-1">P1 中文</button>
-                <button onclick="switchPage('contact')" class="hover:text-amber-100 px-2 py-1">地區與聯絡</button>
+            <!-- Desktop Navigation (單行且強制不換行) -->
+            <nav class="hidden lg:flex items-center space-x-1.5 xl:space-x-2 text-sm xl:text-base font-medium whitespace-nowrap overflow-x-auto">
+                <button onclick="switchPage('home')" class="hover:text-amber-100 px-1.5 py-1">關於導師</button>
+                <button onclick="switchPage('abacus-benefits')" class="bg-amber-600 hover:bg-amber-700 text-white font-bold px-2.5 py-1 rounded transition">💡 珠心算的好處</button>
+                <button onclick="switchPage('abacus-math')" class="hover:text-amber-100 px-1.5 py-1">珠心算及數學</button>
+                <button onclick="switchPage('finger-math')" class="hover:text-amber-100 px-1.5 py-1">手指速算</button>
+                <button onclick="switchPage('phonics')" class="hover:text-amber-100 px-1.5 py-1">英文拼音</button>
+                <button onclick="switchPage('eng-foundation')" class="hover:text-amber-100 px-1.5 py-1">拼音及基礎</button>
+                <button onclick="switchPage('primary-math')" class="hover:text-amber-100 px-1.5 py-1">小學數學</button>
+                <button onclick="switchPage('k3-chinese')" class="hover:text-amber-100 px-1.5 py-1">K3 中文</button>
+                <button onclick="switchPage('p1-chinese')" class="hover:text-amber-100 px-1.5 py-1">P1 中文</button>
+                <button onclick="switchPage('contact')" class="hover:text-amber-100 px-1.5 py-1">地區與聯絡</button>
             </nav>
 
             <div class="lg:hidden">
