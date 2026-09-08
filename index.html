@@ -16,18 +16,18 @@
 </head>
 <body class="text-gray-800 flex flex-col min-h-screen">
 
-    <!-- Header Navigation -->
+    <!-- Header Navigation (高度增加至約 85px，字體放大) -->
     <header class="bg-amber-500 text-white shadow-md sticky top-0 z-40">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- 網站名稱 -->
-            <div class="flex items-center space-x-2 cursor-pointer" onclick="switchPage('home')">
-                <span class="text-2xl">👩‍🏫</span>
-                <span class="font-bold text-lg md:text-xl">全職經驗上門女導師 Miss Emily</span>
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <!-- 網站名稱 (字體加大) -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchPage('home')">
+                <span class="text-3xl">👩‍🏫</span>
+                <span class="font-bold text-xl md:text-2xl tracking-wide">全職經驗上門女導師 Miss Emily</span>
             </div>
             
-            <!-- 選單按鈕 -->
-            <button id="menu-open-btn" class="flex items-center space-x-2 bg-amber-600 hover:bg-amber-700 px-4 py-2 rounded-lg font-bold text-base transition">
-                <i class="fas fa-bars text-xl"></i>
+            <!-- 選單按鈕 (字體加大) -->
+            <button id="menu-open-btn" class="flex items-center space-x-3 bg-amber-600 hover:bg-amber-700 px-6 py-3 rounded-xl font-bold text-lg shadow transition">
+                <i class="fas fa-bars text-2xl"></i>
                 <span>選單</span>
             </button>
         </div>
@@ -38,39 +38,39 @@
     
     <aside id="drawer-menu" class="fixed top-0 right-0 w-80 max-w-full h-full bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
         <div class="bg-amber-500 text-white p-5 flex justify-between items-center">
-            <h3 class="text-xl font-bold"><i class="fas fa-compass mr-2"></i>導覽選單</h3>
-            <button onclick="toggleDrawer(false)" class="text-white hover:text-amber-200 text-2xl focus:outline-none"><i class="fas fa-times"></i></button>
+            <h3 class="text-2xl font-bold"><i class="fas fa-compass mr-2"></i>導覽選單</h3>
+            <button onclick="toggleDrawer(false)" class="text-white hover:text-amber-200 text-3xl focus:outline-none"><i class="fas fa-times"></i></button>
         </div>
         
-        <nav class="p-4 space-y-2 overflow-y-auto flex-grow text-gray-700 font-medium">
-            <button onclick="switchPage('home')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
+        <nav class="p-4 space-y-2 overflow-y-auto flex-grow text-gray-700 font-medium text-lg">
+            <button onclick="switchPage('home')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
                 <i class="fas fa-user-graduate text-amber-500 w-6"></i><span>關於導師</span>
             </button>
-            <button onclick="switchPage('abacus-benefits')" class="w-full text-left px-4 py-3 rounded-lg bg-amber-50 text-amber-800 font-bold hover:bg-amber-100 flex items-center space-x-3 transition">
+            <button onclick="switchPage('abacus-benefits')" class="w-full text-left px-4 py-3.5 rounded-lg bg-amber-50 text-amber-800 font-bold hover:bg-amber-100 flex items-center space-x-3 transition">
                 <i class="fas fa-lightbulb text-amber-500 w-6"></i><span>💡 珠心算的好處</span>
             </button>
-            <button onclick="switchPage('abacus-math')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
+            <button onclick="switchPage('abacus-math')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
                 <i class="fas fa-calculator text-amber-500 w-6"></i><span>🧮 珠心算及數學</span>
             </button>
-            <button onclick="switchPage('finger-math')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
+            <button onclick="switchPage('finger-math')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
                 <i class="fas fa-hand-paper text-amber-500 w-6"></i><span>✋ 手指速算</span>
             </button>
-            <button onclick="switchPage('phonics')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
+            <button onclick="switchPage('phonics')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
                 <i class="fas fa-font text-amber-500 w-6"></i><span>🔤 英文拼音</span>
             </button>
-            <button onclick="switchPage('eng-foundation')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
+            <button onclick="switchPage('eng-foundation')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
                 <i class="fas fa-book-open text-amber-500 w-6"></i><span>📖 拼音及基礎</span>
             </button>
-            <button onclick="switchPage('primary-math')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
+            <button onclick="switchPage('primary-math')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
                 <i class="fas fa-square-root-alt text-amber-500 w-6"></i><span>📘 小學數學</span>
             </button>
-            <button onclick="switchPage('k3-chinese')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
+            <button onclick="switchPage('k3-chinese')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
                 <i class="fas fa-book text-amber-500 w-6"></i><span>📚 K3 中文</span>
             </button>
-            <button onclick="switchPage('p1-chinese')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
+            <button onclick="switchPage('p1-chinese')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
                 <i class="fas fa-pen-nib text-amber-500 w-6"></i><span>📖 P1 中文</span>
             </button>
-            <button onclick="switchPage('contact')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition border-t border-gray-100 mt-2">
+            <button onclick="switchPage('contact')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition border-t border-gray-100 mt-2">
                 <i class="fas fa-map-marker-alt text-amber-500 w-6"></i><span>📍 地區與聯絡</span>
             </button>
         </nav>
