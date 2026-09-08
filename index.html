@@ -17,25 +17,25 @@
 <body class="text-gray-800 flex flex-col min-h-screen">
     <!-- Header Navigation -->
     <header class="bg-amber-500 text-white shadow-md sticky top-0 z-50">
-        <div class="w-full px-2 sm:px-4 py-3 flex justify-between items-center">
-            <!-- 網站名稱向左靠齊 -->
-            <div class="flex items-center space-x-1 sm:space-x-2 cursor-pointer shrink-0 mr-2" onclick="switchPage('home')">
-                <span class="text-xl md:text-2xl">👩‍🏫</span>
-                <span class="font-bold text-base md:text-lg lg:text-xl whitespace-nowrap">全職經驗上門女導師 Miss Emily</span>
+        <div class="w-full px-2 py-3 flex justify-between items-center">
+            <!-- 網站名稱靠左 -->
+            <div class="flex items-center space-x-1 cursor-pointer shrink-0 mr-2" onclick="switchPage('home')">
+                <span class="text-xl">👩‍🏫</span>
+                <span class="font-bold text-sm md:text-base lg:text-lg whitespace-nowrap">全職經驗上門女導師 Miss Emily</span>
             </div>
             
-            <!-- Desktop Navigation (單行、不換行、無滑動條) -->
-            <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 text-xs md:text-sm xl:text-base font-medium whitespace-nowrap">
-                <button onclick="switchPage('home')" class="hover:text-amber-100 px-1 py-1">關於導師</button>
-                <button onclick="switchPage('abacus-benefits')" class="bg-amber-600 hover:bg-amber-700 text-white font-bold px-2 py-1 rounded transition">💡 珠心算的好處</button>
-                <button onclick="switchPage('abacus-math')" class="hover:text-amber-100 px-1 py-1">珠心算及數學</button>
-                <button onclick="switchPage('finger-math')" class="hover:text-amber-100 px-1 py-1">手指速算</button>
-                <button onclick="switchPage('phonics')" class="hover:text-amber-100 px-1 py-1">英文拼音</button>
-                <button onclick="switchPage('eng-foundation')" class="hover:text-amber-100 px-1 py-1">拼音及基礎</button>
-                <button onclick="switchPage('primary-math')" class="hover:text-amber-100 px-1 py-1">小學數學</button>
-                <button onclick="switchPage('k3-chinese')" class="hover:text-amber-100 px-1 py-1">K3 中文</button>
-                <button onclick="switchPage('p1-chinese')" class="hover:text-amber-100 px-1 py-1">P1 中文</button>
-                <button onclick="switchPage('contact')" class="hover:text-amber-100 px-1 py-1">地區與聯絡</button>
+            <!-- Desktop Navigation (強制單行、絕對不換行) -->
+            <nav class="hidden lg:flex items-center flex-nowrap space-x-1 xl:space-x-1.5 text-xs xl:text-sm font-medium whitespace-nowrap">
+                <button onclick="switchPage('home')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">關於導師</button>
+                <button onclick="switchPage('abacus-benefits')" class="bg-amber-600 hover:bg-amber-700 text-white font-bold px-1.5 py-1 rounded transition whitespace-nowrap">💡 珠心算的好處</button>
+                <button onclick="switchPage('abacus-math')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">珠心算及數學</button>
+                <button onclick="switchPage('finger-math')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">手指速算</button>
+                <button onclick="switchPage('phonics')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">英文拼音</button>
+                <button onclick="switchPage('eng-foundation')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">拼音及基礎</button>
+                <button onclick="switchPage('primary-math')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">小學數學</button>
+                <button onclick="switchPage('k3-chinese')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">K3 中文</button>
+                <button onclick="switchPage('p1-chinese')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">P1 中文</button>
+                <button onclick="switchPage('contact')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">地區與聯絡</button>
             </nav>
 
             <div class="lg:hidden">
@@ -137,7 +137,7 @@
                     </div>
                     <div class="p-6 bg-amber-50 rounded-xl border border-amber-200 space-y-3">
                         <h3 class="text-xl font-bold text-amber-800"><i class="fas fa-bullseye mr-2"></i>2. 培養極佳專注力與敏銳聽覺</h3>
-                        <p class="text-gray-700 text-lg">聽算訓練要求小朋友在極短時間內聽清數字、理解並在腦中快速運算，極度考驗專注力與聽覺記憶，對將來課堂上聽講吸收極有幫助。</p>
+                        <p class="text-gray-700 text-lg">聽算訓練要求小朋友在極短時間內聽清數字、理解並 in 腦中快速運算，極度考驗專注力與聽覺記憶，對將來課堂上聽講吸收極有幫助。</p>
                     </div>
                     <div class="p-6 bg-amber-50 rounded-xl border border-amber-200 space-y-3">
                         <h3 class="text-xl font-bold text-amber-800"><i class="fas fa-calculator mr-2"></i>3. 建立極強數感，克服數學恐懼</h3>
