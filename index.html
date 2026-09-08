@@ -15,49 +15,68 @@
     </style>
 </head>
 <body class="text-gray-800 flex flex-col min-h-screen">
+
     <!-- Header Navigation -->
-    <header class="bg-amber-500 text-white shadow-md sticky top-0 z-50">
-        <div class="w-full px-2 py-3 flex justify-between items-center">
-            <!-- 網站名稱靠左 -->
-            <div class="flex items-center space-x-1 cursor-pointer shrink-0 mr-2" onclick="switchPage('home')">
-                <span class="text-xl">👩‍🏫</span>
-                <span class="font-bold text-sm md:text-base lg:text-lg whitespace-nowrap">全職經驗上門女導師 Miss Emily</span>
+    <header class="bg-amber-500 text-white shadow-md sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- 網站名稱 -->
+            <div class="flex items-center space-x-2 cursor-pointer" onclick="switchPage('home')">
+                <span class="text-2xl">👩‍🏫</span>
+                <span class="font-bold text-lg md:text-xl">全職經驗上門女導師 Miss Emily</span>
             </div>
             
-            <!-- Desktop Navigation (強制單行、絕對不換行) -->
-            <nav class="hidden lg:flex items-center flex-nowrap space-x-1 xl:space-x-1.5 text-xs xl:text-sm font-medium whitespace-nowrap">
-                <button onclick="switchPage('home')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">關於導師</button>
-                <button onclick="switchPage('abacus-benefits')" class="bg-amber-600 hover:bg-amber-700 text-white font-bold px-1.5 py-1 rounded transition whitespace-nowrap">💡 珠心算的好處</button>
-                <button onclick="switchPage('abacus-math')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">珠心算及數學</button>
-                <button onclick="switchPage('finger-math')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">手指速算</button>
-                <button onclick="switchPage('phonics')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">英文拼音</button>
-                <button onclick="switchPage('eng-foundation')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">拼音及基礎</button>
-                <button onclick="switchPage('primary-math')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">小學數學</button>
-                <button onclick="switchPage('k3-chinese')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">K3 中文</button>
-                <button onclick="switchPage('p1-chinese')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">P1 中文</button>
-                <button onclick="switchPage('contact')" class="hover:text-amber-100 px-1 py-1 whitespace-nowrap">地區與聯絡</button>
-            </nav>
-
-            <div class="lg:hidden">
-                <button id="mobile-menu-btn" class="text-white text-3xl focus:outline-none"><i class="fas fa-bars"></i></button>
-            </div>
-        </div>
-
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-amber-600 px-4 py-3 space-y-2 text-lg">
-            <button onclick="switchPage('home')" class="block w-full text-left text-white py-2 border-b border-amber-500">關於導師</button>
-            <button onclick="switchPage('abacus-benefits')" class="block w-full text-left text-amber-200 font-bold py-2 border-b border-amber-500">💡 珠心算的好處</button>
-            <button onclick="switchPage('abacus-math')" class="block w-full text-left text-white py-2 border-b border-amber-500">🧮 珠心算及數學課程 (K2-P1)</button>
-            <button onclick="switchPage('finger-math')" class="block w-full text-left text-white py-2 border-b border-amber-500">✋ 手指速算課程 (K2-P1)</button>
-            <button onclick="switchPage('phonics')" class="block w-full text-left text-white py-2 border-b border-amber-500">🔤 英文拼音課程 (K2-K3)</button>
-            <button onclick="switchPage('eng-foundation')" class="block w-full text-left text-white py-2 border-b border-amber-500">📖 拼音及基礎課程 (K3-P1)</button>
-            <button onclick="switchPage('primary-math')" class="block w-full text-left text-white py-2 border-b border-amber-500">📘 小學數學基礎 (P1-P3)</button>
-            <button onclick="switchPage('k3-chinese')" class="block w-full text-left text-white py-2 border-b border-amber-500">📚 K3 中文預備班</button>
-            <button onclick="switchPage('p1-chinese')" class="block w-full text-left text-white py-2 border-b border-amber-500">📖 P1 中文課程</button>
-            <button onclick="switchPage('contact')" class="block w-full text-left text-white py-2">📍 上門地區與聯絡方式</button>
+            <!-- 選單按鈕 -->
+            <button id="menu-open-btn" class="flex items-center space-x-2 bg-amber-600 hover:bg-amber-700 px-4 py-2 rounded-lg font-bold text-base transition">
+                <i class="fas fa-bars text-xl"></i>
+                <span>選單</span>
+            </button>
         </div>
     </header>
 
+    <!-- 右側側邊抽屜選單 (Drawer Menu) -->
+    <div id="drawer-backdrop" class="fixed inset-0 bg-black/50 z-50 hidden transition-opacity" onclick="toggleDrawer(false)"></div>
+    
+    <aside id="drawer-menu" class="fixed top-0 right-0 w-80 max-w-full h-full bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="bg-amber-500 text-white p-5 flex justify-between items-center">
+            <h3 class="text-xl font-bold"><i class="fas fa-compass mr-2"></i>導覽選單</h3>
+            <button onclick="toggleDrawer(false)" class="text-white hover:text-amber-200 text-2xl focus:outline-none"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <nav class="p-4 space-y-2 overflow-y-auto flex-grow text-gray-700 font-medium">
+            <button onclick="switchPage('home')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
+                <i class="fas fa-user-graduate text-amber-500 w-6"></i><span>關於導師</span>
+            </button>
+            <button onclick="switchPage('abacus-benefits')" class="w-full text-left px-4 py-3 rounded-lg bg-amber-50 text-amber-800 font-bold hover:bg-amber-100 flex items-center space-x-3 transition">
+                <i class="fas fa-lightbulb text-amber-500 w-6"></i><span>💡 珠心算的好處</span>
+            </button>
+            <button onclick="switchPage('abacus-math')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
+                <i class="fas fa-calculator text-amber-500 w-6"></i><span>🧮 珠心算及數學</span>
+            </button>
+            <button onclick="switchPage('finger-math')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
+                <i class="fas fa-hand-paper text-amber-500 w-6"></i><span>✋ 手指速算</span>
+            </button>
+            <button onclick="switchPage('phonics')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
+                <i class="fas fa-font text-amber-500 w-6"></i><span>🔤 英文拼音</span>
+            </button>
+            <button onclick="switchPage('eng-foundation')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
+                <i class="fas fa-book-open text-amber-500 w-6"></i><span>📖 拼音及基礎</span>
+            </button>
+            <button onclick="switchPage('primary-math')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
+                <i class="fas fa-square-root-alt text-amber-500 w-6"></i><span>📘 小學數學</span>
+            </button>
+            <button onclick="switchPage('k3-chinese')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
+                <i class="fas fa-book text-amber-500 w-6"></i><span>📚 K3 中文</span>
+            </button>
+            <button onclick="switchPage('p1-chinese')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
+                <i class="fas fa-pen-nib text-amber-500 w-6"></i><span>📖 P1 中文</span>
+            </button>
+            <button onclick="switchPage('contact')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition border-t border-gray-100 mt-2">
+                <i class="fas fa-map-marker-alt text-amber-500 w-6"></i><span>📍 地區與聯絡</span>
+            </button>
+        </nav>
+    </aside>
+
+    <!-- 主要內容區域 -->
     <main class="flex-grow max-w-5xl mx-auto px-4 py-8 w-full">
         <!-- 頁面 1：關於導師 (Home) -->
         <section id="page-home" class="page-content active space-y-8">
@@ -75,7 +94,7 @@
                 </div>
             </div>
 
-            <!-- 獨立課程快速選單 -->
+            <!-- 獨立課程快速選單卡片 -->
             <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100">
                 <h2 class="text-2xl font-bold text-amber-600 mb-6 border-b pb-3"><i class="fas fa-th-large mr-2"></i>點擊查看各項專屬課程：</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-lg">
@@ -137,7 +156,7 @@
                     </div>
                     <div class="p-6 bg-amber-50 rounded-xl border border-amber-200 space-y-3">
                         <h3 class="text-xl font-bold text-amber-800"><i class="fas fa-bullseye mr-2"></i>2. 培養極佳專注力與敏銳聽覺</h3>
-                        <p class="text-gray-700 text-lg">聽算訓練要求小朋友在極短時間內聽清數字、理解並 in 腦中快速運算，極度考驗專注力與聽覺記憶，對將來課堂上聽講吸收極有幫助。</p>
+                        <p class="text-gray-700 text-lg">聽算訓練要求小朋友在極短時間內聽清數字、理解並在腦中快速運算，極度考驗專注力與聽覺記憶，對將來課堂上聽講吸收極有幫助。</p>
                     </div>
                     <div class="p-6 bg-amber-50 rounded-xl border border-amber-200 space-y-3">
                         <h3 class="text-xl font-bold text-amber-800"><i class="fas fa-calculator mr-2"></i>3. 建立極強數感，克服數學恐懼</h3>
@@ -255,16 +274,27 @@
     </footer>
 
     <script>
+        function toggleDrawer(open) {
+            const drawer = document.getElementById('drawer-menu');
+            const backdrop = document.getElementById('drawer-backdrop');
+            if (open) {
+                drawer.classList.remove('translate-x-full');
+                backdrop.classList.remove('hidden');
+            } else {
+                drawer.classList.add('translate-x-full');
+                backdrop.classList.add('hidden');
+            }
+        }
+
+        document.getElementById('menu-open-btn').addEventListener('click', () => toggleDrawer(true));
+
         function switchPage(pageId) {
             document.querySelectorAll('.page-content').forEach(page => { page.classList.remove('active'); });
             const targetPage = document.getElementById('page-' + pageId);
             if(targetPage) { targetPage.classList.add('active'); }
-            document.getElementById('mobile-menu').classList.add('hidden');
+            toggleDrawer(false);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
     </script>
 </body>
 </html>
