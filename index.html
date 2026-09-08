@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: #fcfbfa; font-size: 1.125rem; line-height: 1.75; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; font-size: 1.125rem; line-height: 1.75; }
         .page-content { display: none; }
         .page-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
@@ -16,62 +16,62 @@
 </head>
 <body class="text-gray-800 flex flex-col min-h-screen">
 
-    <!-- Header Navigation (高度增加至約 85px，字體放大) -->
-    <header class="bg-amber-500 text-white shadow-md sticky top-0 z-40">
+    <!-- Header Navigation (粉藍色主題，選單移至左側) -->
+    <header class="bg-sky-500 text-white shadow-md sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <!-- 網站名稱 (字體加大) -->
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchPage('home')">
-                <span class="text-3xl">👩‍🏫</span>
-                <span class="font-bold text-xl md:text-2xl tracking-wide">全職經驗上門女導師 Miss Emily</span>
-            </div>
-            
-            <!-- 選單按鈕 (字體加大) -->
-            <button id="menu-open-btn" class="flex items-center space-x-3 bg-amber-600 hover:bg-amber-700 px-6 py-3 rounded-xl font-bold text-lg shadow transition">
+            <!-- 左側：選單按鈕 -->
+            <button id="menu-open-btn" class="flex items-center space-x-3 bg-sky-600 hover:bg-sky-700 px-6 py-3 rounded-xl font-bold text-lg shadow transition">
                 <i class="fas fa-bars text-2xl"></i>
                 <span>選單</span>
             </button>
+
+            <!-- 右側：網站名稱 (可點擊回首頁) -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchPage('home')">
+                <span class="font-bold text-xl md:text-2xl tracking-wide">全職經驗上門女導師 Miss Emily</span>
+                <span class="text-3xl">👩‍🏫</span>
+            </div>
         </div>
     </header>
 
-    <!-- 右側側邊抽屜選單 (Drawer Menu) -->
+    <!-- 左側側邊抽屜選單 (Drawer Menu) -->
     <div id="drawer-backdrop" class="fixed inset-0 bg-black/50 z-50 hidden transition-opacity" onclick="toggleDrawer(false)"></div>
     
-    <aside id="drawer-menu" class="fixed top-0 right-0 w-80 max-w-full h-full bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
-        <div class="bg-amber-500 text-white p-5 flex justify-between items-center">
+    <aside id="drawer-menu" class="fixed top-0 left-0 w-80 max-w-full h-full bg-white z-50 shadow-2xl transform -translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="bg-sky-500 text-white p-5 flex justify-between items-center">
             <h3 class="text-2xl font-bold"><i class="fas fa-compass mr-2"></i>導覽選單</h3>
-            <button onclick="toggleDrawer(false)" class="text-white hover:text-amber-200 text-3xl focus:outline-none"><i class="fas fa-times"></i></button>
+            <button onclick="toggleDrawer(false)" class="text-white hover:text-sky-200 text-3xl focus:outline-none"><i class="fas fa-times"></i></button>
         </div>
         
         <nav class="p-4 space-y-2 overflow-y-auto flex-grow text-gray-700 font-medium text-lg">
-            <button onclick="switchPage('home')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
-                <i class="fas fa-user-graduate text-amber-500 w-6"></i><span>關於導師</span>
+            <button onclick="switchPage('home')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-sky-50 hover:text-sky-600 flex items-center space-x-3 transition">
+                <i class="fas fa-user-graduate text-sky-500 w-6"></i><span>關於導師</span>
             </button>
-            <button onclick="switchPage('abacus-benefits')" class="w-full text-left px-4 py-3.5 rounded-lg bg-amber-50 text-amber-800 font-bold hover:bg-amber-100 flex items-center space-x-3 transition">
-                <i class="fas fa-lightbulb text-amber-500 w-6"></i><span>💡 珠心算的好處</span>
+            <button onclick="switchPage('abacus-benefits')" class="w-full text-left px-4 py-3.5 rounded-lg bg-sky-50 text-sky-800 font-bold hover:bg-sky-100 flex items-center space-x-3 transition">
+                <i class="fas fa-lightbulb text-sky-500 w-6"></i><span>💡 珠心算的好處</span>
             </button>
-            <button onclick="switchPage('abacus-math')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
-                <i class="fas fa-calculator text-amber-500 w-6"></i><span>🧮 珠心算及數學</span>
+            <button onclick="switchPage('abacus-math')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-sky-50 hover:text-sky-600 flex items-center space-x-3 transition">
+                <i class="fas fa-calculator text-sky-500 w-6"></i><span>🧮 珠心算及數學</span>
             </button>
-            <button onclick="switchPage('finger-math')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
-                <i class="fas fa-hand-paper text-amber-500 w-6"></i><span>✋ 手指速算</span>
+            <button onclick="switchPage('finger-math')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-sky-50 hover:text-sky-600 flex items-center space-x-3 transition">
+                <i class="fas fa-hand-paper text-sky-500 w-6"></i><span>✋ 手指速算</span>
             </button>
-            <button onclick="switchPage('phonics')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
-                <i class="fas fa-font text-amber-500 w-6"></i><span>🔤 英文拼音</span>
+            <button onclick="switchPage('phonics')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-sky-50 hover:text-sky-600 flex items-center space-x-3 transition">
+                <i class="fas fa-font text-sky-500 w-6"></i><span>🔤 英文拼音</span>
             </button>
-            <button onclick="switchPage('eng-foundation')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
-                <i class="fas fa-book-open text-amber-500 w-6"></i><span>📖 拼音及基礎</span>
+            <button onclick="switchPage('eng-foundation')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-sky-50 hover:text-sky-600 flex items-center space-x-3 transition">
+                <i class="fas fa-book-open text-sky-500 w-6"></i><span>📖 拼音及基礎</span>
             </button>
-            <button onclick="switchPage('primary-math')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
-                <i class="fas fa-square-root-alt text-amber-500 w-6"></i><span>📘 小學數學</span>
+            <button onclick="switchPage('primary-math')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-sky-50 hover:text-sky-600 flex items-center space-x-3 transition">
+                <i class="fas fa-square-root-alt text-sky-500 w-6"></i><span>📘 小學數學</span>
             </button>
-            <button onclick="switchPage('k3-chinese')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
-                <i class="fas fa-book text-amber-500 w-6"></i><span>📚 K3 中文</span>
+            <button onclick="switchPage('k3-chinese')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-sky-50 hover:text-sky-600 flex items-center space-x-3 transition">
+                <i class="fas fa-book text-sky-500 w-6"></i><span>📚 K3 中文</span>
             </button>
-            <button onclick="switchPage('p1-chinese')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition">
-                <i class="fas fa-pen-nib text-amber-500 w-6"></i><span>📖 P1 中文</span>
+            <button onclick="switchPage('p1-chinese')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-sky-50 hover:text-sky-600 flex items-center space-x-3 transition">
+                <i class="fas fa-pen-nib text-sky-500 w-6"></i><span>📖 P1 中文</span>
             </button>
-            <button onclick="switchPage('contact')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-amber-50 hover:text-amber-600 flex items-center space-x-3 transition border-t border-gray-100 mt-2">
-                <i class="fas fa-map-marker-alt text-amber-500 w-6"></i><span>📍 地區與聯絡</span>
+            <button onclick="switchPage('contact')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-sky-50 hover:text-sky-600 flex items-center space-x-3 transition border-t border-gray-100 mt-2">
+                <i class="fas fa-map-marker-alt text-sky-500 w-6"></i><span>📍 地區與聯絡</span>
             </button>
         </nav>
     </aside>
@@ -80,11 +80,11 @@
     <main class="flex-grow max-w-5xl mx-auto px-4 py-8 w-full">
         <!-- 頁面 1：關於導師 (Home) -->
         <section id="page-home" class="page-content active space-y-8">
-            <div class="bg-gradient-to-r from-amber-100 to-amber-50 border-l-8 border-amber-500 p-6 md:p-8 rounded-r-xl shadow-sm space-y-4">
-                <h1 class="text-3xl md:text-4xl font-bold text-amber-900 leading-tight">
+            <div class="bg-gradient-to-r from-sky-100 to-sky-50 border-l-8 border-sky-500 p-6 md:p-8 rounded-r-xl shadow-sm space-y-4">
+                <h1 class="text-3xl md:text-4xl font-bold text-sky-900 leading-tight">
                     專業1對1貼心上門教學｜奠定幼小銜接與小學扎實根基
                 </h1>
-                <p class="text-amber-800 text-xl md:text-2xl font-bold">全職經驗女導師 Miss Emily · 學生家中面授</p>
+                <p class="text-sky-800 text-xl md:text-2xl font-bold">全職經驗女導師 Miss Emily · 學生家中面授</p>
                 <p class="text-gray-700 text-lg">課程涵蓋 K2 至小學階段，由基礎起步，循序漸進銜接更高年級。</p>
                 <div class="pt-2">
                     <a href="https://www.facebook.com/profile.php" target="_blank" class="inline-flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-xl shadow-md transition duration-200 text-xl w-full sm:w-auto">
@@ -96,90 +96,90 @@
 
             <!-- 獨立課程快速選單卡片 -->
             <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100">
-                <h2 class="text-2xl font-bold text-amber-600 mb-6 border-b pb-3"><i class="fas fa-th-large mr-2"></i>點擊查看各項專屬課程：</h2>
+                <h2 class="text-2xl font-bold text-sky-600 mb-6 border-b pb-3"><i class="fas fa-th-large mr-2"></i>點擊查看各項專屬課程：</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-lg">
-                    <button onclick="switchPage('abacus-benefits')" class="p-4 bg-amber-50 hover:bg-amber-100 rounded-lg text-left border border-amber-200 transition font-bold text-amber-900">💡 珠心算的好處專頁</button>
-                    <button onclick="switchPage('abacus-math')" class="p-4 bg-amber-50 hover:bg-amber-100 rounded-lg text-left border border-amber-200 transition font-semibold text-gray-800">🧮 珠心算及數學課程</button>
-                    <button onclick="switchPage('finger-math')" class="p-4 bg-amber-50 hover:bg-amber-100 rounded-lg text-left border border-amber-200 transition font-semibold text-gray-800">✋ 手指速算及數學課程</button>
-                    <button onclick="switchPage('phonics')" class="p-4 bg-amber-50 hover:bg-amber-100 rounded-lg text-left border border-amber-200 transition font-semibold text-gray-800">🔤 兒童英文拼音課程</button>
-                    <button onclick="switchPage('eng-foundation')" class="p-4 bg-amber-50 hover:bg-amber-100 rounded-lg text-left border border-amber-200 transition font-semibold text-gray-800">📖 拼音及基礎英文課程</button>
-                    <button onclick="switchPage('primary-math')" class="p-4 bg-amber-50 hover:bg-amber-100 rounded-lg text-left border border-amber-200 transition font-semibold text-gray-800">📘 小學數學基礎課程</button>
-                    <button onclick="switchPage('k3-chinese')" class="p-4 bg-amber-50 hover:bg-amber-100 rounded-lg text-left border border-amber-200 transition font-semibold text-gray-800">📚 K3 中文預備班</button>
-                    <button onclick="switchPage('p1-chinese')" class="p-4 bg-amber-50 hover:bg-amber-100 rounded-lg text-left border border-amber-200 transition font-semibold text-gray-800">📖 P1 中文課程</button>
+                    <button onclick="switchPage('abacus-benefits')" class="p-4 bg-sky-50 hover:bg-sky-100 rounded-lg text-left border border-sky-200 transition font-bold text-sky-900">💡 珠心算的好處專頁</button>
+                    <button onclick="switchPage('abacus-math')" class="p-4 bg-sky-50 hover:bg-sky-100 rounded-lg text-left border border-sky-200 transition font-semibold text-gray-800">🧮 珠心算及數學課程</button>
+                    <button onclick="switchPage('finger-math')" class="p-4 bg-sky-50 hover:bg-sky-100 rounded-lg text-left border border-sky-200 transition font-semibold text-gray-800">✋ 手指速算及數學課程</button>
+                    <button onclick="switchPage('phonics')" class="p-4 bg-sky-50 hover:bg-sky-100 rounded-lg text-left border border-sky-200 transition font-semibold text-gray-800">🔤 兒童英文拼音課程</button>
+                    <button onclick="switchPage('eng-foundation')" class="p-4 bg-sky-50 hover:bg-sky-100 rounded-lg text-left border border-sky-200 transition font-semibold text-gray-800">📖 拼音及基礎英文課程</button>
+                    <button onclick="switchPage('primary-math')" class="p-4 bg-sky-50 hover:bg-sky-100 rounded-lg text-left border border-sky-200 transition font-semibold text-gray-800">📘 小學數學基礎課程</button>
+                    <button onclick="switchPage('k3-chinese')" class="p-4 bg-sky-50 hover:bg-sky-100 rounded-lg text-left border border-sky-200 transition font-semibold text-gray-800">📚 K3 中文預備班</button>
+                    <button onclick="switchPage('p1-chinese')" class="p-4 bg-sky-50 hover:bg-sky-100 rounded-lg text-left border border-sky-200 transition font-semibold text-gray-800">📖 P1 中文課程</button>
                     <button onclick="switchPage('contact')" class="p-4 bg-blue-50 hover:bg-blue-100 rounded-lg text-left border border-blue-200 transition font-semibold text-blue-900">📍 上門地區與聯絡方式</button>
                 </div>
             </div>
 
             <!-- 關於 Miss Emily 詳細介紹 -->
             <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100 space-y-6">
-                <h2 class="text-2xl font-bold text-amber-600 border-b pb-3"><i class="fas fa-user-graduate mr-2"></i>關於 Miss Emily</h2>
+                <h2 class="text-2xl font-bold text-sky-600 border-b pb-3"><i class="fas fa-user-graduate mr-2"></i>關於 Miss Emily</h2>
                 <p class="leading-relaxed text-gray-700 text-lg md:text-xl">
                     我是 Miss Emily，全職上門女導師，多年教學經驗，持有專業認證，曾於幼稚園及小學任教珠心算及功課輔導班，專注教導 K2 至小學生。我重視基礎訓練，因材施教，擅長針對學生弱點，幫助學生建立自信與學習興趣，與家長同心協力，引導孩子循序漸進地成長。
                 </p>
 
                 <div class="space-y-3 pt-2">
-                    <h3 class="text-xl md:text-2xl font-bold text-amber-800"><i class="fas fa-heart mr-2 text-amber-500"></i>教學風格：</h3>
+                    <h3 class="text-xl md:text-2xl font-bold text-sky-800"><i class="fas fa-heart mr-2 text-sky-500"></i>教學風格：</h3>
                     <p class="leading-relaxed text-gray-700 text-lg md:text-xl">
                         我會觀察每個孩子的學習狀況，用適合他們的方式引導，採用活動教學方式，融入不同教學元素，讓學習變得生動有趣。我重視時間觀念、責任感與互相尊重，期望與同樣重視這些理念的家長攜手，陪伴孩子穩步成長。
                     </p>
                 </div>
 
                 <div class="space-y-3 pt-2">
-                    <h3 class="text-xl md:text-2xl font-bold text-amber-800"><i class="fas fa-lightbulb mr-2 text-amber-500"></i>教學心得：</h3>
+                    <h3 class="text-xl md:text-2xl font-bold text-sky-800"><i class="fas fa-lightbulb mr-2 text-sky-500"></i>教學心得：</h3>
                     <p class="leading-relaxed text-gray-700 text-lg md:text-xl">
                         多年教學讓我體會到，孩子的進步需要穩定節奏、家長陪伴，以及足夠的成長時間。學習是累積的過程，穩定上課建立習慣，溫故知新鞏固所學，家長輕輕扶持，孩子走得更穩。
                     </p>
                 </div>
 
-                <div class="bg-amber-50 p-6 rounded-xl border border-amber-200 space-y-3">
-                    <h3 class="text-xl md:text-2xl font-bold text-amber-900"><i class="fas fa-star mr-2 text-amber-500"></i>教學理念：</h3>
+                <div class="bg-sky-50 p-6 rounded-xl border border-sky-200 space-y-3">
+                    <h3 class="text-xl md:text-2xl font-bold text-sky-900"><i class="fas fa-star mr-2 text-sky-500"></i>教學理念：</h3>
                     <ul class="list-disc list-inside space-y-2 text-gray-800 text-lg md:text-xl font-medium">
                         <li>融匯創新，奠基扎實</li>
                         <li>因材施教，穩健前行</li>
                         <li>多元啟發，循序漸進</li>
                         <li>學術為本，家長同心</li>
                     </ul>
-                    <p class="text-amber-900 font-bold text-lg md:text-xl pt-2">期待與您一起陪孩子走過學習之路。</p>
+                    <p class="text-sky-900 font-bold text-lg md:text-xl pt-2">期待與您一起陪孩子走過學習之路。</p>
                 </div>
             </div>
         </section>
 
         <!-- 頁面 2：珠心算的好處 (Abacus Benefits) -->
         <section id="page-abacus-benefits" class="page-content space-y-6">
-            <h1 class="text-3xl font-bold text-amber-800 border-b-2 border-amber-500 pb-3">💡 學習珠心算對幼兒發展的四大好處</h1>
+            <h1 class="text-3xl font-bold text-sky-800 border-b-2 border-sky-500 pb-3">💡 學習珠心算對幼兒發展的四大好處</h1>
             <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100 space-y-6">
                 <p class="text-gray-700 leading-relaxed text-xl">珠心算不單單是計算工具，更是一項全面開發幼兒左右腦潛能的腦力運動！在 K2 至小一黃金時期學習珠心算，能為孩子帶來以下關鍵能力提升：</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="p-6 bg-amber-50 rounded-xl border border-amber-200 space-y-3">
-                        <h3 class="text-xl font-bold text-amber-800"><i class="fas fa-brain mr-2"></i>1. 開發左右腦，提升圖像記憶力</h3>
+                    <div class="p-6 bg-sky-50 rounded-xl border border-sky-200 space-y-3">
+                        <h3 class="text-xl font-bold text-sky-800"><i class="fas fa-brain mr-2"></i>1. 開發左右腦，提升圖像記憶力</h3>
                         <p class="text-gray-700 text-lg">學習珠心算時，右手打算盤刺激左腦邏輯，同時左腦將算盤珠子轉化為「腦中圖像」（心算），能有效促進左右腦均衡發育，大幅增強立體圖像記憶力。</p>
                     </div>
-                    <div class="p-6 bg-amber-50 rounded-xl border border-amber-200 space-y-3">
-                        <h3 class="text-xl font-bold text-amber-800"><i class="fas fa-bullseye mr-2"></i>2. 培養極佳專注力與敏銳聽覺</h3>
+                    <div class="p-6 bg-sky-50 rounded-xl border border-sky-200 space-y-3">
+                        <h3 class="text-xl font-bold text-sky-800"><i class="fas fa-bullseye mr-2"></i>2. 培養極佳專注力與敏銳聽覺</h3>
                         <p class="text-gray-700 text-lg">聽算訓練要求小朋友在極短時間內聽清數字、理解並在腦中快速運算，極度考驗專注力與聽覺記憶，對將來課堂上聽講吸收極有幫助。</p>
                     </div>
-                    <div class="p-6 bg-amber-50 rounded-xl border border-amber-200 space-y-3">
-                        <h3 class="text-xl font-bold text-amber-800"><i class="fas fa-calculator mr-2"></i>3. 建立極強數感，克服數學恐懼</h3>
+                    <div class="p-6 bg-sky-50 rounded-xl border border-sky-200 space-y-3">
+                        <h3 class="text-xl font-bold text-sky-800"><i class="fas fa-calculator mr-2"></i>3. 建立極強數感，克服數學恐懼</h3>
                         <p class="text-gray-700 text-lg">透過實體算盤撥珠，數字不再是抽象符號，而是看得見、摸得著的具體量化概念，幫助孩子迅速掌握進位、退位等技巧，奠定小學數學強大優勢。</p>
                     </div>
-                    <div class="p-6 bg-amber-50 rounded-xl border border-amber-200 space-y-3">
-                        <h3 class="text-xl font-bold text-amber-800"><i class="fas fa-award mr-2"></i>4. 國際認證考試，助力升小面試</h3>
+                    <div class="p-6 bg-sky-50 rounded-xl border border-sky-200 space-y-3">
+                        <h3 class="text-xl font-bold text-sky-800"><i class="fas fa-award mr-2"></i>4. 國際認證考試，助力升小面試</h3>
                         <p class="text-gray-700 text-lg">小朋友可定期參加珠心算國際鑑定考試，獲得認可證書，不但能建立孩子自信與成就感，更可在小一入學面試時作為極具份量的能力證明！</p>
                     </div>
                 </div>
-                <div class="p-6 bg-amber-100 rounded-xl text-center pt-4">
-                    <button onclick="switchPage('abacus-math')" class="bg-amber-600 hover:bg-amber-700 text-white font-bold text-xl px-8 py-3 rounded-xl transition">👉 查看【珠心算及數學課程】詳情</button>
+                <div class="p-6 bg-sky-100 rounded-xl text-center pt-4">
+                    <button onclick="switchPage('abacus-math')" class="bg-sky-600 hover:bg-sky-700 text-white font-bold text-xl px-8 py-3 rounded-xl transition">👉 查看【珠心算及數學課程】詳情</button>
                 </div>
             </div>
         </section>
 
         <!-- 頁面 3：珠心算及數學課程 (Abacus Math) -->
         <section id="page-abacus-math" class="page-content space-y-6">
-            <h1 class="text-3xl font-bold text-amber-800 border-b-2 border-amber-500 pb-3">🧮 兒童珠心算及數學課程（K2 至小一）</h1>
+            <h1 class="text-3xl font-bold text-sky-800 border-b-2 border-sky-500 pb-3">🧮 兒童珠心算及數學課程（K2 至小一）</h1>
             <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100 space-y-6">
                 <p class="text-gray-700 leading-relaxed text-xl">課程以珠心算為主，透過算盤建立數感，訓練專注力、記憶力及促進左右腦均衡發展，讓小朋友輕鬆掌握加減概念，對數字更敏感。</p>
-                <div class="bg-amber-50 p-6 rounded-xl space-y-3 border border-amber-200">
-                    <p class="font-bold text-amber-900 text-xl">📌 課程涵蓋範疇：</p>
+                <div class="bg-sky-50 p-6 rounded-xl space-y-3 border border-sky-200">
+                    <p class="font-bold text-sky-900 text-xl">📌 課程涵蓋範疇：</p>
                     <ul class="list-disc list-inside space-y-2 text-gray-800 text-lg md:text-xl">
                         <li>珠心算基礎概念與算盤正確撥珠手法</li>
                         <li>滿五/進十/破五進十口訣運用</li>
@@ -192,7 +192,7 @@
 
         <!-- 頁面 4：手指速算課程 (Finger Math) -->
         <section id="page-finger-math" class="page-content space-y-6">
-            <h1 class="text-3xl font-bold text-amber-800 border-b-2 border-amber-500 pb-3">✋ 兒童手指速算及數學課程（K2 至小一）</h1>
+            <h1 class="text-3xl font-bold text-sky-800 border-b-2 border-sky-500 pb-3">✋ 兒童手指速算及數學課程（K2 至小一）</h1>
             <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100 space-y-6">
                 <p class="text-gray-700 leading-relaxed text-xl">課程以手指速算為主，從具體手指操作逐步過渡至心算，訓練手腦協調及計算反應，建立穩固數學基礎。小朋友隨時可用雙手練習，無須額外工具。</p>
             </div>
@@ -200,7 +200,7 @@
 
         <!-- 頁面 5：英文拼音課程 (Phonics) -->
         <section id="page-phonics" class="page-content space-y-6">
-            <h1 class="text-3xl font-bold text-amber-800 border-b-2 border-amber-500 pb-3">🔤 兒童英文拼音課程（K2 至 K3）</h1>
+            <h1 class="text-3xl font-bold text-sky-800 border-b-2 border-sky-500 pb-3">🔤 兒童英文拼音課程（K2 至 K3）</h1>
             <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100 space-y-6">
                 <p class="text-gray-700 leading-relaxed text-xl">課程以英文拼音及遊戲式教學為主，讓小朋友掌握字母與發音的對應關係，達到「見字能讀、聽音能寫」的能力，讓日後背誦單字更輕鬆。</p>
             </div>
@@ -208,7 +208,7 @@
 
         <!-- 頁面 6：拼音及基礎英文 (Eng Foundation) -->
         <section id="page-eng-foundation" class="page-content space-y-6">
-            <h1 class="text-3xl font-bold text-amber-800 border-b-2 border-amber-500 pb-3">📖 兒童英文拼音及基礎課程（K3 至小一）</h1>
+            <h1 class="text-3xl font-bold text-sky-800 border-b-2 border-sky-500 pb-3">📖 兒童英文拼音及基礎課程（K3 至小一）</h1>
             <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100 space-y-6">
                 <p class="text-gray-700 leading-relaxed text-xl">結合英文拼音與小一基礎文法，採用遊戲式教學，讓小朋友同時掌握 Phonics 及基礎 Grammar 概念，自信銜接小一英文課程。</p>
             </div>
@@ -216,7 +216,7 @@
 
         <!-- 頁面 7：小學數學基礎 (Primary Math) -->
         <section id="page-primary-math" class="page-content space-y-6">
-            <h1 class="text-3xl font-bold text-amber-800 border-b-2 border-amber-500 pb-3">📘 小學數學基礎課程（小一至小三）</h1>
+            <h1 class="text-3xl font-bold text-sky-800 border-b-2 border-sky-500 pb-3">📘 小學數學基礎課程（小一至小三）</h1>
             <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100 space-y-6">
                 <p class="text-gray-700 leading-relaxed text-xl">透過數學遊戲與適量練習鞏固學校所學，按學生程度進行針對性輔導，精準破譯文字應用題與幾何空間概念。</p>
             </div>
@@ -224,7 +224,7 @@
 
         <!-- 頁面 8：K3 中文預備班 (K3 Chinese) -->
         <section id="page-k3-chinese" class="page-content space-y-6">
-            <h1 class="text-3xl font-bold text-amber-800 border-b-2 border-amber-500 pb-3">📚 K3 中文預備班 (K3升小一)</h1>
+            <h1 class="text-3xl font-bold text-sky-800 border-b-2 border-sky-500 pb-3">📚 K3 中文預備班 (K3升小一)</h1>
             <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100 space-y-6">
                 <ul class="list-disc list-inside space-y-3 text-gray-800 text-xl">
                     <li>漢字筆劃、筆順、部件加減法</li>
@@ -237,7 +237,7 @@
 
         <!-- 頁面 9：P1 中文課程 (P1 Chinese) -->
         <section id="page-p1-chinese" class="page-content space-y-6">
-            <h1 class="text-3xl font-bold text-amber-800 border-b-2 border-amber-500 pb-3">📖 P1 中文課程 (小一全年)</h1>
+            <h1 class="text-3xl font-bold text-sky-800 border-b-2 border-sky-500 pb-3">📖 P1 中文課程 (小一全年)</h1>
             <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100 space-y-6">
                 <ul class="list-disc list-inside space-y-3 text-gray-800 text-xl">
                     <li>量詞、形容詞、反義詞、形近字、同部件字</li>
@@ -249,16 +249,16 @@
 
         <!-- 頁面 10：地區與聯絡 (Contact) -->
         <section id="page-contact" class="page-content space-y-6">
-            <h1 class="text-3xl font-bold text-amber-800 border-b-2 border-amber-500 pb-3">📍 上門地區與聯絡方式</h1>
+            <h1 class="text-3xl font-bold text-sky-800 border-b-2 border-sky-500 pb-3">📍 上門地區與聯絡方式</h1>
             <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100 space-y-4">
-                <h2 class="text-2xl font-bold text-amber-600"><i class="fas fa-map-marker-alt mr-2"></i>上門服務地區</h2>
+                <h2 class="text-2xl font-bold text-sky-600"><i class="fas fa-map-marker-alt mr-2"></i>上門服務地區</h2>
                 <div class="p-6 bg-green-50 border border-green-200 rounded-xl">
                     <p class="font-bold text-green-900 text-xl mb-2">✅ 優先地區（上門面授，輕鐵／西鐵沿線）：</p>
                     <p class="text-green-900 text-2xl font-bold">天水圍、元朗、屯門</p>
                 </div>
             </div>
             <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100 space-y-4">
-                <h2 class="text-2xl font-bold text-amber-600"><i class="fas fa-paper-plane mr-2"></i>聯絡方法</h2>
+                <h2 class="text-2xl font-bold text-sky-600"><i class="fas fa-paper-plane mr-2"></i>聯絡方法</h2>
                 <div class="p-8 bg-blue-50 border border-blue-200 rounded-2xl space-y-4 text-center sm:text-left">
                     <a href="https://www.facebook.com/profile.php" target="_blank" class="inline-flex items-center space-x-3 bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-xl shadow transition text-xl">
                         <i class="fab fa-facebook text-3xl"></i>
@@ -278,10 +278,10 @@
             const drawer = document.getElementById('drawer-menu');
             const backdrop = document.getElementById('drawer-backdrop');
             if (open) {
-                drawer.classList.remove('translate-x-full');
+                drawer.classList.remove('-translate-x-full');
                 backdrop.classList.remove('hidden');
             } else {
-                drawer.classList.add('translate-x-full');
+                drawer.classList.add('-translate-x-full');
                 backdrop.classList.add('hidden');
             }
         }
