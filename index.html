@@ -16,7 +16,7 @@
 </head>
 <body class="text-gray-800 flex flex-col min-h-screen">
 
-    <!-- Header Navigation (粉藍色主題，選單移至左側) -->
+    <!-- Header Navigation (粉藍色主題，選單位於左側) -->
     <header class="bg-sky-500 text-white shadow-md sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <!-- 左側：選單按鈕 -->
@@ -25,7 +25,7 @@
                 <span>選單</span>
             </button>
 
-            <!-- 右側：網站名稱 (可點擊回首頁) -->
+            <!-- 右側：網站名稱 -->
             <div class="flex items-center space-x-3 cursor-pointer" onclick="switchPage('home')">
                 <span class="font-bold text-xl md:text-2xl tracking-wide">全職經驗上門女導師 Miss Emily</span>
                 <span class="text-3xl">👩‍🏫</span>
@@ -46,7 +46,10 @@
             <button onclick="switchPage('home')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-sky-50 hover:text-sky-600 flex items-center space-x-3 transition">
                 <i class="fas fa-user-graduate text-sky-500 w-6"></i><span>關於導師</span>
             </button>
-            <button onclick="switchPage('abacus-benefits')" class="w-full text-left px-4 py-3.5 rounded-lg bg-sky-50 text-sky-800 font-bold hover:bg-sky-100 flex items-center space-x-3 transition">
+            <button onclick="switchPage('awards')" class="w-full text-left px-4 py-3.5 rounded-lg bg-amber-50 text-amber-800 font-bold hover:bg-amber-100 flex items-center space-x-3 transition">
+                <i class="fas fa-trophy text-amber-500 w-6"></i><span>🏆 導師獲獎紀錄</span>
+            </button>
+            <button onclick="switchPage('abacus-benefits')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-sky-50 hover:text-sky-600 flex items-center space-x-3 transition">
                 <i class="fas fa-lightbulb text-sky-500 w-6"></i><span>💡 珠心算的好處</span>
             </button>
             <button onclick="switchPage('abacus-math')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-sky-50 hover:text-sky-600 flex items-center space-x-3 transition">
@@ -94,10 +97,14 @@
                 </div>
             </div>
 
-            <!-- 獨立課程快速選單卡片 -->
+            <!-- 獨立課程與獲獎快速選單卡片 -->
             <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100">
-                <h2 class="text-2xl font-bold text-sky-600 mb-6 border-b pb-3"><i class="fas fa-th-large mr-2"></i>點擊查看各項專屬課程：</h2>
+                <h2 class="text-2xl font-bold text-sky-600 mb-6 border-b pb-3"><i class="fas fa-th-large mr-2"></i>快速導航與專屬課程：</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-lg">
+                    <button onclick="switchPage('awards')" class="p-4 bg-amber-50 hover:bg-amber-100 rounded-lg text-left border border-amber-300 transition font-bold text-amber-900 col-span-1 sm:col-span-2 md:col-span-3 flex items-center space-x-2">
+                        <i class="fas fa-award text-amber-500 text-2xl"></i>
+                        <span>🏆 Miss Emily 獲獎紀錄（中文/英文徵文及文學比賽）</span>
+                    </button>
                     <button onclick="switchPage('abacus-benefits')" class="p-4 bg-sky-50 hover:bg-sky-100 rounded-lg text-left border border-sky-200 transition font-bold text-sky-900">💡 珠心算的好處專頁</button>
                     <button onclick="switchPage('abacus-math')" class="p-4 bg-sky-50 hover:bg-sky-100 rounded-lg text-left border border-sky-200 transition font-semibold text-gray-800">🧮 珠心算及數學課程</button>
                     <button onclick="switchPage('finger-math')" class="p-4 bg-sky-50 hover:bg-sky-100 rounded-lg text-left border border-sky-200 transition font-semibold text-gray-800">✋ 手指速算及數學課程</button>
@@ -116,6 +123,19 @@
                 <p class="leading-relaxed text-gray-700 text-lg md:text-xl">
                     我是 Miss Emily，全職上門女導師，多年教學經驗，持有專業認證，曾於幼稚園及小學任教珠心算及功課輔導班，專注教導 K2 至小學生。我重視基礎訓練，因材施教，擅長針對學生弱點，幫助學生建立自信與學習興趣，與家長同心協力，引導孩子循序漸進地成長。
                 </p>
+
+                <!-- 獲獎殊榮概要 -->
+                <div class="bg-amber-50 p-6 rounded-xl border border-amber-200 space-y-3">
+                    <div class="flex justify-between items-center border-b border-amber-200 pb-2">
+                        <h3 class="text-xl md:text-2xl font-bold text-amber-900"><i class="fas fa-trophy text-amber-500 mr-2"></i>導師文學創作與徵文比賽榮譽</h3>
+                        <button onclick="switchPage('awards')" class="text-amber-800 font-bold hover:underline text-base">查看全部 →</button>
+                    </div>
+                    <ul class="space-y-2 text-gray-800 text-base md:text-lg">
+                        <li class="flex items-start space-x-2"><span class="text-amber-600 font-bold">🥇</span><span><strong>亞太當代文學獎：</strong>金獎及全組別冠軍</span></li>
+                        <li class="flex items-start space-x-2"><span class="text-amber-600 font-bold">🥇</span><span><strong>第五屆香港青年兒童文藝交流2026：</strong>公開組冠軍 及 最佳文采獎</span></li>
+                        <li class="flex items-start space-x-2"><span class="text-amber-600 font-bold">🥇</span><span><strong>第二屆全港十八區校網傑出作家比賽：</strong>元朗區 (72, 73, 74校網) 公開組金獎</span></li>
+                    </ul>
+                </div>
 
                 <div class="space-y-3 pt-2">
                     <h3 class="text-xl md:text-2xl font-bold text-sky-800"><i class="fas fa-heart mr-2 text-sky-500"></i>教學風格：</h3>
@@ -140,6 +160,81 @@
                         <li>學術為本，家長同心</li>
                     </ul>
                     <p class="text-sky-900 font-bold text-lg md:text-xl pt-2">期待與您一起陪孩子走過學習之路。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 頁面：獲獎紀錄 (Awards) -->
+        <section id="page-awards" class="page-content space-y-6">
+            <h1 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500 pb-3 flex items-center space-x-3">
+                <span>🏆 Miss Emily 獲獎紀錄</span>
+            </h1>
+            
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100 space-y-6">
+                <p class="text-gray-700 leading-relaxed text-lg md:text-xl">
+                    Miss Emily 熱愛文字創作與語文教學，持續於各類全港性及跨區域公開徵文、文學比賽中屢獲殊榮，具備深厚的中文及英文創作底蘊：
+                </p>
+
+                <div class="space-y-4">
+                    <!-- 獎項 1 -->
+                    <div class="p-5 bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 rounded-r-xl shadow-sm">
+                        <div class="flex items-center space-x-2 text-amber-900 font-bold text-xl">
+                            <span class="text-2xl">🏆</span>
+                            <span>亞太當代文學獎</span>
+                        </div>
+                        <p class="text-amber-800 font-semibold text-lg mt-1">亞太兒童及青少年優才協會「2026亞太當代文學獎」</p>
+                        <p class="text-amber-900 font-bold text-xl mt-2">🥇 金獎 及 全組別冠軍 (Gold Award and The Overall Champion)</p>
+                    </div>
+
+                    <!-- 獎項 2 -->
+                    <div class="p-5 bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 rounded-r-xl shadow-sm">
+                        <div class="flex items-center space-x-2 text-amber-900 font-bold text-xl">
+                            <span class="text-2xl">🏆</span>
+                            <span>第五屆香港青年兒童文藝交流2026</span>
+                        </div>
+                        <p class="text-amber-800 font-semibold text-lg mt-1">CYACA 青年兒童文藝交流協會 — 第五屆香港青年兒童徵文比賽2026</p>
+                        <p class="text-amber-900 font-bold text-xl mt-2">🥇 公開組 冠軍 及 公開組 最佳文采獎</p>
+                    </div>
+
+                    <!-- 獎項 3 -->
+                    <div class="p-5 bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 rounded-r-xl shadow-sm">
+                        <div class="flex items-center space-x-2 text-amber-900 font-bold text-xl">
+                            <span class="text-2xl">🏆</span>
+                            <span>第二屆全港十八區校網傑出作家比賽（自選主題）</span>
+                        </div>
+                        <p class="text-amber-800 font-semibold text-lg mt-1">HKAOCU 香港文化協會 ｜ 組別：元朗區 (72, 73, 74 校網)</p>
+                        <p class="text-amber-900 font-bold text-xl mt-2">🥇 公開組 金獎</p>
+                    </div>
+
+                    <!-- 獎項 4 -->
+                    <div class="p-5 bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 rounded-r-xl shadow-sm">
+                        <div class="flex items-center space-x-2 text-amber-900 font-bold text-xl">
+                            <span class="text-2xl">🥈</span>
+                            <span>第十三屆香港青少年及兒童微文大賽</span>
+                        </div>
+                        <p class="text-amber-800 font-semibold text-lg mt-1">SICCA 智慧之星兒童文化協會 （愛護地球）</p>
+                        <p class="text-amber-900 font-bold text-xl mt-2">🥈 英文組．公開組 亞軍</p>
+                    </div>
+
+                    <!-- 獎項 5 -->
+                    <div class="p-5 bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 rounded-r-xl shadow-sm">
+                        <div class="flex items-center space-x-2 text-amber-900 font-bold text-xl">
+                            <span class="text-2xl">🥈</span>
+                            <span>Asia Kids Talent 兒童及青少年英文寫作比賽</span>
+                        </div>
+                        <p class="text-amber-800 font-semibold text-lg mt-1">Free Topic 自由主題</p>
+                        <p class="text-amber-900 font-bold text-xl mt-2">🥈 公開組 銀獎</p>
+                    </div>
+
+                    <!-- 獎項 6 -->
+                    <div class="p-5 bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 rounded-r-xl shadow-sm">
+                        <div class="flex items-center space-x-2 text-amber-900 font-bold text-xl">
+                            <span class="text-2xl">🥉</span>
+                            <span>第七屆全港青少年及兒童微文大賽</span>
+                        </div>
+                        <p class="text-amber-800 font-semibold text-lg mt-1">香港創意與文化交流協會（颱風下的香港微文大賽）</p>
+                        <p class="text-amber-900 font-bold text-xl mt-2">🥉 公開組 季軍</p>
+                    </div>
                 </div>
             </div>
         </section>
