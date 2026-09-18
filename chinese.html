@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 小學中文課程 | Miss Emily</title>
+    <style>
+        :root { --primary-color: #4A86E8; --bg-color: #F0F6FC; --card-bg: #FFFFFF; --text-color: #2C3E50; --accent-bg: #E8F2FC; --nav-bg: #3B72C4; }
+        html { font-size: 17px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; padding-bottom: 40px; }
+        header { background: linear-gradient(135deg, #5B92E5, #4A86E8); color: white; text-align: center; padding: 40px 20px; }
+        header h1 { font-size: 2.2rem; }
+        nav { position: sticky; top: 0; background-color: var(--nav-bg); z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; overflow-x: auto; white-space: nowrap; padding: 0 10px; }
+        .nav-container a { color: white; padding: 14px 16px; text-decoration: none; font-weight: 600; font-size: 0.98rem; flex-shrink: 0; }
+        .nav-container a:hover, .nav-container a.active { background-color: rgba(255, 255, 255, 0.2); }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .card { background: var(--card-bg); border-radius: 12px; padding: 30px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
+        h2 { color: var(--primary-color); border-bottom: 3px solid var(--accent-bg); padding-bottom: 8px; margin-bottom: 20px; font-size: 1.6rem; }
+        ul { list-style-type: none; padding-left: 0; }
+        ul li { position: relative; padding-left: 22px; margin-bottom: 12px; }
+        ul li::before { content: "•"; color: var(--primary-color); font-weight: bold; font-size: 1.3rem; position: absolute; left: 0; top: -2px; }
+        .cta-button { display: inline-block; background-color: var(--primary-color); color: white; padding: 14px 28px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.1rem; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 小學中文課程</h1>
+        <p>K3 至 小六 語文素養與閱讀寫作專修</p>
+    </header>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">🏠 返回網站首頁</a>
+            <a href="abacus.html">🧮 珠心算</a>
+            <a href="finger-math.html">✋ 手指速算</a>
+            <a href="phonics.html">🔤 英文拼音</a>
+            <a href="english.html">📖 小學英文</a>
+            <a href="chinese.html" class="active">📚 小學中文</a>
+            <a href="math.html">📘 小學數學</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h2>課程簡介</h2>
+            <p>涵蓋漢字結構、筆順、部首、造句及閱讀理解，培養基礎語文能力，並針對小學考試題型拆解，穩步提升語文表達能力。</p>
+        </div>
+        <div class="card">
+            <h2>核心學習內容</h2>
+            <ul>
+                <li><strong>文字基礎：</strong>漢字結構、筆順規範、部首辨析與文字起源記憶。</li>
+                <li><strong>詞語句型：</strong>擴充詞彙量、近義詞/反義詞、修辭手法（比喻、擬人、排比）。</li>
+                <li><strong>閱讀理解：</strong>文章結構拆解、尋找關鍵字、主旨分析與答題技巧。</li>
+                <li><strong>實用寫作：</strong>記敘文、看圖寫作、書信及各類實用文體寫作。</li>
+            </ul>
+        </div>
+        <div class="card" style="text-align: center; background: #E8F2FC;">
+            <h2>想為孩子報名或查詢詳情？</h2>
+            <a href="https://www.facebook.com" target="_blank" class="cta-button">👉 點擊 PM Miss Emily Facebook 專頁</a>
+        </div>
+    </div>
+</body>
+</html>
