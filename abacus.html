@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧮 兒童珠心算及數學課程 | Miss Emily</title>
+    <style>
+        :root {
+            --primary-color: #4A86E8;
+            --bg-color: #F0F6FC;
+            --card-bg: #FFFFFF;
+            --text-color: #2C3E50;
+            --accent-bg: #E8F2FC;
+            --nav-bg: #3B72C4;
+        }
+
+        html { font-size: 17px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; padding-bottom: 40px; }
+
+        header {
+            background: linear-gradient(135deg, #5B92E5, #4A86E8);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        header h1 { font-size: 2.2rem; margin-bottom: 8px; }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--nav-bg);
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 0 10px;
+        }
+
+        .nav-container a {
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.98rem;
+            flex-shrink: 0;
+        }
+
+        .nav-container a:hover, .nav-container a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-bg);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+        }
+
+        ul { list-style-type: none; padding-left: 0; }
+        ul li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 12px;
+        }
+        ul li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.3rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🧮 兒童珠心算及數學課程</h1>
+        <p>專為 K2 至 小一 學生設計的大腦專注力與數學思維體操</p>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">🏠 返回網站首頁</a>
+            <a href="abacus.html" class="active">🧮 珠心算</a>
+            <a href="finger-math.html">✋ 手指速算</a>
+            <a href="phonics.html">🔤 英文拼音</a>
+            <a href="english.html">📖 小學英文</a>
+            <a href="chinese.html">📚 小學中文</a>
+            <a href="math.html">📘 小學數學</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>課程簡介</h2>
+            <p>本課程重視算理理解，並完美銜接學校體制，不與學校直式筆算混淆。透過算盤及心算練習，有效訓練幼兒的專注力、記憶力與圖像思維能力。</p>
+        </div>
+
+        <div class="card">
+            <h2>核心學習內容</h2>
+            <ul>
+                <li><strong>算盤基礎：</strong>正確認識算盤結構、撥珠姿勢與口訣應用。</li>
+                <li><strong>口訣記憶：</strong>滿五、進十、破五進十口訣遊戲化記憶。</li>
+                <li><strong>心算轉化：</strong>由實物算盤過渡至腦海影像心算（珠像圖）。</li>
+                <li><strong>生活應用：</strong>結合時鐘、貨幣等日常生活數學應用。</li>
+                <li><strong>國際認證：</strong>協助報考國際珠心算鑑定考試。</li>
+            </ul>
+        </div>
+
+        <div class="card" style="text-align: center; background: #E8F2FC;">
+            <h2>想為孩子報名或查詢詳情？</h2>
+            <p style="margin-top: 8px;">歡迎直接聯絡 Miss Emily 了解更多！</p>
+            <a href="https://www.facebook.com" target="_blank" class="cta-button">👉 點擊 PM Miss Emily Facebook 專頁</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
