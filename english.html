@@ -3,34 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📖 兒童英文拼音及小學英文課程 | Miss Emily</title>
+    <title>📖 兒童英文拼音及基礎課程 | Miss Emily</title>
     <style>
         :root { --primary-color: #4A86E8; --bg-color: #F0F6FC; --card-bg: #FFFFFF; --text-color: #2C3E50; --accent-bg: #E8F2FC; --nav-bg: #3B72C4; }
-        html { font-size: 17px; }
+        html { font-size: 26px; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; padding-bottom: 40px; }
-        header { background: linear-gradient(135deg, #5B92E5, #4A86E8); color: white; text-align: center; padding: 40px 20px; }
-        header h1 { font-size: 2.2rem; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; padding-bottom: 40px; font-size: 1rem; }
+        header { background: linear-gradient(135deg, #5B92E5, #4A86E8); color: white; text-align: center; padding: 30px 20px; }
+        header h1 { font-size: 1.8rem; margin-bottom: 8px; }
         nav { position: sticky; top: 0; background-color: var(--nav-bg); z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
-        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; overflow-x: auto; white-space: nowrap; padding: 0 10px; }
-        .nav-container a { color: white; padding: 14px 16px; text-decoration: none; font-weight: 600; font-size: 0.98rem; flex-shrink: 0; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; overflow-x: auto; white-space: nowrap; padding: 0 10px; }
+        .nav-container a { color: white; padding: 14px 16px; text-decoration: none; font-weight: 600; font-size: 0.9rem; flex-shrink: 0; }
         .nav-container a:hover, .nav-container a.active { background-color: rgba(255, 255, 255, 0.2); }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        .card { background: var(--card-bg); border-radius: 12px; padding: 30px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
-        h2 { color: var(--primary-color); border-bottom: 3px solid var(--accent-bg); padding-bottom: 8px; margin-bottom: 20px; font-size: 1.6rem; }
-        .outline-sub { margin-bottom: 15px; }
-        .outline-sub strong { color: #2B5288; font-size: 1.1rem; }
-        .cta-button { display: inline-block; background-color: var(--primary-color); color: white; padding: 14px 28px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.1rem; margin-top: 15px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
+        h2 { color: var(--primary-color); border-bottom: 3px solid var(--accent-bg); padding-bottom: 8px; margin-bottom: 18px; font-size: 1.4rem; }
+        .grade-block { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #D0D7DE; }
+        .grade-block:last-child { border-bottom: none; }
+        .grade-title { color: #2B5288; font-weight: bold; font-size: 1.15rem; margin-bottom: 8px; }
+        ul { list-style-type: none; padding-left: 0; }
+        ul li { position: relative; padding-left: 24px; margin-bottom: 8px; }
+        ul li::before { content: "•"; color: var(--primary-color); font-weight: bold; font-size: 1.2rem; position: absolute; left: 0; top: -2px; }
+        .cta-button { display: inline-block; background-color: var(--primary-color); color: white; padding: 12px 24px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1rem; margin-top: 15px; }
     </style>
 </head>
 <body>
     <header>
-        <h1>📖 兒童英文拼音及小學英文課程</h1>
-        <p>K3 至 小六 英文專修與文法寫作訓練</p>
+        <h1>📖 兒童英文拼音及基礎課程</h1>
+        <p>P1 至 P6 英文拼音、語法與寫作全面提升</p>
     </header>
     <nav>
         <div class="nav-container">
-            <a href="index.html">🏠 返回網站首頁</a>
+            <a href="index.html">🏠 返回首頁</a>
             <a href="abacus.html">🧮 珠心算</a>
             <a href="finger-math.html">✋ 手指速算</a>
             <a href="phonics.html">🔤 英文拼音</a>
@@ -41,33 +45,58 @@
     </nav>
     <div class="container">
         <div class="card">
-            <h2>課程簡介</h2>
-            <p>結合英文拼音與基礎文法，採用遊戲式教學，擴充詞彙量及閱讀理解能力，為升小一英文作準備，並循序漸進銜接至小六大綱。</p>
+            <h2>P1 - P6 英國語文科課程大綱</h2>
+
+            <div class="grade-block">
+                <div class="grade-title">小一英文 (P1 English)</div>
+                <ul>
+                    <li><strong>Phonics & Pronunciation:</strong> Letter Sounds, Short Vowels, Blends (br, cl).</li>
+                    <li><strong>Grammar:</strong> Subject Pronouns & Verb "to be", Singular / Plural Nouns (-s), Articles (a/an/the), Demonstrative Pronouns, Prepositions of Location, Imperatives, Punctuation (Capital letters), Question Words.</li>
+                    <li><strong>Reading & Writing:</strong> Big Book Reading & Sight Words, Sentence Writing / Guided Writing.</li>
+                </ul>
+            </div>
+
+            <div class="grade-block">
+                <div class="grade-title">小二英文 (P2 English)</div>
+                <ul>
+                    <li><strong>Grammar & Vocabulary:</strong> Simple Present Tense, Present Continuous Tense, Possessive Adjectives, Prepositions of Location & Method, Quantifiers, Conjunctions, Adverbs & Verb "to be", Proper Nouns & Common Nouns.</li>
+                </ul>
+            </div>
+
+            <div class="grade-block">
+                <div class="grade-title">小三英文 (P3 English)</div>
+                <ul>
+                    <li><strong>Grammar:</strong> Simple Past Tense, Future Tense, Comparatives & Superlatives, Modal Verbs, Adverbs of Frequency & Manner, Prepositions of Time, Countable & Uncountable Nouns, Conjunctions, Wh-Questions.</li>
+                    <li><strong>Writing & Reading:</strong> Guided Writing / Short Writing.</li>
+                </ul>
+            </div>
+
+            <div class="grade-block">
+                <div class="grade-title">小四英文 (P4 English)</div>
+                <ul>
+                    <li><strong>Grammar:</strong> Present Perfect Tense, Past Continuous Tense, Relative Clauses, Conditional Sentences - Type 1 (If...), Passive Voice - Introductory, Reported Speech - Introductory, Phrasal Verbs.</li>
+                    <li><strong>Reading & Writing:</strong> Reading Comprehension - Longer Passages, Writing (Essays, Diaries, Letters/Emails).</li>
+                </ul>
+            </div>
+
+            <div class="grade-block">
+                <div class="grade-title">小五英文 (P5 English)</div>
+                <ul>
+                    <li><strong>Grammar:</strong> All Tenses Review & Application, Relative Clauses - Advanced, Conditional Sentences - Type 1 & 2, Passive Voice, Reported Speech, Connectors & Discourse Markers, Modal Verbs, Gerunds.</li>
+                    <li><strong>Vocabulary Building:</strong> Phrasal Verbs & Idioms, Prefixes & Suffixes, Academic & Theme Words.</li>
+                    <li><strong>Text Types & Writing:</strong> Short Essays, Letters, Emails, Reports, Travelogues, Persuasive Writing.</li>
+                </ul>
+            </div>
+
+            <div class="grade-block">
+                <div class="grade-title">小六英文 (P6 English)</div>
+                <ul>
+                    <li><strong>Grammar:</strong> All Tenses - Comprehensive Application, Advanced Relative Clauses, Conditional Sentences - Type 1-3, Passive Voice across All Tenses, Reported Speech - Advanced, Phrasal Verbs & Idioms.</li>
+                    <li><strong>Text Types & Writing:</strong> Narrative, Descriptive, Explanatory, Persuasive, Practical Texts.</li>
+                </ul>
+            </div>
         </div>
-        <div class="card">
-            <h2>P1 - P6 英文科核心大綱</h2>
-            <div class="outline-sub">
-                <strong>P1 English：</strong>
-                <p>• Phonics: Short Vowels, Blends, Sight Words.</p>
-                <p>• Grammar: Subject Pronouns, Verb "to be", Singular/Plural Nouns, Prepositions.</p>
-            </div>
-            <div class="outline-sub">
-                <strong>P2 English：</strong>
-                <p>• Grammar: Simple Present Tense, Present Continuous Tense, Adjectives, Conjunctions.</p>
-            </div>
-            <div class="outline-sub">
-                <strong>P3 English：</strong>
-                <p>• Grammar: Simple Past Tense, Future Tense, Comparatives/Superlatives, Modal Verbs.</p>
-            </div>
-            <div class="outline-sub">
-                <strong>P4 English：</strong>
-                <p>• Grammar: Present Perfect Tense, Past Continuous Tense, Conditionals, Relative Clauses.</p>
-            </div>
-            <div class="outline-sub">
-                <strong>P5 - P6 English：</strong>
-                <p>• Grammar & Writing: All Tenses Review, Passive Voice, Reported Speech, Text Types Writing.</p>
-            </div>
-        </div>
+
         <div class="card" style="text-align: center; background: #E8F2FC;">
             <h2>想為孩子報名或查詢詳情？</h2>
             <a href="https://www.facebook.com" target="_blank" class="cta-button">👉 點擊 PM Miss Emily Facebook 專頁</a>
