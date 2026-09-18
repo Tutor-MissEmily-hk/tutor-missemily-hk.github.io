@@ -6,32 +6,35 @@
     <title>📚 小學中文課程 | Miss Emily</title>
     <style>
         :root { --primary-color: #4A86E8; --bg-color: #F0F6FC; --card-bg: #FFFFFF; --text-color: #2C3E50; --accent-bg: #E8F2FC; --nav-bg: #3B72C4; }
-        html { font-size: 17px; }
+        html { font-size: 26px; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; padding-bottom: 40px; }
-        header { background: linear-gradient(135deg, #5B92E5, #4A86E8); color: white; text-align: center; padding: 40px 20px; }
-        header h1 { font-size: 2.2rem; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; padding-bottom: 40px; font-size: 1rem; }
+        header { background: linear-gradient(135deg, #5B92E5, #4A86E8); color: white; text-align: center; padding: 30px 20px; }
+        header h1 { font-size: 1.8rem; margin-bottom: 8px; }
         nav { position: sticky; top: 0; background-color: var(--nav-bg); z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
-        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; overflow-x: auto; white-space: nowrap; padding: 0 10px; }
-        .nav-container a { color: white; padding: 14px 16px; text-decoration: none; font-weight: 600; font-size: 0.98rem; flex-shrink: 0; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; overflow-x: auto; white-space: nowrap; padding: 0 10px; }
+        .nav-container a { color: white; padding: 14px 16px; text-decoration: none; font-weight: 600; font-size: 0.9rem; flex-shrink: 0; }
         .nav-container a:hover, .nav-container a.active { background-color: rgba(255, 255, 255, 0.2); }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        .card { background: var(--card-bg); border-radius: 12px; padding: 30px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
-        h2 { color: var(--primary-color); border-bottom: 3px solid var(--accent-bg); padding-bottom: 8px; margin-bottom: 20px; font-size: 1.6rem; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
+        h2 { color: var(--primary-color); border-bottom: 3px solid var(--accent-bg); padding-bottom: 8px; margin-bottom: 18px; font-size: 1.4rem; }
+        .grade-block { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #D0D7DE; }
+        .grade-block:last-child { border-bottom: none; }
+        .grade-title { color: #2B5288; font-weight: bold; font-size: 1.15rem; margin-bottom: 8px; }
         ul { list-style-type: none; padding-left: 0; }
-        ul li { position: relative; padding-left: 22px; margin-bottom: 12px; }
-        ul li::before { content: "•"; color: var(--primary-color); font-weight: bold; font-size: 1.3rem; position: absolute; left: 0; top: -2px; }
-        .cta-button { display: inline-block; background-color: var(--primary-color); color: white; padding: 14px 28px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.1rem; margin-top: 15px; }
+        ul li { position: relative; padding-left: 24px; margin-bottom: 8px; }
+        ul li::before { content: "•"; color: var(--primary-color); font-weight: bold; font-size: 1.2rem; position: absolute; left: 0; top: -2px; }
+        .cta-button { display: inline-block; background-color: var(--primary-color); color: white; padding: 12px 24px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1rem; margin-top: 15px; }
     </style>
 </head>
 <body>
     <header>
-        <h1>📚 小學中文課程</h1>
-        <p>K3 至 小六 語文素養與閱讀寫作專修</p>
+        <h1>📚 小學中文核心課程</h1>
+        <p>P1 至 P6 語文素養、閱讀理解與寫作專修</p>
     </header>
     <nav>
         <div class="nav-container">
-            <a href="index.html">🏠 返回網站首頁</a>
+            <a href="index.html">🏠 返回首頁</a>
             <a href="abacus.html">🧮 珠心算</a>
             <a href="finger-math.html">✋ 手指速算</a>
             <a href="phonics.html">🔤 英文拼音</a>
@@ -42,18 +45,76 @@
     </nav>
     <div class="container">
         <div class="card">
-            <h2>課程簡介</h2>
-            <p>涵蓋漢字結構、筆順、部首、造句及閱讀理解，培養基礎語文能力，並針對小學考試題型拆解，穩步提升語文表達能力。</p>
+            <h2>P1 - P6 中國語文科課程大綱</h2>
+            
+            <div class="grade-block">
+                <div class="grade-title">小一中文 (P1 Chinese)</div>
+                <ul>
+                    <li>基本筆畫和筆順辨識、字形辨識、加減筆、常見部首。</li>
+                    <li>詞語填充、詞語辨識、簡單錯別字改正、疊詞、反義詞、近義詞、量詞。</li>
+                    <li>句子：配字完句、重組句子、擴寫句子、看圖續句、基本句型。</li>
+                    <li>標點符號辨識。</li>
+                    <li>閱讀理解、寫作、造句、看圖寫句等。</li>
+                </ul>
+            </div>
+
+            <div class="grade-block">
+                <div class="grade-title">小二中文 (P2 Chinese)</div>
+                <ul>
+                    <li>同音字辨識、形近字辨識、錯別字改正。</li>
+                    <li>近義詞辨識、反義詞填充、詞義辨析、供詞/不供詞填充。</li>
+                    <li>重組句子、聯結句子、擴寫句子、配對完句、配字完句。</li>
+                    <li>標點符號辨識、標點符號填充、補寫標點符號。</li>
+                    <li>記敘文、童話、日記、簡單古詩。</li>
+                </ul>
+            </div>
+
+            <div class="grade-block">
+                <div class="grade-title">小三中文 (P3 Chinese)</div>
+                <ul>
+                    <li>近義詞、反義詞、連接詞/關聯詞、成語、多音字、多義詞。</li>
+                    <li>重組句子、聯結句子、擴寫句子、改寫句子、選詞改寫句子、複句、雙重否定、直接間接引述、病句修改。</li>
+                    <li>修辭：比喻、擬人、修辭辨識。</li>
+                    <li>標點符號辨識、補寫標點符號、標點符號填充。</li>
+                    <li>記敘文、描寫文、說明文、童話寓言、古詩賞析、段意歸納。</li>
+                    <li>看圖寫作、記敘文簡單段落/日記/書信。</li>
+                </ul>
+            </div>
+
+            <div class="grade-block">
+                <div class="grade-title">小四中文 (P4 Chinese)</div>
+                <ul>
+                    <li>成語運用、詞彙辨析、關聯詞。</li>
+                    <li>句子：擴寫、改寫、複句（因果、轉折、條件）。</li>
+                    <li>修辭：比喻、擬人、排比、誇張。</li>
+                    <li>閱讀：記敘文、描寫文、說明文、抒情文、古詩文賞析。</li>
+                    <li>記敘文、描寫文、實用文（書信、日記）。</li>
+                </ul>
+            </div>
+
+            <div class="grade-block">
+                <div class="grade-title">小五中文 (P5 Chinese)</div>
+                <ul>
+                    <li>成語、諺語、詞彙辨析、關聯詞運用（並列、遞進、選擇、轉折、假設、條件）。</li>
+                    <li>句子：複句綜合運用、改寫句子、擴寫句子。</li>
+                    <li>修辭：比喻、擬人、排比、誇張、反問、設問。</li>
+                    <li>閱讀：各類文體（記敘、描寫、說明、抒情、議論）、古詩文、文言虛詞、實用文（說明書、廣告、通告）。</li>
+                    <li>記敘文、描寫文、說明文、議論文初步、實用文（通知、啟事、演講辭、建議書）。</li>
+                </ul>
+            </div>
+
+            <div class="grade-block">
+                <div class="grade-title">小六中文 (P6 Chinese)</div>
+                <ul>
+                    <li>成語、諺語、歇後語、詞彙辨析、關聯詞。</li>
+                    <li>句子：各類複句、改寫句子、擴寫句子、句式變換。</li>
+                    <li>修辭：綜合運用各類修辭手法（含誇張、對偶、借代等）。</li>
+                    <li>閱讀：各類文體、古詩文賞析、實用文、文言經典建議篇章、長篇閱讀（歸納中心思想/主旨）。</li>
+                    <li>記敘文、描寫文、說明文、議論文、實用文。</li>
+                </ul>
+            </div>
         </div>
-        <div class="card">
-            <h2>核心學習內容</h2>
-            <ul>
-                <li><strong>文字基礎：</strong>漢字結構、筆順規範、部首辨析與文字起源記憶。</li>
-                <li><strong>詞語句型：</strong>擴充詞彙量、近義詞/反義詞、修辭手法（比喻、擬人、排比）。</li>
-                <li><strong>閱讀理解：</strong>文章結構拆解、尋找關鍵字、主旨分析與答題技巧。</li>
-                <li><strong>實用寫作：</strong>記敘文、看圖寫作、書信及各類實用文體寫作。</li>
-            </ul>
-        </div>
+
         <div class="card" style="text-align: center; background: #E8F2FC;">
             <h2>想為孩子報名或查詢詳情？</h2>
             <a href="https://www.facebook.com" target="_blank" class="cta-button">👉 點擊 PM Miss Emily Facebook 專頁</a>
