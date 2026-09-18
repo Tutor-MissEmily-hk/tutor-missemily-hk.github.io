@@ -3,518 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miss Emily 1對1上門教學 | K2至小學全科及專修課程</title>
+    <title>🧮 兒童珠心算及數學課程 | Miss Emily 1對1教學</title>
     <style>
         :root {
-            --primary-color: #4A86E8; /* 粉藍主色 */
-            --secondary-color: #6C9CE9; /* 亮粉藍 */
-            --bg-color: #F0F6FC; /* 超淺粉藍背景 */
+            --primary-color: #4A86E8;
+            --bg-color: #F0F6FC;
             --card-bg: #FFFFFF;
             --text-color: #2C3E50;
-            --light-text: #555555;
-            --accent-bg: #E8F2FC; /* 淺粉藍襯色 */
-            --nav-bg: #3B72C4; /* 導覽列深粉藍 */
+            --accent-bg: #E8F2FC;
+            --nav-bg: #3B72C4;
         }
 
-        html {
-            scroll-behavior: smooth; /* 平滑滾動效果 */
-            font-size: 17px; /* 加大全局基礎字體大小 */
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.7;
-            padding-bottom: 40px;
-            font-size: 1.05rem; /* 加大內文字體 */
-        }
+        html { font-size: 17px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; padding-bottom: 40px; }
 
         header {
             background: linear-gradient(135deg, #5B92E5, #4A86E8);
             color: white;
             text-align: center;
-            padding: 45px 20px 35px 20px;
+            padding: 40px 20px;
         }
 
-        header h1 {
-            font-size: 2.3rem; /* 加大主標題 */
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.15rem; /* 加大副標題 */
-            opacity: 0.95;
-        }
-
-        /* 置頂導覽選單 */
         nav {
-            position: sticky;
-            top: 0;
             background-color: var(--nav-bg);
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            padding: 12px;
+            text-align: center;
         }
 
-        .nav-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            overflow-x: auto;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .nav-container a {
+        nav a {
             color: white;
-            padding: 14px 20px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem; /* 加大選單字體 */
-            transition: background 0.2s;
-        }
-
-        .nav-container a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 28px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            scroll-margin-top: 65px; /* 防止錨點跳轉時被 Nav 遮擋 */
-        }
-
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 3px solid var(--accent-bg);
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-            font-size: 1.65rem; /* 加大區塊標題 */
-        }
-
-        h3 {
-            color: #2C4A6F;
-            margin: 18px 0 10px 0;
-            font-size: 1.35rem; /* 加大課程標題 */
-        }
-
-        p {
-            font-size: 1.05rem;
-            margin-bottom: 10px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        ul.bullet-list li {
-            position: relative;
-            padding-left: 22px;
-            margin-bottom: 10px;
-            font-size: 1.05rem; /* 加大列表字體 */
-        }
-
-        ul.bullet-list li::before {
-            content: "•";
-            color: var(--primary-color);
             font-weight: bold;
-            font-size: 1.3rem;
-            position: absolute;
-            left: 0;
-            top: -2px;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 14px;
-        }
-
-        .qual-badge {
-            background: var(--accent-bg);
-            padding: 12px 16px;
-            border-radius: 8px;
-            font-size: 1.05rem; /* 加大資歷標籤 */
-            color: #2B5288;
-            font-weight: 600;
-        }
-
-        .advantage-box {
-            border-left: 5px solid var(--primary-color);
-            background: #F4F8FD;
-            padding: 16px 18px;
-            margin-bottom: 12px;
-            border-radius: 0 8px 8px 0;
+            margin: 0 15px;
             font-size: 1.05rem;
         }
 
-        .course-card {
-            border: 1px solid #E1E8F0;
-            border-radius: 8px;
-            padding: 22px;
-            margin-bottom: 22px;
-            background: #FAFCFE;
-        }
-
-        .tag {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 4px 14px;
-            border-radius: 14px;
-            font-size: 0.95rem; /* 加大標籤 */
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .card { background: var(--card-bg); border-radius: 12px; padding: 30px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
+        h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        h2 { color: var(--primary-color); border-bottom: 3px solid var(--accent-bg); padding-bottom: 8px; margin-bottom: 20px; }
+        
+        ul { list-style-type: none; padding-left: 0; }
+        ul li { position: relative; padding-left: 22px; margin-bottom: 12px; }
+        ul li::before { content: "•"; color: var(--primary-color); font-weight: bold; font-size: 1.3rem; position: absolute; left: 0; top: -2px; }
 
         .cta-button {
             display: inline-block;
             background-color: var(--primary-color);
             color: white;
-            padding: 15px 32px;
+            padding: 14px 28px;
             text-decoration: none;
             border-radius: 30px;
             font-weight: bold;
-            font-size: 1.2rem; /* 加大按鈕字體 */
-            text-align: center;
-            transition: background 0.3s;
-            margin-top: 12px;
-        }
-
-        .cta-button:hover {
-            background-color: #3572CC;
-        }
-
-        .contact-card {
-            text-align: center;
-            background: var(--accent-bg);
-            border: 2px dashed var(--primary-color);
-        }
-
-        details {
-            background: #FFFFFF;
-            border: 1px solid #D5E2F0;
-            border-radius: 8px;
-            padding: 14px 16px;
-            margin-top: 12px;
-            margin-bottom: 12px;
-            font-size: 1.05rem;
-        }
-
-        summary {
-            font-weight: bold;
-            cursor: pointer;
-            color: var(--primary-color);
-            font-size: 1.1rem; /* 加大展開按鈕字體 */
-        }
-
-        details[open] summary {
-            margin-bottom: 12px;
-            border-bottom: 1px solid #E8F0F8;
-            padding-bottom: 6px;
-        }
-
-        .outline-sub {
-            margin-bottom: 12px;
-            padding-left: 8px;
-        }
-
-        .outline-sub strong {
-            color: #2B5288;
-            font-size: 1.1rem;
-        }
-
-        @media (max-width: 600px) {
-            html { font-size: 16px; }
-            header h1 { font-size: 1.8rem; }
-            .card { padding: 20px; }
-            .nav-container a { padding: 12px 14px; font-size: 0.95rem; }
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>全職經驗上門女導師 Miss Emily</h1>
-        <p>專注 K2 至小學 | 點燃學習自信 | 貼心 1 對 1 上門教學</p>
+        <h1>🧮 兒童珠心算及數學課程</h1>
+        <p>專為 K2 至 小一 學生設計的大腦專注力與數學思維體操</p>
     </header>
 
-    <!-- 置頂選單 nav -->
     <nav>
-        <div class="nav-container">
-            <a href="#about">關於導師</a>
-            <a href="#qualifications">專業資格</a>
-            <a href="#courses">核心課程</a>
-            <a href="#advantages">教學優勢</a>
-            <a href="#contact">授課地區與報名</a>
-        </div>
+        <a href="index.html">🏠 返回網站首頁</a>
+        <a href="index.html#contact">📩 聯絡報名</a>
     </nav>
 
     <div class="container">
-
-        <!-- 簡介與理念 -->
-        <div class="card" id="about">
-            <h2>關於 Miss Emily</h2>
-            <p>我是 Miss Emily，全職上門女導師，擁有多年幼兒及小學教學經驗，持有專業認證，曾於幼稚園及小學任教珠心算及功課輔導班。</p>
-            <p>我重視基礎訓練，因材施教，擅長針對學生弱點，幫助學生建立自信與學習興趣，採用活動教學方式融入多元元素，讓學習變得生動有趣。</p>
-            <div class="advantage-box" style="margin-top: 15px;">
-                <strong>教學理念：</strong>融匯創新，奠基扎實；因材施教，穩健前行；多元啟發，循序漸進；學術為本，家長同心。
-            </div>
+        <div class="card">
+            <h2>課程簡介</h2>
+            <p>本課程重視算理理解，並完美銜接學校體制，不與學校直式筆算混淆。透過算盤及心算練習，有效訓練幼兒的專注力、記憶力與圖像思維能力。</p>
         </div>
 
-        <!-- 專業資格 -->
-        <div class="card" id="qualifications">
-            <h2>專業資格認證</h2>
-            <div class="grid-2">
-                <div class="qual-badge">✔ 珠心算導師證書</div>
-                <div class="qual-badge">✔ 實用英語語音學證書 (IPA)</div>
-                <div class="qual-badge">✔ 課餘託管導師證書</div>
-                <div class="qual-badge">✔ Playgroup 導師證書</div>
-                <div class="qual-badge">✔ 小學生涯規劃導師證書</div>
-                <div class="qual-badge">✔ 蒙特梭利教學應用基礎證書</div>
-                <div class="qual-badge">✔ 讀寫障礙治療證書</div>
-                <div class="qual-badge">✔ 特殊學習需要青年支援證書</div>
-                <div class="qual-badge">✔ 幼兒 Messy Play 導師證書</div>
-                <div class="qual-badge">✔ 進階會計 Level 2 證書</div>
-                <div class="qual-badge">✔ 中文字母教學導師證書</div>
-            </div>
+        <div class="card">
+            <h2>核心學習內容</h2>
+            <ul>
+                <li><strong>算盤基礎：</strong>正確認識算盤結構、撥珠姿勢與口訣應用。</li>
+                <li><strong>口訣記憶：</strong>滿五、進十、破五進十口訣遊戲化記憶。</li>
+                <li><strong>心算轉化：</strong>由實物算盤過渡至腦海影像心算（珠像圖）。</li>
+                <li><strong>生活應用：</strong>結合時鐘、貨幣等日常生活數學應用。</li>
+                <li><strong>國際認證：</strong>協助報考國際珠心算鑑定考試。</li>
+            </ul>
         </div>
 
-        <!-- 專修及全科課程 -->
-        <div class="card" id="courses">
-            <h2>幼兒及小學核心專修課程</h2>
-
-            <!-- 1. 珠心算 -->
-            <div class="course-card">
-                <span class="tag">K2 至 小一</span>
-                <h3>🧮 兒童珠心算及數學課程</h3>
-                <p>專為幼兒設計的「大腦專注力與數學思維體操」。重視算理理解，並完美銜接學校體制，不與學校直式筆算混淆。</p>
-                <ul class="bullet-list" style="margin-top: 10px;">
-                    <li><strong>課程特色：</strong>全腦開發與專注力訓練、邏輯推導、生活化應用（時鐘、貨幣），可報考國際鑑定考試。</li>
-                    <li><strong>課程內容：</strong>算盤運用、加減乘除、滿五/進十/破五進十口訣遊戲化記憶、心算原理。</li>
-                </ul>
-            </div>
-
-            <!-- 2. 手指速算 -->
-            <div class="course-card">
-                <span class="tag">K2 至 小一</span>
-                <h3>✋ 兒童手指速算及數學課程</h3>
-                <p>擺脫工具依賴，隨時可用手指練習，無須額外工具。從具體手指操作逐步過渡至心算與思維建模。</p>
-                <ul class="bullet-list" style="margin-top: 10px;">
-                    <li><strong>課程內容：</strong>手指速算基礎、數量守恆概念、圖形與空間初階邏輯、生活化應用題拆解。</li>
-                </ul>
-            </div>
-
-            <!-- 3. 英文拼音 -->
-            <div class="course-card">
-                <span class="tag">K2 至 K3</span>
-                <h3>🔤 兒童英文拼音課程 (Phonics)</h3>
-                <p>遊戲式教學，掌握字母與聲音對應關係，達到「見字能讀、聽音能辨」，建立閱讀興趣。</p>
-                <ul class="bullet-list" style="margin-top: 10px;">
-                    <li><strong>Level 1 基礎入門：</strong>建立字母與聲音的連結 (Letter Sounds, Short Vowels, Blends)。</li>
-                    <li><strong>Level 2 進階規則：</strong>掌握音節與重音。</li>
-                    <li><strong>Level 3 高階應用：</strong>流暢閱讀與自然表達。</li>
-                </ul>
-            </div>
-
-            <!-- 4. 英文拼音及基礎課程 -->
-            <div class="course-card">
-                <span class="tag">K3 至 小一，銜接至小六</span>
-                <h3>📖 兒童英文拼音及基礎課程 (English Language)</h3>
-                <p>結合英文拼音與基礎文法，採用遊戲式教學，擴充詞彙量及閱讀理解能力，為升小一英文作準備，並循序漸進銜接至小六。</p>
-                <ul class="bullet-list" style="margin-top: 10px; margin-bottom: 14px;">
-                    <li><strong>拼音：</strong>涵蓋字母短音、常見組合音、長音、混合音等，可銜接 IPA 國際音標。</li>
-                    <li><strong>文法與基礎：</strong>涵蓋詞彙分類、基本句子結構、擴充詞彙量、閱讀理解、見字識讀、聽音識串。</li>
-                </ul>
-
-                <details>
-                    <summary>🔍 點擊展開：小一至小六 英文科核心課程大綱 (P1 - P6 English)</summary>
-                    <div style="padding-top: 12px;">
-                        <div class="outline-sub">
-                            <strong>P1 English：</strong>
-                            <p>• Phonics: Letter Sounds, Short Vowels, Blends (br, cl)。</p>
-                            <p>• Grammar: Subject Pronouns & Verb "to be", Singular/Plural Nouns, Articles, Demonstrative Pronouns, Prepositions of Location, Imperatives, Capital letters, Question Words。</p>
-                            <p>• Reading & Writing: Big Book Reading & Sight Words, Sentence Writing / Guided Writing。</p>
-                        </div>
-                        <div class="outline-sub">
-                            <strong>P2 English：</strong>
-                            <p>• Grammar & Vocabulary: Simple Present Tense, Present Continuous Tense, Possessive Adjectives, Prepositions of Location & Method, Quantifiers, Conjunctions, Adverbs & Verb "to be", Proper Nouns & Common Nouns。</p>
-                        </div>
-                        <div class="outline-sub">
-                            <strong>P3 English：</strong>
-                            <p>• Grammar: Simple Past Tense, Future Tense, Comparatives & Superlatives, Modal Verbs, Adverbs of Frequency & Manner, Prepositions of Time, Countable & Uncountable Nouns, Conjunctions, Wh-Questions。</p>
-                            <p>• Writing & Reading: Guided Writing / Short Writing。</p>
-                        </div>
-                        <div class="outline-sub">
-                            <strong>P4 English：</strong>
-                            <p>• Grammar: Present Perfect Tense, Past Continuous Tense, Relative Clauses, Conditional Sentences - Type 1 (If...), Passive Voice (Introductory), Reported Speech (Introductory), Phrasal Verbs。</p>
-                            <p>• Reading & Writing: Reading Comprehension (Longer Passages), Essays, Diaries, Letters/Emails。</p>
-                        </div>
-                        <div class="outline-sub">
-                            <strong>P5 English：</strong>
-                            <p>• Grammar: All Tenses Review & Application, Relative Clauses (Advanced), Conditional Sentences (Type 1 & 2), Passive Voice, Reported Speech, Connectors & Discourse Markers, Modal Verbs, Gerunds。</p>
-                            <p>• Vocabulary & Writing: Phrasal Verbs & Idioms, Prefixes & Suffixes, Academic Words; Short Essays, Letters, Emails, Reports, Travelogues, Persuasive Writing。</p>
-                        </div>
-                        <div class="outline-sub">
-                            <strong>P6 English：</strong>
-                            <p>• Grammar: All Tenses Comprehensive Application, Advanced Relative Clauses, Conditional Sentences (Type 1-3), Passive Voice across All Tenses, Reported Speech (Advanced), Phrasal Verbs & Idioms。</p>
-                            <p>• Text Types & Writing: Narrative, Descriptive, Explanatory, Persuasive, Practical Texts。</p>
-                        </div>
-                    </div>
-                </details>
-            </div>
-
-            <!-- 5. 中文課程 -->
-            <div class="course-card">
-                <span class="tag">K3 至 小一，銜接至小六</span>
-                <h3>📚 K3-小一 中文課程 (Chinese Language)</h3>
-                <p>打好根基，輕鬆銜接。由基礎起步，涵蓋漢字結構、筆順、造句與閱讀理解，穩步提升語文素養，循序漸進銜接至小六。</p>
-                <ul class="bullet-list" style="margin-top: 10px; margin-bottom: 14px;">
-                    <li><strong>K3 中文預備班：</strong>漢字筆劃/筆順/部件加減法、漢字結構（上下/左中右/包圍）、二素句→三素句→四素句、相反詞、部首配詞、簡易閱讀理解、標點符號。</li>
-                    <li><strong>P1 中文基礎：</strong>量詞、形容詞、反義詞、形近字、同部件字、人稱代詞、造句/重組句子/改寫句子、行為句寫作訓練、閱讀理解及練習。</li>
-                </ul>
-
-                <details>
-                    <summary>🔍 點擊展開：小一至小六 中文科核心課程大綱 (P1 - P6 Chinese)</summary>
-                    <div style="padding-top: 12px;">
-                        <div class="outline-sub">
-                            <strong>小一中文 (P1 Chinese)：</strong>
-                            <p>• 基本筆畫和筆順辨識、字形辨識、加減筆、常見部首。</p>
-                            <p>• 詞語填充、詞語辨識、簡單錯別字改正、疊詞、反義詞、近義詞、量詞。</p>
-                            <p>• 句子：配字完句、重組句子、擴寫句子、看圖續句、基本句型、標點符號辨識。</p>
-                            <p>• 閱讀理解、寫作、造句、看圖寫句等。</p>
-                        </div>
-                        <div class="outline-sub">
-                            <strong>小二中文 (P2 Chinese)：</strong>
-                            <p>• 同音字辨識、形近字辨識、錯別字改正、近義詞/反義詞/詞義辨析、供詞與不供詞填充。</p>
-                            <p>• 重組句子、聯結句子、擴寫句子、配對完句、補寫標點符號。</p>
-                            <p>• 記敘文、童話、日記、簡單古詩。</p>
-                        </div>
-                        <div class="outline-sub">
-                            <strong>小三中文 (P3 Chinese)：</strong>
-                            <p>• 近義詞、反義詞、連接詞/關聯詞、成語、多音字、多義詞。</p>
-                            <p>• 重組/聯結/擴寫/改寫句子、複句、雙重否定、直接間接引述、病句修改。</p>
-                            <p>• 修辭（比喻、擬人）、記敘文、描寫文、說明文、童話寓言、古詩賞析、段意歸納、書信/日記寫作。</p>
-                        </div>
-                        <div class="outline-sub">
-                            <strong>小四中文 (P4 Chinese)：</strong>
-                            <p>• 成語運用、詞彙辨析、關聯詞、複句（因果、轉折、條件）。</p>
-                            <p>• 修辭：比喻、擬人、排比、誇張。</p>
-                            <p>• 閱讀與寫作：記敘文、描寫文、說明文、抒情文、古詩文賞析、實用文（書信、日記）。</p>
-                        </div>
-                        <div class="outline-sub">
-                            <strong>小五中文 (P5 Chinese)：</strong>
-                            <p>• 成語、諺語、詞彙辨析、關聯詞運用（並列、遞進、選擇、轉折、假設、條件）。</p>
-                            <p>• 複句綜合運用、改寫/擴寫句子；修辭：反問、設問等。</p>
-                            <p>• 閱讀與寫作：各類文體（記敘/描寫/說明/抒情/議論）、文言虛詞、實用文（通知、啟事、演講辭、建議書）。</p>
-                        </div>
-                        <div class="outline-sub">
-                            <strong>小六中文 (P6 Chinese)：</strong>
-                            <p>• 成語、諺語、歇後語、詞彙辨析、關聯詞、句式變換。</p>
-                            <p>• 修辭綜合運用（含誇張、對偶、借代等）。</p>
-                            <p>• 閱讀與寫作：各類文體、古詩文賞析、實用文、文言經典建議篇章、長篇閱讀（歸納中心思想/主旨）。</p>
-                        </div>
-                    </div>
-                </details>
-            </div>
-
-            <!-- 6. 數學課程 -->
-            <div class="course-card">
-                <span class="tag">小一 至 小三，銜接至小六</span>
-                <h3>📘 小學數學基礎課程 (Mathematics)</h3>
-                <p>以遊戲式教學為主，融入不同教學元素，讓學習變得生動有趣。透過結構化引導與思維訓練，培養解題策略、空間想像力與邏輯推理能力，輕鬆應付學校的應用題挑戰。</p>
-
-                <details>
-                    <summary>🔍 點擊展開：小一至小六 數學科核心課程大綱 (P1 - P6 Math)</summary>
-                    <div style="padding-top: 12px;">
-                        <div class="outline-sub">
-                            <strong>小一數學 (P1 Math)：</strong>
-                            <p>• 數與計算：10/20/100以內數、18以內加減、兩位加法（進位/不退位）、單雙數、數的分解合成。</p>
-                            <p>• 度量與圖形：日期/月份/月曆、硬幣與價錢牌、長度比較、時鐘報時（時/半時）、平面與立體圖形、位置（上下左右前後）。</p>
-                            <p>• 數據與增潤：初步統計、分類方法、簡單數獨。</p>
-                        </div>
-                        <div class="outline-sub">
-                            <strong>小二數學 (P2 Math)：</strong>
-                            <p>• 數與計算：三/四位數、百位概念、兩位/三位加減法、兩步加法應用題、基本乘法與除法。</p>
-                            <p>• 度量與圖形：長度（m/cm/mm）、時間、貨幣找贖、直角、四邊形、方向與位置、象形圖、方塊圖。</p>
-                        </div>
-                        <div class="outline-sub">
-                            <strong>小三數學 (P3 Math)：</strong>
-                            <p>• 數與計算：五位數、乘法（2位×1位/2位×2位）、除法（3位÷1位/短除/直式有餘數）、分數初步、四則計算（含小括號/先乘除後加減）、因數與倍數概念。</p>
-                            <p>• 度量與空間：長度（mm/km）、重量（g/kg）、容量（mL/L）、時間（秒/24小時制）、平行線/垂直線、量角器使用、對稱圖形、三角形與四邊形、棒形圖、簡易方程初步。</p>
-                        </div>
-                        <div class="outline-sub">
-                            <strong>小四數學 (P4 Math)：</strong>
-                            <p>• 數與計算：六位數以上、公因數與公倍數、多位數四則運算、分數（等值/比較/加減）、小數初步。</p>
-                            <p>• 度量與空間：周界與面積（正方形/長方形）、體積初步、三角形分類與角度和、四邊形性質、立體圖形、對稱軸、折線圖入門、簡易方程加減。</p>
-                        </div>
-                        <div class="outline-sub">
-                            <strong>小五數學 (P5 Math)：</strong>
-                            <p>• 數與計算：分數（約分/擴分/異分母加減/乘除）、小數四則計算、小數化分數、百分數初步、比例。</p>
-                            <p>• 度量與空間：面積（平行四邊形/三角形/梯形）、體積（長方體/正方體/立方厘米）、容積、圓（圓心/半徑/直徑）、立體展開圖、線對稱與旋轉對稱、平均數、棒形圖/折線圖/圓形圖入門、代數式與簡易方程。</p>
-                        </div>
-                        <div class="outline-sub">
-                            <strong>小六數學 (P6 Math)：</strong>
-                            <p>• 數與計算：百分數應用（折扣/利息/盈虧）、分數/小數/百分數互換與綜合運算、比和比例、速率（速度/距離/時間）、估算。</p>
-                            <p>• 度量與空間：圓周與圓面積、扇形、組合立體體積、截面/表面積、三角形全等與相似概念、座標平面、縮放。</p>
-                            <p>• 數據與代數：折線圖/圓形百分圖/數據分析、兩步方程/綜合方程、代數式化簡求值、簡易不等式。</p>
-                        </div>
-                    </div>
-                </details>
-            </div>
-        </div>
-
-        <!-- 四大核心優勢 -->
-        <div class="card" id="advantages">
-            <h2>課程四大核心優勢</h2>
-            <div class="grid-2">
-                <div class="advantage-box">
-                    <strong>🌱 循序漸進</strong>
-                    <p>由淺入深，不急不徐，讓孩子建立扎實根基。</p>
-                </div>
-                <div class="advantage-box">
-                    <strong>🎈 愉快學習</strong>
-                    <p>融入遊戲式教學與多元元素，讓孩子愛上學習。</p>
-                </div>
-                <div class="advantage-box">
-                    <strong>🎯 專注 1 對 1</strong>
-                    <p>全心關注單一學生進度，精準針對學習弱點。</p>
-                </div>
-                <div class="advantage-box">
-                    <strong>🏫 緊貼校內</strong>
-                    <p>課程內容與學校進度接軌，輕鬆應付日常學業。</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 授課地區與聯絡方式 -->
-        <div class="card contact-card" id="contact">
-            <h2>上門授課地區與報名</h2>
-            <p><strong>優先上門地區（輕鐵 / 西鐵沿線）：</strong></p>
-            <p style="font-size: 1.25rem; color: var(--primary-color); font-weight: bold; margin: 10px 0;">天水圍 • 元朗 • 屯門</p>
-            <p style="font-size: 0.95rem; color: var(--light-text); margin-bottom: 18px;">（區內如需轉乘小巴或村巴則不設上門；巴士可直達之公車站點歡迎查詢）</p>
-
-            <p style="margin-top: 15px;">如果您認同「穩定節奏、家長陪伴、扎實根基」的教育理念，歡迎直接聯繫查詢：</p>
+        <div class="card" style="text-align: center;">
+            <h2>想為孩子報名或查詢詳情？</h2>
             <a href="https://www.facebook.com" target="_blank" class="cta-button">👉 點擊 PM Miss Emily Facebook 專頁</a>
         </div>
-
     </div>
 
 </body>
