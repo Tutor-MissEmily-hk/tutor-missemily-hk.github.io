@@ -6,32 +6,35 @@
     <title>📘 小學數學基礎課程 | Miss Emily</title>
     <style>
         :root { --primary-color: #4A86E8; --bg-color: #F0F6FC; --card-bg: #FFFFFF; --text-color: #2C3E50; --accent-bg: #E8F2FC; --nav-bg: #3B72C4; }
-        html { font-size: 17px; }
+        html { font-size: 26px; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; padding-bottom: 40px; }
-        header { background: linear-gradient(135deg, #5B92E5, #4A86E8); color: white; text-align: center; padding: 40px 20px; }
-        header h1 { font-size: 2.2rem; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; padding-bottom: 40px; font-size: 1rem; }
+        header { background: linear-gradient(135deg, #5B92E5, #4A86E8); color: white; text-align: center; padding: 30px 20px; }
+        header h1 { font-size: 1.8rem; margin-bottom: 8px; }
         nav { position: sticky; top: 0; background-color: var(--nav-bg); z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
-        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; overflow-x: auto; white-space: nowrap; padding: 0 10px; }
-        .nav-container a { color: white; padding: 14px 16px; text-decoration: none; font-weight: 600; font-size: 0.98rem; flex-shrink: 0; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; overflow-x: auto; white-space: nowrap; padding: 0 10px; }
+        .nav-container a { color: white; padding: 14px 16px; text-decoration: none; font-weight: 600; font-size: 0.9rem; flex-shrink: 0; }
         .nav-container a:hover, .nav-container a.active { background-color: rgba(255, 255, 255, 0.2); }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        .card { background: var(--card-bg); border-radius: 12px; padding: 30px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
-        h2 { color: var(--primary-color); border-bottom: 3px solid var(--accent-bg); padding-bottom: 8px; margin-bottom: 20px; font-size: 1.6rem; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
+        h2 { color: var(--primary-color); border-bottom: 3px solid var(--accent-bg); padding-bottom: 8px; margin-bottom: 18px; font-size: 1.4rem; }
+        .grade-block { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #D0D7DE; }
+        .grade-block:last-child { border-bottom: none; }
+        .grade-title { color: #2B5288; font-weight: bold; font-size: 1.15rem; margin-bottom: 8px; }
         ul { list-style-type: none; padding-left: 0; }
-        ul li { position: relative; padding-left: 22px; margin-bottom: 12px; }
-        ul li::before { content: "•"; color: var(--primary-color); font-weight: bold; font-size: 1.3rem; position: absolute; left: 0; top: -2px; }
-        .cta-button { display: inline-block; background-color: var(--primary-color); color: white; padding: 14px 28px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.1rem; margin-top: 15px; }
+        ul li { position: relative; padding-left: 24px; margin-bottom: 8px; }
+        ul li::before { content: "•"; color: var(--primary-color); font-weight: bold; font-size: 1.2rem; position: absolute; left: 0; top: -2px; }
+        .cta-button { display: inline-block; background-color: var(--primary-color); color: white; padding: 12px 24px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1rem; margin-top: 15px; }
     </style>
 </head>
 <body>
     <header>
         <h1>📘 小學數學基礎課程</h1>
-        <p>小一 至 小六 邏輯思維與應用題拆解</p>
+        <p>P1 至 P6 數理邏輯、圖形幾何與應用題拆解</p>
     </header>
     <nav>
         <div class="nav-container">
-            <a href="index.html">🏠 返回網站首頁</a>
+            <a href="index.html">🏠 返回首頁</a>
             <a href="abacus.html">🧮 珠心算</a>
             <a href="finger-math.html">✋ 手指速算</a>
             <a href="phonics.html">🔤 英文拼音</a>
@@ -42,18 +45,69 @@
     </nav>
     <div class="container">
         <div class="card">
-            <h2>課程簡介</h2>
-            <p>培養孩子解題策略、空間想像力與邏輯推理能力，著重概念理解而非盲目刷題，輕鬆應付學校應用題與測驗考試。</p>
+            <h2>P1 - P6 數學科課程大綱</h2>
+
+            <div class="grade-block">
+                <div class="grade-title">小一數學 (P1 Math)</div>
+                <ul>
+                    <li>10以內的數、18以內的加法和減法、20以內的數、100以內的數、兩位加法（進位、不退位）、數物和次序、數的基本組合（1-18）、奇數與偶數（單雙數）、數的分解合成。</li>
+                    <li><strong>度量：</strong>日期、星期月份、月曆、硬幣認識與價錢牌、長度與距離比較、時鐘報時（時/半時）。</li>
+                    <li><strong>圖形與空間：</strong>平面圖形（點、直線、曲線、三角形、四邊形、五邊形、六邊形、圓形）、立體圖形（角柱、圓柱、角錐、圓錐、球）、位置（上下左右前後之間）。</li>
+                    <li><strong>數據處理與增潤：</strong>初步統計、分類方法；增潤（簡單數獨）。</li>
+                </ul>
+            </div>
+
+            <div class="grade-block">
+                <div class="grade-title">小二數學 (P2 Math)</div>
+                <ul>
+                    <li>三位數、四位數、百位概念、加減法、兩位/三位加法與減法、兩步加法應用題、基本乘法、基本除法。</li>
+                    <li><strong>度量：</strong>長度（米 m / 厘米 cm / 毫米 mm）、時間、貨幣找贖。</li>
+                    <li><strong>圖形與空間：</strong>立體圖形、角（直角）、四邊形、方向與位置。</li>
+                    <li>象形圖、方塊圖。</li>
+                </ul>
+            </div>
+
+            <div class="grade-block">
+                <div class="grade-title">小三數學 (P3 Math)</div>
+                <ul>
+                    <li>五位數、乘法（兩位數×一位數 / 兩位數×兩位數）、除法（三位數÷一位數 / 短除法 / 直式有餘數）、分數初步（部分概念）、四則計算（含小括號 / 先乘除後加減）、倍數與因數概念。</li>
+                    <li><strong>度量：</strong>長度（毫米 / 公里 km）、重量（克 g / 公斤 kg）、容量（毫升 mL / 升 L）、時間（秒 / 24小時報時制與時間加減）。</li>
+                    <li><strong>圖形與空間：</strong>平行線、垂直線、角與量角器使用、對稱圖形、三角形（等腰、等邊、直角）及其包含關係、四邊形（平行四邊形）。</li>
+                    <li><strong>數據處理與代數：</strong>棒形圖；簡易方程（初步）。</li>
+                </ul>
+            </div>
+
+            <div class="grade-block">
+                <div class="grade-title">小四數學 (P4 Math)</div>
+                <ul>
+                    <li>六位數以上、因數與倍數（公因數、公倍數）、多位數加減乘除四則運算、分數（等值分數、比較大小、加減）、小數初步（讀寫、加減）。</li>
+                    <li><strong>度量：</strong>周界與面積（正方形、長方形、平方厘米）、四邊形周界、體積（初步）、時間計算（秒 / 24小時制）。</li>
+                    <li><strong>圖形與空間：</strong>三角形分類與角度和、四邊形性質（平行四邊形、梯形）、立體圖形（柱體、錐體）、對稱（對稱軸畫圖）。</li>
+                    <li><strong>數據處理與代數：</strong>棒形圖（進階）、折線圖入門；簡易方程（加減）。</li>
+                </ul>
+            </div>
+
+            <div class="grade-block">
+                <div class="grade-title">小五數學 (P5 Math)</div>
+                <ul>
+                    <li>分數（約分、擴分、異分母加減、整數乘除分數、分數除法）、小數（加減乘除、小數化分數）、四則混合計算、百分數（初步/認識）、比例。</li>
+                    <li><strong>度量：</strong>面積（平行四邊形、三角形、梯形）、體積（長方體、正方體、立方厘米）、容積、時間應用。</li>
+                    <li><strong>圖形與空間：</strong>圓（圓心、半徑、直徑）、立體圖形（頂/棱/面/展開圖）、線對稱與旋轉對稱。</li>
+                    <li><strong>數據處理與代數：</strong>平均數、棒形圖、折線圖、圓形圖入門；簡易方程（乘除/用字母表示數）、代數式（初步）。</li>
+                </ul>
+            </div>
+
+            <div class="grade-block">
+                <div class="grade-title">小六數學 (P6 Math)</div>
+                <ul>
+                    <li>百分數（增減、折扣、利息、盈虧等應用）、分數/小數/百分數互換與綜合運算、比和比例、速率（速度/距離/時間）、估算。</li>
+                    <li><strong>度量：</strong>圓周與圓面積、扇形、體積綜合（組合立體）、速率。</li>
+                    <li><strong>圖形與空間：</strong>圓的性質、立體圖形（截面/表面積/體積）、三角形全等與相似概念、座標平面、旋轉對稱與縮放。</li>
+                    <li><strong>數據處理與代數：</strong>折線圖、圓形百分圖、數據分析與統計圖選擇；方程（兩步方程/綜合）、代數式（化簡與求值）、簡易不等式（初步）。</li>
+                </ul>
+            </div>
         </div>
-        <div class="card">
-            <h2>核心學習內容</h2>
-            <ul>
-                <li><strong>四則運算：</strong>整數、分數、小數及百分數四則混合運算技巧。</li>
-                <li><strong>應用題解析：</strong>畫圖解題法、列表法與邏輯推導策略。</li>
-                <li><strong>度量與幾何：</strong>周長、面積、體積計算與立體圖形空間建構。</li>
-                <li><strong>代數與數據：</strong>簡易方程式、折線圖/柱狀圖數據分析與應用。</li>
-            </ul>
-        </div>
+
         <div class="card" style="text-align: center; background: #E8F2FC;">
             <h2>想為孩子報名或查詢詳情？</h2>
             <a href="https://www.facebook.com" target="_blank" class="cta-button">👉 點擊 PM Miss Emily Facebook 專頁</a>
