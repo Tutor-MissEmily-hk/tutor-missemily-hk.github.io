@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 小學中文基礎課程 (P1-P6) | Miss Emily</title>
+    <style>
+        :root {
+            --bg-color: #E6F2FF;        /* 粉藍色背景 */
+            --card-bg: #FFFFFF;          /* 純白卡片背景 */
+            --primary-color: #1E56A0;    /* 深藍主色 */
+            --secondary-color: #3D84C6;  /* 柔和藍色 */
+            --text-main: #2C3E50;       /* 主要文字顏色 */
+            --nav-bg: #2B6CB0;           /* 導航欄背景 */
+        }
+
+        /* 頁面整體基礎字體大小 */
+        html { font-size: 30px; }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; padding-bottom: 50px; font-size: 30px; }
+
+        /* 頂部 Header */
+        header {
+            background: linear-gradient(135deg, #3B82F6, #1E40AF);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        header h1 { font-size: 40px; margin-bottom: 15px; font-weight: bold; line-height: 1.3; }
+        header p { font-size: 32px; opacity: 0.95; font-weight: 500; }
+
+        /* 導覽列 */
+        nav { 
+            position: sticky; 
+            top: 0; 
+            background-color: var(--nav-bg); 
+            z-index: 1000; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 左側選單按鈕 */
+        .menu-btn {
+            background-color: #1A4980;
+            color: white;
+            border: 2px solid #63B3ED;
+            padding: 10px 24px;
+            font-size: 32px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .menu-btn:hover { background-color: #153E6C; }
+
+        /* 左側側邊選單 (Side Menu) */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -380px;
+            width: 360px;
+            height: 100%;
+            background-color: var(--nav-bg);
+            box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+            transition: left 0.3s ease;
+            z-index: 2000;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .side-menu.active { left: 0; }
+
+        .side-menu .close-btn {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            padding: 10px 25px;
+            cursor: pointer;
+        }
+
+        .side-menu a {
+            color: white;
+            padding: 20px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+        .side-menu a:hover, .side-menu a.active { background-color: rgba(255, 255, 255, 0.2); }
+
+        /* 遮罩背景 */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            z-index: 1500;
+        }
+        .overlay.active { display: block; }
+
+        /* 滿版最寬 Container (95%) */
+        .container { max-width: 95%; margin: 0 auto; padding: 30px 10px; }
+
+        /* 簡介主卡片 */
+        .main-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            border: 2px solid #D0E3FF;
+        }
+        .main-card h2 {
+            color: var(--primary-color);
+            border-bottom: 4px solid #BEE3F8;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        /* 四大優勢區塊 */
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .adv-item {
+            background-color: #F0F7FF;
+            padding: 15px 20px;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-color);
+            font-size: 28px;
+        }
+
+        /* 雙欄佈局：左右平分最寬空間 */
+        .grade-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        /* 手機螢幕自動切換為單欄 */
+        @media (max-width: 768px) {
+            .grade-grid, .advantages {
+                grid-template-columns: 1fr;
+            }
+            .container { max-width: 98%; }
+        }
+
+        /* 個別年級卡片通用樣式 (字體 28px) */
+        .grade-card {
+            border-radius: 18px;
+            padding: 25px 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+            font-size: 28px;
+            line-height: 1.6;
+        }
+
+        .grade-card h3 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+        }
+
+        .grade-card .section-title {
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 6px;
+            font-size: 29px;
+            display: block;
+        }
+
+        /* 列點樣式 (字體 28px) */
+        .grade-card ul {
+            list-style-type: disc;
+            padding-left: 30px;
+            margin-bottom: 15px;
+        }
+        .grade-card ul li {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+
+        /* 6 種獨立淺色背景與邊框設定 */
+        .card-p1 { background-color: #FFF0F2; border: 2px solid #FFB6C1; color: #4A1525; } /* 淺粉紅 */
+        .card-p2 { background-color: #FFF7ED; border: 2px solid #FBD38D; color: #5C3317; } /* 淺杏黃 */
+        .card-p3 { background-color: #FEFCBF; border: 2px solid #ECC94B; color: #4A4200; } /* 淺檸黃 */
+        .card-p4 { background-color: #E6FFFA; border: 2px solid #81E6D9; color: #044E46; } /* 淺薄荷綠 */
+        .card-p5 { background-color: #EBF8FF; border: 2px solid #90CDF4; color: #0D47A1; } /* 淺天空藍 */
+        .card-p6 { background-color: #FAF5FF; border: 2px solid #D6BCFA; color: #44337A; } /* 淺淡紫 */
+
+        footer { text-align: center; padding: 30px 20px; font-size: 30px; color: #4A5568; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>📚 小學中文基礎課程</h1>
+        <p>小一 至 小六｜由基礎起步，循序漸進銜接至小六</p>
+    </header>
+
+    <!-- 導覽列：左側選單按鈕 -->
+    <nav>
+        <button class="menu-btn" onclick="toggleMenu()">☰ 選單</button>
+    </nav>
+
+    <!-- 左側彈出選單 -->
+    <div class="side-menu" id="sideMenu">
+        <button class="close-btn" onclick="toggleMenu()">✕</button>
+        <a href="index.html">🏠 返回首頁</a>
+        <a href="abacus.html">🧮 珠心算</a>
+        <a href="finger-math.html">✋ 手指速算</a>
+        <a href="phonics.html">🔤 英文拼音</a>
+        <a href="english.html">📖 小學英文</a>
+        <a href="chinese.html">🌸 K3中文預備</a>
+        <a href="chinese-p1p6.html" class="active">📚 小學中文</a>
+        <a href="math.html">📘 小學數學</a>
+    </div>
+
+    <!-- 點擊背景關閉選單遮罩 -->
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <div class="container">
+
+        <!-- 課程總覽簡介卡片 -->
+        <div class="main-card">
+            <h2>課程四大核心優勢</h2>
+            <div class="advantages">
+                <div class="adv-item"><strong>🌱 循序漸進：</strong>由淺入深，不急不徐，讓孩子建立扎實根基。</div>
+                <div class="adv-item"><strong>🎮 愉快學習：</strong>融入遊戲式教學與多元元素，讓孩子愛上學習。</div>
+                <div class="adv-item"><strong>🎯 專注1對1：</strong>全心關注單一學生進度，精準針對學習弱點。</div>
+                <div class="adv-item"><strong>📖 緊貼校內：</strong>課程內容與學校進度接軌，輕鬆應付日常學業。</div>
+            </div>
+        </div>
+
+        <h2 style="color: var(--primary-color); font-size: 36px; margin-bottom: 20px;">各年級課程內容詳情</h2>
+
+        <!-- 各年級獨立卡片網格（雙欄） -->
+        <div class="grade-grid">
+
+            <!-- 小一 (淺粉紅) -->
+            <div class="grade-card card-p1">
+                <h3>✏️ 小一中文 (P1 Chinese)</h3>
+                <span class="section-title">🔤 字詞與基礎：</span>
+                <ul>
+                    <li>基本筆畫和筆順辨識、字形辨識、加減筆、常見部首</li>
+                    <li>詞語填充、詞語辨識、簡單錯別字改正、疊詞、反義詞、近義詞、量詞</li>
+                </ul>
+                <span class="section-title">📝 句子與標點：</span>
+                <ul>
+                    <li>配字完句、重組句子、擴寫句子、看圖續句、基本句型</li>
+                    <li>標點符號辨識</li>
+                </ul>
+                <span class="section-title">📖 閱讀與寫作：</span>
+                <ul>
+                    <li>閱讀理解、寫作、造句、看圖寫句等</li>
+                </ul>
+            </div>
+
+            <!-- 小二 (淺杏黃) -->
+            <div class="grade-card card-p2">
+                <h3>✏️ 小二中文 (P2 Chinese)</h3>
+                <span class="section-title">🔤 字詞與字形：</span>
+                <ul>
+                    <li>同音字辨識、形近字辨識、錯別字改正</li>
+                    <li>近義詞辨識、反義詞填充、詞義辨析、供詞/不供詞填充</li>
+                </ul>
+                <span class="section-title">📝 句子與標點：</span>
+                <ul>
+                    <li>重組句子、聯結句子、擴寫句子、配對完句、配字完句</li>
+                    <li>標點符號辨識、標點符號填充、補寫標點符號</li>
+                </ul>
+                <span class="section-title">📖 閱讀與文體賞析：</span>
+                <ul>
+                    <li>記敘文、童話、日記、簡單古詩</li>
+                </ul>
+            </div>
+
+            <!-- 小三 (淺檸黃) -->
+            <div class="grade-card card-p3">
+                <h3>✏️ 小三中文 (P3 Chinese)</h3>
+                <span class="section-title">🔤 詞彙與關聯詞：</span>
+                <ul>
+                    <li>近義詞、反義詞、連接詞/關聯詞、成語、多音字、多義詞</li>
+                </ul>
+                <span class="section-title">📝 句式變換與修辭：</span>
+                <ul>
+                    <li>重組句子、聯結句子、擴寫句子、改寫句子、選詞改寫句子、複句、雙重否定、直接間接引述、病句修改</li>
+                    <li>修辭：比喻、擬人、修辭辨識</li>
+                    <li>標點符號辨識、補寫標點符號、標點符號填充</li>
+                </ul>
+                <span class="section-title">📖 閱讀與寫作：</span>
+                <ul>
+                    <li>記敘文、描寫文、說明文、童話寓言、古詩賞析、段意歸納</li>
+                    <li>看圖寫作、記敘文簡單段落 / 日記 / 書信</li>
+                </ul>
+            </div>
+
+            <!-- 小四 (淺薄荷綠) -->
+            <div class="grade-card card-p4">
+                <h3>✏️ 小四中文 (P4 Chinese)</h3>
+                <span class="section-title">🔤 詞彙與語法：</span>
+                <ul>
+                    <li>成語運用、詞彙辨析、關聯詞</li>
+                </ul>
+                <span class="section-title">📝 句子與修辭：</span>
+                <ul>
+                    <li>句子：擴寫、改寫、複句（因果、轉折、條件）</li>
+                    <li>修辭：比喻、擬人、排比、誇張</li>
+                </ul>
+                <span class="section-title">📖 閱讀與寫作：</span>
+                <ul>
+                    <li>閱讀：記敘文、描寫文、說明文、抒情文、古詩文賞析</li>
+                    <li>寫作：記敘文、描寫文、實用文（書信、日記）</li>
+                </ul>
+            </div>
+
+            <!-- 小五 (淺天空藍) -->
+            <div class="grade-card card-p5">
+                <h3>✏️ 小五中文 (P5 Chinese)</h3>
+                <span class="section-title">🔤 詞彙與複句運用：</span>
+                <ul>
+                    <li>成語、諺語、詞彙辨析、關聯詞運用（並列、遞進、選擇、轉折、假設、條件）</li>
+                </ul>
+                <span class="section-title">📝 句子與高級修辭：</span>
+                <ul>
+                    <li>句子：複句綜合運用、改寫句子、擴寫句子</li>
+                    <li>修辭：比喻、擬人、排比、誇張、反問、設問</li>
+                </ul>
+                <span class="section-title">📖 閱讀與寫作：</span>
+                <ul>
+                    <li>閱讀：各類文體（記敘、描寫、說明、抒情、議論）、古詩文、文言虛詞、實用文（說明書、廣告、通告）</li>
+                    <li>寫作：記敘文、描寫文、說明文、議論文初步、實用文（通知、啟事、演講辭、建議書）</li>
+                </ul>
+            </div>
+
+            <!-- 小六 (淺淡紫) -->
+            <div class="grade-card card-p6">
+                <h3>✏️ 小六中文 (P6 Chinese)</h3>
+                <span class="section-title">🔤 詞彙與高級語法：</span>
+                <ul>
+                    <li>成語、諺語、歇後語、詞彙辨析、關聯詞</li>
+                    <li>句子：各類複句、改寫句子、擴寫句子、句式變換</li>
+                </ul>
+                <span class="section-title">📝 修辭綜合運用：</span>
+                <ul>
+                    <li>綜合運用各類修辭手法（含誇張、對偶、借代等）</li>
+                </ul>
+                <span class="section-title">📖 閱讀與寫作深度訓練：</span>
+                <ul>
+                    <li>閱讀：各類文體、古詩文賞析、實用文、文言經典建議篇章、長篇閱讀（歸納中心思想/主旨）</li>
+                    <li>寫作：記敘文、描寫文、說明文、議論文、實用文</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Miss Emily 專業上門輔導. All Rights Reserved.</p>
+    </footer>
+
+    <!-- 開關選單控制腳本 -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('sideMenu').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
