@@ -26,7 +26,6 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         
-        /* 全局字體大小設定為 35px */
         body { 
             font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif; 
             line-height: 1.6; 
@@ -35,7 +34,6 @@
             font-size: 35px; 
         }
         
-        /* 頂部導覽列 */
         header { 
             background: rgba(255, 255, 255, 0.95); 
             backdrop-filter: blur(10px); 
@@ -69,7 +67,6 @@
             color: #ffffff; 
         }
 
-        /* 指定大標題：50px */
         .top-title { 
             font-size: 50px; 
             font-weight: 900; 
@@ -78,7 +75,6 @@
             line-height: 1.2;
         }
 
-        /* 左側邊欄選單 */
         .sidebar { 
             position: fixed; 
             top: 0; 
@@ -139,7 +135,6 @@
             margin-top: 20px;
         }
 
-        /* 遮罩層 */
         .overlay { 
             position: fixed; 
             top: 0; left: 0; 
@@ -151,10 +146,8 @@
         }
         .overlay.active { display: block; }
 
-        /* 主容器 */
         .container { max-width: 1200px; margin: 40px auto; padding: 0 24px; }
 
-        /* 頂部 Hero Banner */
         .hero-container {
             background: #FFFFFF;
             border-radius: var(--radius);
@@ -180,7 +173,6 @@
             margin-bottom: 24px;
         }
         
-        /* 指定大標題：50px */
         .hero-banner h1 { 
             font-size: 50px; 
             font-weight: 900;
@@ -194,26 +186,7 @@
             opacity: 0.95;
             margin-bottom: 24px;
         }
-        .hero-highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 30px;
-            background: var(--primary-light);
-        }
-        .highlight-item {
-            background: #FFFFFF;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: 700;
-            color: var(--primary);
-            border: 2px solid #DBEAFE;
-            box-shadow: var(--shadow-sm);
-            font-size: 35px;
-        }
 
-        /* 卡片與內容文字 (均為 35px) */
         .card { 
             background: var(--card-bg); 
             border-radius: var(--radius); 
@@ -242,7 +215,6 @@
             margin-bottom: 20px;
         }
 
-        /* 證書 Grid 列表 (設為不換行，字體 32px) */
         .cert-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fill, minmax(max-content, 1fr)); 
@@ -261,7 +233,6 @@
             white-space: nowrap;
         }
 
-        /* 獲獎紀錄列表 */
         .award-list { list-style: none; padding: 0; }
         .award-list > li { 
             background: #FAF8F5;
@@ -281,7 +252,7 @@
             margin-bottom: 8px;
         }
 
-        /* 聯絡方法卡片 */
+        /* 聯絡方法卡片優化 */
         .contact-box {
             background: linear-gradient(135deg, #FEF3C7 0%, #FFFBEB 100%);
             border: 3px solid #FDE68A;
@@ -302,6 +273,22 @@
             font-weight: 700;
             margin-bottom: 12px;
         }
+        .contact-btn {
+            display: inline-block;
+            background: #25D366;
+            color: #FFFFFF;
+            padding: 16px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 35px;
+            font-weight: 700;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            transition: background 0.2s;
+        }
+        .contact-btn:hover {
+            background: #1EBE57;
+        }
 
         footer { 
             text-align: center; 
@@ -314,7 +301,7 @@
 </head>
 <body id="top">
 
-    <!-- 頂部導覽列 (標題 50px) -->
+    <!-- 頂部導覽列 -->
     <header>
         <button class="menu-btn" onclick="toggleMenu()">
             <span>☰</span> 目錄
@@ -322,7 +309,7 @@
         <div class="top-title">全職經驗上門女導師 Miss Emily</div>
     </header>
 
-    <!-- 左側選單 (已改為獨立分頁連結) -->
+    <!-- 左側選單 (已修正中文課程檔名) -->
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <h3>目錄選單</h3>
@@ -331,14 +318,14 @@
         <ul class="sidebar-menu">
             <li><a href="#about" onclick="toggleMenu()">關於 Miss Emily</a></li>
             
-            <!-- 已經改去獨立分頁檔案 -->
+            <!-- 已修正對應的檔案名稱 -->
             <li><a href="abacus.html">兒童珠心算及數學課程</a></li>
             <li><a href="finger-math.html">兒童手指速算及數學課程</a></li>
             <li><a href="phonics.html">兒童英文拼音課程</a></li>
             <li><a href="english-base.html">兒童英文拼音及基礎課程</a></li>
             <li><a href="math-base.html">小學數學基礎課程</a></li>
-            <li><a href="chinese-p1p6.html">K3 – 小一 中文課程</a></li>
-            <li><a href="chinese.html">小學中文基礎課程</a></li>
+            <li><a href="k3-chinese.html">K3 – 小一 中文課程</a></li>
+            <li><a href="chinese-base.html">小學中文基礎課程</a></li>
             
             <li><a href="#contact" onclick="toggleMenu()">聯絡方法</a></li>
             <li class="back-top"><a href="#top" onclick="toggleMenu()">↑ 返回頁面</a></li>
@@ -439,6 +426,7 @@
             <h2>📞 聯絡方法</h2>
             <p>歡迎家長查詢上門授課時間與詳情</p>
             <p>專注 1對1 家長信任之選 ‧ 陪伴孩子穩步成長</p>
+            <a href="https://wa.me/852XXXXXXXX" target="_blank" class="contact-btn">💬 WhatsApp 查詢</a>
         </section>
 
     </div>
