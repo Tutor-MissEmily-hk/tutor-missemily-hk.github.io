@@ -4,66 +4,340 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全職經驗上門女導師 Miss Emily</title>
+    <!-- 引入 Google Fonts 提升字體質感 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #1E3A8A;       /* 深藍色：專業沉穩 */
+            --primary-light: #EFF6FF; /* 淺藍底色 */
+            --accent: #D97706;        /* 溫暖金橘色：重點標記 */
+            --accent-bg: #FEF3C7;     /* 溫暖金橘淺底 */
+            --text-main: #1F2937;     /* 主要文字 */
+            --text-muted: #4B5563;    /* 次要文字 */
+            --bg-main: #F8FAFC;       /* 頁面背景 */
+            --card-bg: #FFFFFF;       /* 卡片背景 */
+            --border-color: #E2E8F0;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.04);
+            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            --radius: 16px;
+        }
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; background-color: #f8f9fa; color: #333; }
+        body { 
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            line-height: 1.7; 
+            background-color: var(--bg-main); 
+            color: var(--text-main); 
+            -webkit-font-smoothing: antialiased;
+        }
         
-        /* 頂部導覽列 */
-        header { background-color: #2c3e50; color: #ffffff; padding: 15px 20px; position: sticky; top: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .menu-btn { background: #34495e; color: #fff; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; transition: background 0.2s; }
-        .menu-btn:hover { background: #3498db; }
+        /* 頂部玻璃擬態導覽列 */
+        header { 
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            padding: 12px 24px;
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            box-shadow: var(--shadow-sm);
+        }
         
-        /* 頂部列標題 (設定為 38px) */
-        .top-title { font-size: 38px; font-weight: bold; }
+        /* 選單按鈕 */
+        .menu-btn { 
+            background: var(--primary-light); 
+            color: var(--primary); 
+            border: 1px solid #DBEAFE; 
+            padding: 10px 18px; 
+            border-radius: 30px; 
+            cursor: pointer; 
+            font-size: 1rem; 
+            font-weight: 700;
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+            transition: all 0.2s ease; 
+        }
+        .menu-btn:hover { 
+            background: var(--primary); 
+            color: #ffffff; 
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+        }
+
+        /* 頂部列標題 (設定 38px) */
+        .top-title { 
+            font-size: 38px; 
+            font-weight: 800; 
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
 
         /* 左側抽屜式選單 */
-        .sidebar { position: fixed; top: 0; left: -320px; width: 320px; height: 100%; background-color: #ffffff; box-shadow: 2px 0 10px rgba(0,0,0,0.15); z-index: 1100; transition: left 0.3s ease; overflow-y: auto; }
+        .sidebar { 
+            position: fixed; 
+            top: 0; 
+            left: -340px; 
+            width: 340px; 
+            height: 100%; 
+            background-color: #ffffff; 
+            box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1); 
+            z-index: 1100; 
+            transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1); 
+            overflow-y: auto; 
+        }
         .sidebar.active { left: 0; }
-        .sidebar-header { background-color: #2c3e50; color: #fff; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .close-btn { background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; }
-        
-        .sidebar-menu { list-style: none; padding: 15px 0; }
-        .sidebar-menu li a { display: block; padding: 12px 20px; color: #2c3e50; text-decoration: none; font-size: 1.05rem; border-bottom: 1px solid #f0f0f0; transition: background 0.2s, color 0.2s; }
-        .sidebar-menu li a:hover { background-color: #e3f2fd; color: #1565c0; font-weight: bold; }
-        .menu-category { padding: 12px 20px 5px; font-size: 0.85rem; color: #7f8c8d; font-weight: bold; text-transform: uppercase; }
+        .sidebar-header { 
+            background: var(--primary); 
+            color: #fff; 
+            padding: 24px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .sidebar-header h3 { font-size: 1.25rem; font-weight: 700; }
+        .close-btn { 
+            background: rgba(255,255,255,0.15); 
+            border: none; 
+            color: #fff; 
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.3rem; 
+            cursor: pointer; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .close-btn:hover { background: rgba(255,255,255,0.3); }
+
+        .sidebar-menu { list-style: none; padding: 20px 0; }
+        .sidebar-menu li a { 
+            display: block; 
+            padding: 14px 24px; 
+            color: var(--text-main); 
+            text-decoration: none; 
+            font-size: 1rem; 
+            font-weight: 500;
+            border-left: 4px solid transparent;
+            transition: all 0.2s; 
+        }
+        .sidebar-menu li a:hover { 
+            background-color: var(--primary-light); 
+            color: var(--primary); 
+            border-left-color: var(--primary);
+            font-weight: 700; 
+        }
+        .menu-category { 
+            padding: 16px 24px 6px; 
+            font-size: 0.8rem; 
+            color: var(--text-muted); 
+            font-weight: 700; 
+            letter-spacing: 1px;
+            text-transform: uppercase; 
+        }
 
         /* 遮罩層 */
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 1050; display: none; }
+        .overlay { 
+            position: fixed; 
+            top: 0; left: 0; 
+            width: 100%; height: 100%; 
+            background: rgba(15, 23, 42, 0.4); 
+            backdrop-filter: blur(4px);
+            z-index: 1050; 
+            display: none; 
+        }
         .overlay.active { display: block; }
 
-        /* 主要內容區塊 */
-        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
-        
-        /* Banner 區塊 (最上方大標題設定為 40px) */
-        .hero { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); padding: 40px 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
-        .hero h1 { color: #1565c0; font-size: 40px; margin-bottom: 12px; line-height: 1.2; }
-        .hero p { font-size: 1.2rem; color: #0d47a1; font-weight: 500; }
-        .hero .subtitle { margin-top: 15px; font-size: 1rem; color: #333; }
+        /* 主要內容容器 */
+        .container { max-width: 960px; margin: 40px auto; padding: 0 20px; }
 
-        /* 卡片區塊 */
-        .card { background: #ffffff; border-radius: 10px; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-        .card h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-bottom: 15px; font-size: 1.5rem; }
-        
-        /* 列表樣式 */
-        .grid-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; list-style: none; padding: 0; }
-        .grid-list li { background-color: #f1f8ff; border-left: 4px solid #3498db; padding: 10px 15px; border-radius: 0 6px 6px 0; font-size: 0.95rem; }
+        /* 首頁 Hero Banner (大標題 40px) */
+        .hero { 
+            background: linear-gradient(135deg, #FFFFFF 0%, #EFF6FF 100%); 
+            border: 1px solid #DBEAFE;
+            padding: 50px 36px; 
+            border-radius: var(--radius); 
+            text-align: center; 
+            margin-bottom: 36px; 
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--accent-bg);
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+        .hero h1 { 
+            color: var(--primary); 
+            font-size: 40px; 
+            font-weight: 800;
+            line-height: 1.25; 
+            margin-bottom: 16px; 
+            letter-spacing: -0.5px;
+        }
+        .hero .tagline { 
+            font-size: 1.25rem; 
+            color: var(--text-main); 
+            font-weight: 700; 
+            margin-bottom: 20px;
+        }
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        .feature-pill {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            box-shadow: var(--shadow-sm);
+        }
 
+        /* 卡片設計 */
+        .card { 
+            background: var(--card-bg); 
+            border-radius: var(--radius); 
+            padding: 32px; 
+            margin-bottom: 28px; 
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm); 
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: var(--shadow-md);
+        }
+        .card h2 { 
+            color: var(--primary); 
+            font-size: 1.5rem; 
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px; 
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        /* 課程卡片特定樣式 */
+        .course-card {
+            border-left: 6px solid var(--primary);
+        }
+        .course-badge {
+            font-size: 0.8rem;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 700;
+            margin-left: auto;
+        }
+
+        /* 證書 Grid 列表 */
+        .cert-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
+            gap: 14px; 
+            list-style: none; 
+            padding: 0; 
+        }
+        .cert-grid li { 
+            background-color: var(--primary-light); 
+            color: var(--primary);
+            border: 1px solid #DBEAFE;
+            padding: 12px 18px; 
+            border-radius: 10px; 
+            font-size: 0.95rem; 
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cert-grid li::before { content: "✓"; font-weight: bold; }
+
+        /* 獲獎紀錄列表 */
         .award-list { list-style: none; padding: 0; }
-        .award-list li { margin-bottom: 12px; padding-left: 20px; position: relative; }
-        .award-list li::before { content: "🏆"; position: absolute; left: 0; top: 0; }
+        .award-list > li { 
+            background: #FAF8F5;
+            border: 1px solid #F3EAD8;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 14px; 
+            position: relative; 
+        }
+        .award-title {
+            font-weight: 700;
+            color: #92400E;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .award-sublist {
+            list-style: none;
+            padding-left: 26px;
+            margin-top: 6px;
+        }
+        .award-sublist li {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            position: relative;
+            margin-bottom: 4px;
+        }
+        .award-sublist li::before {
+            content: "•";
+            position: absolute;
+            left: -12px;
+            color: var(--accent);
+        }
 
-        footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 0.85rem; border-top: 1px solid #e0e0e0; margin-top: 40px; }
+        footer { 
+            text-align: center; 
+            padding: 30px; 
+            color: var(--text-muted); 
+            font-size: 0.9rem; 
+            border-top: 1px solid var(--border-color); 
+            margin-top: 50px; 
+        }
 
-        /* 手機螢幕自動微調標題字體 */
+        /* 響應式微調 (手機螢幕) */
         @media (max-width: 768px) {
-            .top-title { font-size: 24px; }
-            .hero h1 { font-size: 32px; }
+            header { padding: 10px 16px; }
+            .top-title { font-size: 22px; }
+            .hero { padding: 32px 20px; }
+            .hero h1 { font-size: 30px; }
+            .card { padding: 22px; }
+            .cert-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 頂部列 -->
+    <!-- 頂部列 (標題 38px) -->
     <header>
         <button class="menu-btn" onclick="toggleMenu()">
             <span>☰</span> 目錄
@@ -71,7 +345,7 @@
         <div class="top-title">全職經驗上門女導師 Miss Emily</div>
     </header>
 
-    <!-- 左側選單 -->
+    <!-- 左側邊欄選單 Drawer -->
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <h3>課程目錄</h3>
@@ -97,102 +371,125 @@
         </ul>
     </div>
 
-    <!-- 點擊背景關閉選單的遮罩 -->
+    <!-- 背景遮罩 -->
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
     <div class="container">
         
-        <!-- 最上方 Banner 頁面標題 -->
+        <!-- 首頁 Hero Banner (標題 40px) -->
         <header class="hero">
+            <span class="hero-badge">🏡 貼心 1對1 上門教學（學生家中）</span>
             <h1>全職經驗上門女導師 Miss Emily</h1>
-            <p>專注 K2 至小學 ‧ 點燃學習自信</p>
-            <p class="subtitle">貼心 1對1 上門教學（學生家中） | 基礎扎實 循序漸進 ‧ 愉快學習</p>
+            <p class="tagline">專注 K2 至小學 ‧ 點燃學習自信[cite: 5]</p>
+            <div class="hero-features">
+                <span class="feature-pill">✨ 基礎扎實[cite: 5]</span>
+                <span class="feature-pill">🌱 循序漸進[cite: 5]</span>
+                <span class="feature-pill">🎈 愉快學習[cite: 5]</span>
+            </div>
         </header>
 
         <!-- 關於 Miss Emily -->
         <section id="about" class="card">
-            <h2>關於 Miss Emily</h2>
-            <p>我是 Miss Emily，全職上門女導師，多年教學經驗，持有專業認證[cite: 6]。曾於幼稚園及小學任教珠心算及功課輔導班，專注教導 K2 至小學生[cite: 6]。</p>
-            <p style="margin-top: 10px;">我重視基礎訓練，因材施教，擅長針對學生弱點，幫助學生建立自信與學習興趣，與家長同心協力，引導孩子循序漸進地成長[cite: 6]。</p>
+            <h2>👩‍🏫 關於 Miss Emily</h2>
+            <p>我是 Miss Emily，全職上門女導師，多年教學經驗，持有專業認證[cite: 5]。曾於幼稚園及小學任教珠心算及功課輔導班，專注教導 K2 至小學生[cite: 5]。</p>
+            <p style="margin-top: 12px;">我重視基礎訓練，因材施教，擅長針對學生弱點，幫助學生建立自信與學習興趣，與家長同心協力，引導孩子循序漸進地成長[cite: 5]。採用活動教學方式，融入不同教學元素，讓學習變得生動有趣[cite: 5]。</p>
         </section>
 
         <!-- 教學理念 -->
         <section id="philosophy" class="card">
-            <h2>教學理念</h2>
-            <p style="font-weight: bold; color: #2980b9; margin-bottom: 10px;">融匯創新，奠基扎實；因材施教，穩健前行；多元啟發，循序漸進；學術為本，家長同心[cite: 6]。</p>
-            <p>學習是累積的過程，穩定上課建立習慣，溫故知新鞏固所學，家長輕輕扶持，孩子走得更穩[cite: 6]。</p>
+            <h2>💡 教學理念</h2>
+            <p style="font-weight: 700; color: var(--primary); font-size: 1.1rem; margin-bottom: 12px; background: var(--primary-light); padding: 12px 16px; border-radius: 8px;">
+                融匯創新，奠基扎實；因材施教，穩健前行；多元啟發，循序漸進；學術為本，家長同心[cite: 5]。
+            </p>
+            <p>學習是累積的過程，穩定上課建立習慣，溫故知新鞏固所學，家長輕輕扶持，孩子走得更穩[cite: 5]。</p>
         </section>
 
-        <!-- 指定課程區塊 -->
-        <section id="course1" class="card">
-            <h2>兒童珠心算及數學課程</h2>
-            <p>奠定數學邏輯與心算基礎，培養專注力與計算敏銳度[cite: 6]。</p>
+        <!-- 指定課程區塊 (1-7) -->
+        <section id="course1" class="card course-card">
+            <h2>🧮 兒童珠心算及數學課程 <span class="course-badge">熱門推薦</span></h2>
+            <p>奠定數學邏輯與心算基礎，培養專注力、記憶力與計算敏銳度[cite: 5]。</p>
         </section>
 
-        <section id="course2" class="card">
-            <h2>兒童手指速算及數學課程</h2>
+        <section id="course2" class="card course-card">
+            <h2>🖐️ 兒童手指速算及數學課程 <span class="course-badge">基礎啟蒙</span></h2>
             <p>透過手腦並用方式提高靈敏度，啟發邏輯思維與快速計算能力。</p>
         </section>
 
-        <section id="course3" class="card">
-            <h2>兒童英文拼音課程</h2>
-            <p>結合實用英語語音學（IPA）拼音訓練，協助掌握發音規律與聽讀基礎[cite: 6]。</p>
+        <section id="course3" class="card course-card">
+            <h2>🔤 兒童英文拼音課程 <span class="course-badge">IPA 語音</span></h2>
+            <p>結合實用英語語音學（IPA）拼音訓練，協助掌握發音規律與聽讀基礎[cite: 5]。</p>
         </section>
 
-        <section id="course4" class="card">
-            <h2>兒童英文拼音及基礎課程</h2>
-            <p>著重拼音應用的同時，鞏固英文基礎詞彙與基本句型能力。</p>
+        <section id="course4" class="card course-card">
+            <h2>📚 兒童英文拼音及基礎課程 <span class="course-badge">綜合加強</span></h2>
+            <p>著重拼音活學活用的同時，鞏固英文基礎詞彙與基本句型架構。</p>
         </section>
 
-        <section id="course5" class="card">
-            <h2>小學數學基礎課程</h2>
-            <p>針對小學數學概念、解題技巧與應用題型進行循序漸進的加強。</p>
+        <section id="course5" class="card course-card">
+            <h2>📐 小學數學基礎課程 <span class="course-badge">學術專攻</span></h2>
+            <p>針對小學數學概念、解題技巧與應用題型進行循序漸進的紮實訓練。</p>
         </section>
 
-        <section id="course6" class="card">
-            <h2>K3 – 小一 中文課程</h2>
-            <p>專為升小適應期設計，包含中文字母教學、筆順與認字基礎訓練[cite: 6]。</p>
+        <section id="course6" class="card course-card">
+            <h2>🌱 K3 – 小一 中文課程 <span class="course-badge">升小銜接</span></h2>
+            <p>專為升小適應期設計，包含中文字母教學、筆順與認字基礎訓練[cite: 5]。</p>
         </section>
 
-        <section id="course7" class="card">
-            <h2>小學中文基礎課程</h2>
-            <p>鞏固中文閱讀理解、語文知識與寫作能力發展。</p>
+        <section id="course7" class="card course-card">
+            <h2>📖 小學中文基礎課程 <span class="course-badge">語文鞏固</span></h2>
+            <p>鞏固中文閱讀理解、語文知識與寫作能力，建立穩固中文底子。</p>
         </section>
 
         <!-- 專業資格證書 -->
         <section id="qualifications" class="card">
-            <h2>Miss Emily 專業資格證書</h2>
-            <ul class="grid-list">
-                <li>珠心算導師證書[cite: 6]</li>
-                <li>實用英語語音學證書 (IPA)[cite: 6]</li>
-                <li>中文字母教學導師證書[cite: 6]</li>
-                <li>課餘託管導師證書[cite: 6]</li>
-                <li>Playgroup 導師證書[cite: 6]</li>
-                <li>小學生涯規劃導師證書[cite: 6]</li>
-                <li>蒙特梭利教學應用基礎證書[cite: 6]</li>
-                <li>讀寫障礙治療證書[cite: 6]</li>
-                <li>特殊學習需要青年支援證書[cite: 6]</li>
-                <li>幼兒 Messy play 導師證書[cite: 6]</li>
-                <li>進階會計 Book-keeping And Accounting Level 2 證書[cite: 6]</li>
+            <h2>📜 Miss Emily 專業資格證書</h2>
+            <ul class="cert-grid">
+                <li>珠心算導師證書[cite: 5]</li>
+                <li>實用英語語音學證書 (IPA)[cite: 5]</li>
+                <li>中文字母教學導師證書[cite: 5]</li>
+                <li>課餘託管導師證書[cite: 5]</li>
+                <li>Playgroup 導師證書[cite: 5]</li>
+                <li>小學生涯規劃導師證書[cite: 5]</li>
+                <li>蒙特梭利教學應用基礎證書[cite: 5]</li>
+                <li>讀寫障礙治療證書[cite: 5]</li>
+                <li>特殊學習需要青年支援證書[cite: 5]</li>
+                <li>幼兒 Messy play 導師證書[cite: 5]</li>
+                <li>進階會計 Level 2 證書[cite: 5]</li>
             </ul>
         </section>
 
         <!-- 獲獎紀錄 -->
         <section id="awards" class="card">
-            <h2>Miss Emily 獲獎紀錄</h2>
+            <h2>🏆 Miss Emily 獲獎紀錄</h2>
             <ul class="award-list">
-                <li><strong>亞太兒童及青少年優才協會：</strong>「2026亞太當代文學獎」金獎及全組別冠軍[cite: 6]</li>
-                <li><strong>第十一屆粵港澳大灣區比賽 - 第六屆微文比賽：</strong>[cite: 6]
-                    <ul>
-                        <li>大灣區總分組（粵港澳區）冠軍[cite: 6]</li>
-                        <li>香港及澳門分組亞軍[cite: 6]</li>
-                        <li>廣東分組亞軍[cite: 6]</li>
+                <li>
+                    <div class="award-title">🥇 亞太兒童及青少年優才協會</div>
+                    <p style="font-size: 0.95rem; color: var(--text-main);">「2026亞太當代文學獎」金獎及全組別冠軍[cite: 5]</p>
+                </li>
+                <li>
+                    <div class="award-title">🥇 第十一屆粵港澳大灣區比賽 - 第六屆微文比賽[cite: 5]</div>
+                    <ul class="award-sublist">
+                        <li>大灣區總分組（粵港澳區）冠軍[cite: 5]</li>
+                        <li>香港及澳門分組亞軍[cite: 5]</li>
+                        <li>廣東分組亞軍[cite: 5]</li>
                     </ul>
                 </li>
-                <li><strong>第十三屆香港青少年及兒童微文大賽：</strong>英文組（愛護地球）公開組亞軍[cite: 6]</li>
-                <li><strong>第七屆全港青少年及兒童微文大賽：</strong>公開組季軍[cite: 6]</li>
-                <li><strong>HKAOCU 香港文化協會：</strong>第二屆全港十八區校網傑出作家比賽 (元朗區 72, 73, 74 校網) 公開組金獎[cite: 6]</li>
-                <li><strong>Asia Kids Talent：</strong>兒童及青少年英文寫作比賽公開組銀獎[cite: 6]</li>
+                <li>
+                    <div class="award-title">🥈 第十三屆香港青少年及兒童微文大賽</div>
+                    <p style="font-size: 0.95rem; color: var(--text-main);">英文組（愛護地球）公開組亞軍[cite: 5]</p>
+                </li>
+                <li>
+                    <div class="award-title">🥉 第七屆全港青少年及兒童微文大賽</div>
+                    <p style="font-size: 0.95rem; color: var(--text-main);">公開組季軍[cite: 5]</p>
+                </li>
+                <li>
+                    <div class="award-title">🥇 HKAOCU 香港文化協會</div>
+                    <p style="font-size: 0.95rem; color: var(--text-main);">第二屆全港十八區校網傑出作家比賽 (元朗區 72, 73, 74 校網) 公開組金獎[cite: 5]</p>
+                </li>
+                <li>
+                    <div class="award-title">🥈 Asia Kids Talent</div>
+                    <p style="font-size: 0.95rem; color: var(--text-main);">兒童及青少年英文寫作比賽公開組銀獎[cite: 5]</p>
+                </li>
             </ul>
         </section>
 
