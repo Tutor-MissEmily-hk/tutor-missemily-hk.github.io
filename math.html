@@ -109,7 +109,7 @@
         }
         .overlay.active { display: block; }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
 
         /* 簡介主卡片 */
         .main-card {
@@ -128,49 +128,56 @@
             font-size: 36px;
         }
 
-        /* 網格佈局：讓各年級卡片大小適中並能包住文字 */
+        /* 上兩格、中兩格、下兩格 (2 Columns Grid) */
         .grade-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
             margin-top: 20px;
         }
 
-        /* 個別年級卡片通用樣式 (字體 18px - 20px，大小包住文字) */
+        /* 手機螢幕自動切換為單欄 */
+        @media (max-width: 768px) {
+            .grade-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 個別年級卡片通用樣式 (字體 28px) */
         .grade-card {
-            border-radius: 16px;
-            padding: 20px;
+            border-radius: 18px;
+            padding: 25px 30px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            height: fit-content; /* 剛好包住文字 */
-            font-size: 18px;     /* 要求 18px - 20px */
+            height: fit-content;
+            font-size: 28px;
             line-height: 1.6;
         }
 
         .grade-card h3 {
-            font-size: 20px;     /* 標題 20px */
+            font-size: 32px;
             font-weight: bold;
-            margin-bottom: 12px;
-            padding-bottom: 6px;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.12);
         }
 
         .grade-card .section-title {
             font-weight: bold;
-            margin-top: 10px;
-            margin-bottom: 4px;
-            font-size: 19px;
+            margin-top: 15px;
+            margin-bottom: 6px;
+            font-size: 29px;
             display: block;
         }
 
-        /* 列點樣式修正 */
+        /* 列點樣式 (字體 28px) */
         .grade-card ul {
             list-style-type: disc;
-            padding-left: 22px;
-            margin-bottom: 10px;
+            padding-left: 30px;
+            margin-bottom: 15px;
         }
         .grade-card ul li {
-            font-size: 18px;
-            margin-bottom: 4px;
+            font-size: 28px;
+            margin-bottom: 6px;
         }
 
         /* 6 種獨立淺色背景與邊框設定 */
@@ -216,15 +223,15 @@
         <!-- 課程總覽簡介卡片 -->
         <div class="main-card">
             <h2>課程簡介與特色</h2>
-            <p>本課程由基礎起步，循序漸进銜接至小六。課程以遊戲式教學為主，融入不同教學元素，讓學習變得生動有趣。透過結構化引導與思維訓練，培養孩子的解題策略、空間想像力與邏輯推理能力，輕鬆應付學校的應用題挑戰。</p>
+            <p>本課程由基礎起步，循序漸進銜接至小六。課程以遊戲式教學為主，融入不同教學元素，讓學習變得生動有趣。透過結構化引導與思維訓練，培養孩子的解題策略、空間想像力與邏輯推理能力，輕鬆應付學校的應用題挑戰。</p>
         </div>
 
         <h2 style="color: var(--primary-color); font-size: 36px; margin-bottom: 20px;">各年級課程內容詳情</h2>
 
-        <!-- 各年級獨立卡片網格 (已全部改為列點表示) -->
+        <!-- 各年級獨立卡片網格（上兩格、中兩格、下兩格） -->
         <div class="grade-grid">
 
-            <!-- 小一卡片 (淺粉紅) -->
+            <!-- 排列 1 (上左)：小一 (淺粉紅) -->
             <div class="grade-card card-p1">
                 <h3>✏️ 小一數學 (P1 Math)</h3>
                 <span class="section-title">🔢 數與計算：</span>
@@ -255,7 +262,7 @@
                 </ul>
             </div>
 
-            <!-- 小二卡片 (淺杏黃) -->
+            <!-- 排列 1 (上右)：小二 (淺杏黃) -->
             <div class="grade-card card-p2">
                 <h3>✏️ 小二數學 (P2 Math)</h3>
                 <span class="section-title">🔢 數與計算：</span>
@@ -281,7 +288,7 @@
                 </ul>
             </div>
 
-            <!-- 小三卡片 (淺檸黃) -->
+            <!-- 排列 2 (中左)：小三 (淺檸黃) -->
             <div class="grade-card card-p3">
                 <h3>✏️ 小三數學 (P3 Math)</h3>
                 <span class="section-title">🔢 數與計算：</span>
@@ -314,7 +321,7 @@
                 </ul>
             </div>
 
-            <!-- 小四卡片 (淺薄荷綠) -->
+            <!-- 排列 2 (中右)：小四 (淺薄荷綠) -->
             <div class="grade-card card-p4">
                 <h3>✏️ 小四數學 (P4 Math)</h3>
                 <span class="section-title">🔢 數與計算：</span>
@@ -346,7 +353,7 @@
                 </ul>
             </div>
 
-            <!-- 小五卡片 (淺天空藍) -->
+            <!-- 排列 3 (下左)：小五 (淺天空藍) -->
             <div class="grade-card card-p5">
                 <h3>✏️ 小五數學 (P5 Math)</h3>
                 <span class="section-title">🔢 數與計算：</span>
@@ -377,7 +384,7 @@
                 </ul>
             </div>
 
-            <!-- 小六卡片 (淺淡紫) -->
+            <!-- 排列 3 (下右)：小六 (淺淡紫) -->
             <div class="grade-card card-p6">
                 <h3>✏️ 小六數學 (P6 Math)</h3>
                 <span class="section-title">🔢 數與計算：</span>
