@@ -245,10 +245,10 @@
         /* 課程卡片 */
         .course-card { border-left: 10px solid var(--primary); }
 
-        /* 證書 Grid 列表 */
+        /* 證書 Grid 列表 (設為不換行，字體 32px) */
         .cert-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); 
+            grid-template-columns: repeat(auto-fill, minmax(max-content, 1fr)); 
             gap: 20px; 
             list-style: none; 
             padding: 0; 
@@ -259,8 +259,9 @@
             border: 2px solid #DBEAFE;
             padding: 18px 24px; 
             border-radius: 12px; 
-            font-size: 35px; 
+            font-size: 32px; 
             font-weight: 700;
+            white-space: nowrap;
         }
 
         /* 獲獎紀錄列表 */
@@ -366,7 +367,7 @@
             </div>
         </div>
 
-        <!-- 關於 Miss Emily (完整 PDF 檔案內文) -->
+        <!-- 關於 Miss Emily -->
         <section id="about" class="card">
             <h2>👩‍🏫 關於 Miss Emily</h2>
             <p>我是 Miss Emily，全職上門女導師，多年教學經驗，持有專業認證，曾於幼稚園及小學任教珠心算及功課輔導班，專注教導K2至小學生。</p>
@@ -452,7 +453,8 @@
                 </li>
                 <li>
                     <div class="award-title">🥇 HKAOCU 香港文化協會</div>
-                    <p>第二屆全港十八區校網傑出作家比賽 元朗區 72,73,74 校網 | 公開組金獎</p>
+                    <p>第二屆全港十八區校網傑出作家比賽 元朗區 72,73,74 校網</p>
+                    <p>公開組金獎</p>
                 </li>
                 <li>
                     <div class="award-title">🥈 Asia Kids Talent</div>
