@@ -26,7 +26,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         
-        /* 設定內文大小為 36px */
+        /* 全局字體設定：36px */
         body { 
             font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif; 
             line-height: 1.6; 
@@ -132,11 +132,20 @@
             border-left-color: var(--primary);
             font-weight: 700; 
         }
+
+        /* 當前頁面高亮樣式 */
+        .sidebar-menu li.active-page a {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            font-weight: 800;
+            border-left: 6px solid var(--primary);
+        }
+
         .sidebar-menu li.home-link a {
             color: var(--primary);
             font-weight: 700;
-            background: var(--primary-light);
-            border-bottom: 2px solid #DBEAFE;
+            background: #F1F5F9;
+            border-bottom: 2px solid var(--border-color);
         }
         .sidebar-menu li.back-top a {
             color: var(--accent);
@@ -306,7 +315,7 @@
         <div class="top-title">Miss Emily 專業課程</div>
     </header>
 
-    <!-- 左側選單 -->
+    <!-- 左側邊欄選單 -->
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <h3>目錄選單</h3>
@@ -314,10 +323,19 @@
         </div>
         <ul class="sidebar-menu">
             <li class="home-link"><a href="index.html">🏠 返回網站主頁</a></li>
-            <li><a href="#intro" onclick="toggleMenu()">課程簡介</a></li>
-            <li><a href="#features" onclick="toggleMenu()">課程特色</a></li>
-            <li><a href="#content" onclick="toggleMenu()">課程內容</a></li>
-            <li><a href="#contact" onclick="toggleMenu()">聯絡與報名</a></li>
+            
+            <!-- 點擊此項目直接切換至 abacus.html -->
+            <li class="active-page"><a href="abacus.html">🧮 兒童珠心算及數學課程</a></li>
+            
+            <!-- 其他課程頁面連結 (可根據您日後的檔名修改) -->
+            <li><a href="finger-math.html">🖐️ 兒童手指速算及數學課程</a></li>
+            <li><a href="phonics.html">🔤 兒童英文拼音課程</a></li>
+            <li><a href="english-base.html">📚 兒童英文拼音及基礎課程</a></li>
+            <li><a href="math-base.html">📐 小學數學基礎課程</a></li>
+            <li><a href="chinese-k3.html">🌱 K3 – 小一 中文課程</a></li>
+            <li><a href="chinese-primary.html">📖 小學中文基礎課程</a></li>
+            
+            <li><a href="#contact" onclick="toggleMenu()">📞 聯絡與查詢</a></li>
             <li class="back-top"><a href="#top" onclick="toggleMenu()">↑ 返回頂部</a></li>
         </ul>
     </div>
