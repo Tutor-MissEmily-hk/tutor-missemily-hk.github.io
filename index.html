@@ -10,20 +10,22 @@
         
         /* 頂部導覽列 */
         header { background-color: #2c3e50; color: #ffffff; padding: 15px 20px; position: sticky; top: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .menu-btn { background: #34495e; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 1rem; display: flex; align-items: center; gap: 8px; transition: background 0.2s; }
+        .menu-btn { background: #34495e; color: #fff; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; transition: background 0.2s; }
         .menu-btn:hover { background: #3498db; }
-        .top-title { font-size: 1.2rem; font-weight: bold; }
+        
+        /* 頂部列標題 (設定為 38px) */
+        .top-title { font-size: 38px; font-weight: bold; }
 
         /* 左側抽屜式選單 */
-        .sidebar { position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background-color: #ffffff; box-shadow: 2px 0 10px rgba(0,0,0,0.15); z-index: 1100; transition: left 0.3s ease; overflow-y: auto; }
+        .sidebar { position: fixed; top: 0; left: -320px; width: 320px; height: 100%; background-color: #ffffff; box-shadow: 2px 0 10px rgba(0,0,0,0.15); z-index: 1100; transition: left 0.3s ease; overflow-y: auto; }
         .sidebar.active { left: 0; }
         .sidebar-header { background-color: #2c3e50; color: #fff; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .close-btn { background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+        .close-btn { background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; }
         
         .sidebar-menu { list-style: none; padding: 15px 0; }
-        .sidebar-menu li a { display: block; padding: 12px 20px; color: #2c3e50; text-decoration: none; font-size: 0.95rem; border-bottom: 1px solid #f0f0f0; transition: background 0.2s, color 0.2s; }
+        .sidebar-menu li a { display: block; padding: 12px 20px; color: #2c3e50; text-decoration: none; font-size: 1.05rem; border-bottom: 1px solid #f0f0f0; transition: background 0.2s, color 0.2s; }
         .sidebar-menu li a:hover { background-color: #e3f2fd; color: #1565c0; font-weight: bold; }
-        .menu-category { padding: 10px 20px 5px; font-size: 0.8rem; color: #7f8c8d; font-weight: bold; text-transform: uppercase; }
+        .menu-category { padding: 12px 20px 5px; font-size: 0.85rem; color: #7f8c8d; font-weight: bold; text-transform: uppercase; }
 
         /* 遮罩層 */
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 1050; display: none; }
@@ -32,15 +34,15 @@
         /* 主要內容區塊 */
         .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
         
-        /* Banner 區塊 (最上方) */
+        /* Banner 區塊 (最上方大標題設定為 40px) */
         .hero { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); padding: 40px 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
-        .hero h1 { color: #1565c0; font-size: 2.2rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.1rem; color: #0d47a1; font-weight: 500; }
-        .hero .subtitle { margin-top: 15px; font-size: 0.95rem; color: #333; }
+        .hero h1 { color: #1565c0; font-size: 40px; margin-bottom: 12px; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; color: #0d47a1; font-weight: 500; }
+        .hero .subtitle { margin-top: 15px; font-size: 1rem; color: #333; }
 
         /* 卡片區塊 */
         .card { background: #ffffff; border-radius: 10px; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-        .card h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-bottom: 15px; font-size: 1.4rem; }
+        .card h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-bottom: 15px; font-size: 1.5rem; }
         
         /* 列表樣式 */
         .grid-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; list-style: none; padding: 0; }
@@ -51,6 +53,12 @@
         .award-list li::before { content: "🏆"; position: absolute; left: 0; top: 0; }
 
         footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 0.85rem; border-top: 1px solid #e0e0e0; margin-top: 40px; }
+
+        /* 手機螢幕自動微調標題字體 */
+        @media (max-width: 768px) {
+            .top-title { font-size: 24px; }
+            .hero h1 { font-size: 32px; }
+        }
     </style>
 </head>
 <body>
@@ -104,21 +112,21 @@
         <!-- 關於 Miss Emily -->
         <section id="about" class="card">
             <h2>關於 Miss Emily</h2>
-            <p>我是 Miss Emily，全職上門女導師，多年教學經驗，持有專業認證[cite: 7]。曾於幼稚園及小學任教珠心算及功課輔導班，專注教導 K2 至小學生[cite: 7]。</p>
-            <p style="margin-top: 10px;">我重視基礎訓練，因材施教，擅長針對學生弱點，幫助學生建立自信與學習興趣，與家長同心協力，引導孩子循序漸進地成長[cite: 7]。</p>
+            <p>我是 Miss Emily，全職上門女導師，多年教學經驗，持有專業認證[cite: 6]。曾於幼稚園及小學任教珠心算及功課輔導班，專注教導 K2 至小學生[cite: 6]。</p>
+            <p style="margin-top: 10px;">我重視基礎訓練，因材施教，擅長針對學生弱點，幫助學生建立自信與學習興趣，與家長同心協力，引導孩子循序漸進地成長[cite: 6]。</p>
         </section>
 
         <!-- 教學理念 -->
         <section id="philosophy" class="card">
             <h2>教學理念</h2>
-            <p style="font-weight: bold; color: #2980b9; margin-bottom: 10px;">融匯創新，奠基扎實；因材施教，穩健前行；多元啟發，循序漸進；學術為本，家長同心[cite: 7]。</p>
-            <p>學習是累積的過程，穩定上課建立習慣，溫故知新鞏固所學，家長輕輕扶持，孩子走得更穩[cite: 7]。</p>
+            <p style="font-weight: bold; color: #2980b9; margin-bottom: 10px;">融匯創新，奠基扎實；因材施教，穩健前行；多元啟發，循序漸進；學術為本，家長同心[cite: 6]。</p>
+            <p>學習是累積的過程，穩定上課建立習慣，溫故知新鞏固所學，家長輕輕扶持，孩子走得更穩[cite: 6]。</p>
         </section>
 
         <!-- 指定課程區塊 -->
         <section id="course1" class="card">
             <h2>兒童珠心算及數學課程</h2>
-            <p>奠定數學邏輯與心算基礎，培養專注力與計算敏銳度[cite: 7]。</p>
+            <p>奠定數學邏輯與心算基礎，培養專注力與計算敏銳度[cite: 6]。</p>
         </section>
 
         <section id="course2" class="card">
@@ -128,7 +136,7 @@
 
         <section id="course3" class="card">
             <h2>兒童英文拼音課程</h2>
-            <p>結合實用英語語音學（IPA）拼音訓練，協助掌握發音規律與聽讀基礎[cite: 7]。</p>
+            <p>結合實用英語語音學（IPA）拼音訓練，協助掌握發音規律與聽讀基礎[cite: 6]。</p>
         </section>
 
         <section id="course4" class="card">
@@ -143,7 +151,7 @@
 
         <section id="course6" class="card">
             <h2>K3 – 小一 中文課程</h2>
-            <p>專為升小適應期設計，包含中文字母教學、筆順與認字基礎訓練[cite: 7]。</p>
+            <p>專為升小適應期設計，包含中文字母教學、筆順與認字基礎訓練[cite: 6]。</p>
         </section>
 
         <section id="course7" class="card">
@@ -155,17 +163,17 @@
         <section id="qualifications" class="card">
             <h2>Miss Emily 專業資格證書</h2>
             <ul class="grid-list">
-                <li>珠心算導師證書[cite: 7]</li>
-                <li>實用英語語音學證書 (IPA)[cite: 7]</li>
-                <li>中文字母教學導師證書[cite: 7]</li>
-                <li>課餘託管導師證書[cite: 7]</li>
-                <li>Playgroup 導師證書[cite: 7]</li>
-                <li>小學生涯規劃導師證書[cite: 7]</li>
-                <li>蒙特梭利教學應用基礎證書[cite: 7]</li>
-                <li>讀寫障礙治療證書[cite: 7]</li>
-                <li>特殊學習需要青年支援證書[cite: 7]</li>
-                <li>幼兒 Messy play 導師證書[cite: 7]</li>
-                <li>進階會計 Book-keeping And Accounting Level 2 證書[cite: 7]</li>
+                <li>珠心算導師證書[cite: 6]</li>
+                <li>實用英語語音學證書 (IPA)[cite: 6]</li>
+                <li>中文字母教學導師證書[cite: 6]</li>
+                <li>課餘託管導師證書[cite: 6]</li>
+                <li>Playgroup 導師證書[cite: 6]</li>
+                <li>小學生涯規劃導師證書[cite: 6]</li>
+                <li>蒙特梭利教學應用基礎證書[cite: 6]</li>
+                <li>讀寫障礙治療證書[cite: 6]</li>
+                <li>特殊學習需要青年支援證書[cite: 6]</li>
+                <li>幼兒 Messy play 導師證書[cite: 6]</li>
+                <li>進階會計 Book-keeping And Accounting Level 2 證書[cite: 6]</li>
             </ul>
         </section>
 
@@ -173,18 +181,18 @@
         <section id="awards" class="card">
             <h2>Miss Emily 獲獎紀錄</h2>
             <ul class="award-list">
-                <li><strong>亞太兒童及青少年優才協會：</strong>「2026亞太當代文學獎」金獎及全組別冠軍[cite: 7]</li>
-                <li><strong>第十一屆粵港澳大灣區比賽 - 第六屆微文比賽：</strong>[cite: 7]
+                <li><strong>亞太兒童及青少年優才協會：</strong>「2026亞太當代文學獎」金獎及全組別冠軍[cite: 6]</li>
+                <li><strong>第十一屆粵港澳大灣區比賽 - 第六屆微文比賽：</strong>[cite: 6]
                     <ul>
-                        <li>大灣區總分組（粵港澳區）冠軍[cite: 7]</li>
-                        <li>香港及澳門分組亞軍[cite: 7]</li>
-                        <li>廣東分組亞軍[cite: 7]</li>
+                        <li>大灣區總分組（粵港澳區）冠軍[cite: 6]</li>
+                        <li>香港及澳門分組亞軍[cite: 6]</li>
+                        <li>廣東分組亞軍[cite: 6]</li>
                     </ul>
                 </li>
-                <li><strong>第十三屆香港青少年及兒童微文大賽：</strong>英文組（愛護地球）公開組亞軍[cite: 7]</li>
-                <li><strong>第七屆全港青少年及兒童微文大賽：</strong>公開組季軍[cite: 7]</li>
-                <li><strong>HKAOCU 香港文化協會：</strong>第二屆全港十八區校網傑出作家比賽 (元朗區 72, 73, 74 校網) 公開組金獎[cite: 7]</li>
-                <li><strong>Asia Kids Talent：</strong>兒童及青少年英文寫作比賽公開組銀獎[cite: 7]</li>
+                <li><strong>第十三屆香港青少年及兒童微文大賽：</strong>英文組（愛護地球）公開組亞軍[cite: 6]</li>
+                <li><strong>第七屆全港青少年及兒童微文大賽：</strong>公開組季軍[cite: 6]</li>
+                <li><strong>HKAOCU 香港文化協會：</strong>第二屆全港十八區校網傑出作家比賽 (元朗區 72, 73, 74 校網) 公開組金獎[cite: 6]</li>
+                <li><strong>Asia Kids Talent：</strong>兒童及青少年英文寫作比賽公開組銀獎[cite: 6]</li>
             </ul>
         </section>
 
