@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>兒童珠心算及數學課程(K2至小一) - Miss Emily</title>
+    <title>兒童珠心算及數學課程 - Miss Emily</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800;900&display=swap" rel="stylesheet">
@@ -25,85 +25,30 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Noto Sans TC', sans-serif; line-height: 1.6; background-color: var(--bg-main); color: var(--text-main); font-size: 35px; }
         header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 2px solid var(--border-color); position: sticky; top: 0; z-index: 1000; padding: 20px 30px; display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm); }
-        .menu-btn { background: var(--primary-light); color: var(--primary); border: 2px solid #DBEAFE; padding: 16px 28px; border-radius: 40px; cursor: pointer; font-size: 35px; font-weight: 700; display: flex; align-items: center; gap: 12px; }
-        .top-title { font-size: 50px; font-weight: 900; color: var(--primary); }
-        .sidebar { position: fixed; top: 0; left: -500px; width: 500px; height: 100%; background-color: #ffffff; box-shadow: 10px 0 30px rgba(0, 0, 0, 0.2); z-index: 1100; transition: left 0.3s ease; overflow-y: auto; }
-        .sidebar.active { left: 0; }
-        .sidebar-header { background: var(--primary); color: #fff; padding: 30px; display: flex; justify-content: space-between; align-items: center; }
-        .sidebar-header h3 { font-size: 35px; }
-        .close-btn { background: rgba(255,255,255,0.2); border: none; color: #fff; width: 50px; height: 50px; border-radius: 50%; font-size: 35px; cursor: pointer; }
-        .sidebar-menu { list-style: none; padding: 20px 0; }
-        .sidebar-menu li a { display: block; padding: 18px 30px; color: var(--text-main); text-decoration: none; font-size: 35px; }
-        .sidebar-menu li a:hover { background-color: var(--primary-light); color: var(--primary); }
-        .sidebar-menu li.active-page a { background-color: var(--primary-light); color: var(--primary); font-weight: 800; border-left: 6px solid var(--primary); }
-        .sidebar-menu li.home-link a { color: var(--primary); font-weight: 700; background: #F1F5F9; border-bottom: 2px solid var(--border-color); }
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.4); z-index: 1050; display: none; }
-        .overlay.active { display: block; }
+        .back-btn { background: var(--primary-light); color: var(--primary); border: 2px solid #DBEAFE; padding: 16px 28px; border-radius: 40px; text-decoration: none; font-size: 35px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s ease; }
+        .back-btn:hover { background: var(--primary); color: #ffffff; }
+        .top-title { font-size: 50px; font-weight: 900; color: var(--primary); letter-spacing: -1px; }
         .container { max-width: 1200px; margin: 40px auto; padding: 0 24px; }
-        .hero-banner { background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%); color: #FFFFFF; padding: 60px 40px; text-align: center; border-radius: var(--radius); margin-bottom: 40px; }
-        .hero-badge { display: inline-block; background: rgba(255, 255, 255, 0.2); font-size: 35px; font-weight: 700; padding: 10px 24px; border-radius: 40px; margin-bottom: 24px; }
-        .hero-banner h1 { font-size: 50px; font-weight: 900; margin-bottom: 20px; }
-        .card { background: var(--card-bg); border-radius: var(--radius); padding: 40px; margin-bottom: 36px; border: 2px solid var(--border-color); box-shadow: var(--shadow-sm); }
-        .card h2 { color: var(--primary); font-size: 38px; font-weight: 800; margin-bottom: 24px; border-bottom: 4px solid var(--primary-light); padding-bottom: 16px; }
-        .card p, .card li { font-size: 35px; margin-bottom: 20px; }
-        .feature-item { background: var(--primary-light); border: 2px solid #DBEAFE; border-radius: 16px; padding: 28px; margin-bottom: 24px; }
-        .feature-title { font-size: 35px; font-weight: 800; color: var(--primary); margin-bottom: 12px; }
-        footer { text-align: center; padding: 40px; color: var(--text-muted); font-size: 35px; }
+        .card { background: var(--card-bg); border-radius: var(--radius); padding: 40px; margin-bottom: 36px; border: 2px solid var(--border-color); box-shadow: var(--shadow-sm); border-left: 10px solid var(--primary); }
+        .card h2 { color: var(--primary); font-size: 45px; font-weight: 800; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 4px solid var(--primary-light); }
+        .card p { font-size: 35px; margin-bottom: 20px; }
+        footer { text-align: center; padding: 40px; color: var(--text-muted); font-size: 35px; margin-top: 50px; }
     </style>
 </head>
-<body id="top">
+<body>
     <header>
-        <button class="menu-btn" onclick="toggleMenu()"><span>☰</span> 目錄</button>
-        <div class="top-title">Miss Emily 專業課程</div>
+        <a href="index.html" class="back-btn">← 返回主頁</a>
+        <div class="top-title">課程詳情</div>
     </header>
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-header"><h3>目錄選單</h3><button class="close-btn" onclick="toggleMenu()">&times;</button></div>
-        <ul class="sidebar-menu">
-            <li class="home-link"><a href="index.html">🏠 返回網站主頁</a></li>
-            <li class="active-page"><a href="abacus.html">🧮 兒童珠心算及數學課程</a></li>
-            <li><a href="finger-math.html">🖐️ 兒童手指速算及數學課程</a></li>
-            <li><a href="phonics.html">🔤 兒童英文拼音課程</a></li>
-            <li><a href="english-base.html">📚 兒童英文拼音及基礎課程</a></li>
-            <li><a href="math-base.html">📐 小學數學基礎課程</a></li>
-            <li><a href="chinese-p1p6.html">📖 小學中文基礎課程</a></li>
-        </ul>
-    </div>
-    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
     <div class="container">
-        <div class="hero-banner">
-            <span class="hero-badge">K2 至 小一 專屬</span>
-            <h1>兒童珠心算及數學課程</h1>
-            <p>大腦專注力與數學思維體操[cite: 10]</p>
-        </div>
         <section class="card">
-            <h2>💡 課程簡介</h2>
-            <p>課程專為 K2 至小一兒童設計的「大腦專注力與數學思維體操」[cite: 10]。重視算理理解，並完美銜接學校體制，幫助孩子建立清晰的切換觀念，不與學校直式筆算混淆[cite: 10]。</p>
-        </section>
-        <section class="card">
-            <h2>✨ 課程特色</h2>
-            <div class="feature-item">
-                <div class="feature-title">🧠 全腦開發與專注力</div>
-                <div>透過算盤操作與影像化訓練，同步鍛鍊專注力、記憶力與左右腦協調[cite: 10]。</div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-title">🧩 思維訓練融入</div>
-                <div>不盲目追求速度，透過圖像轉化與邏輯推導，培養孩子對數字的敏銳度與數感[cite: 10]。</div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-title">🏫 無縫銜接學校數學</div>
-                <div>課堂中會引導孩子區分「課外心算技巧」與「學校直式寫法」，相輔相成[cite: 10]。</div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-title">🏆 生活化應用與證書</div>
-                <div>融入時鐘、貨幣等情境；可報考珠心算國際鑑定考試，證書有助升小面試[cite: 10]。</div>
-            </div>
-        </section>
-        <section class="card">
-            <h2>📚 課程內容</h2>
-            <p>珠心算概念、算盤運用、加減乘除、滿五/進十/破五進十口訣(情境化遊戲記憶)、心算原理、基礎數學邏輯推理[cite: 10]。</p>
+            <h2>🧮 兒童珠心算及數學課程</h2>
+            <p>奠定數學邏輯與心算基礎，培養專注力、記憶力與計算敏銳度。</p>
+            <p>透過系統化的珠心算訓練，讓孩子在腦海中建立清晰的數碼影像，大大提升計算速度與準確度，同時鍛鍊專注力及腦力發展。</p>
         </section>
     </div>
-    <footer><p>&copy; Miss Emily Teaching Studio. All Rights Reserved.</p></footer>
-    <script>function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); document.getElementById('overlay').classList.toggle('active'); }</script>
+    <footer>
+        <p>&copy; Miss Emily Teaching Studio. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
