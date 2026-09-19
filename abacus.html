@@ -11,15 +11,12 @@
         :root {
             --primary: #1E3A8A;
             --primary-light: #EFF6FF;
-            --accent: #D97706;
-            --accent-bg: #FEF3C7;
             --text-main: #1F2937;
             --text-muted: #4B5563;
             --bg-main: #F8FAFC;
             --card-bg: #FFFFFF;
             --border-color: #E2E8F0;
             --shadow-sm: 0 2px 5px rgba(0,0,0,0.04);
-            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
             --radius: 16px;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,25 +24,71 @@
         header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 2px solid var(--border-color); position: sticky; top: 0; z-index: 1000; padding: 20px 30px; display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm); }
         .back-btn { background: var(--primary-light); color: var(--primary); border: 2px solid #DBEAFE; padding: 16px 28px; border-radius: 40px; text-decoration: none; font-size: 35px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s ease; }
         .back-btn:hover { background: var(--primary); color: #ffffff; }
-        .top-title { font-size: 50px; font-weight: 900; color: var(--primary); letter-spacing: -1px; }
+        .top-title { font-size: 40px; font-weight: 900; color: var(--primary); letter-spacing: -1px; }
         .container { max-width: 1200px; margin: 40px auto; padding: 0 24px; }
-        .card { background: var(--card-bg); border-radius: var(--radius); padding: 40px; margin-bottom: 36px; border: 2px solid var(--border-color); box-shadow: var(--shadow-sm); border-left: 10px solid var(--primary); }
-        .card h2 { color: var(--primary); font-size: 45px; font-weight: 800; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 4px solid var(--primary-light); }
-        .card p { font-size: 35px; margin-bottom: 20px; }
+        
+        .main-intro { background: var(--card-bg); border-radius: var(--radius); padding: 40px; margin-bottom: 36px; border: 2px solid var(--border-color); box-shadow: var(--shadow-sm); }
+        .main-intro h2 { color: var(--primary); font-size: 40px; font-weight: 800; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 4px solid var(--primary-light); }
+        .main-intro p { font-size: 35px; }
+
+        .grade-card {
+            width: 100%;
+            border-radius: var(--radius);
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-sm);
+        }
+        .grade-card h3 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .grade-card p, .grade-card li {
+            font-size: 32px;
+            line-height: 1.8;
+        }
+        .grade-card ul {
+            padding-left: 30px;
+            margin-top: 10px;
+        }
+
+        .card-s1 { background: #FEF2F2; border: 3px solid #FCA5A5; }
+        .card-s1 h3 { color: #991B1B; }
+        .card-s2 { background: #FFFBEB; border: 3px solid #FCD34D; }
+        .card-s2 h3 { color: #92400E; }
+        .card-s3 { background: #F0FDF4; border: 3px solid #86EFAC; }
+        .card-s3 h3 { color: #166534; }
+
         footer { text-align: center; padding: 40px; color: var(--text-muted); font-size: 35px; margin-top: 50px; }
     </style>
 </head>
 <body>
     <header>
         <a href="index.html" class="back-btn">← 返回主頁</a>
-        <div class="top-title">課程詳情</div>
+        <div class="top-title">兒童珠心算及數學課程</div>
     </header>
     <div class="container">
-        <section class="card">
-            <h2>🧮 兒童珠心算及數學課程</h2>
-            <p>奠定數學邏輯與心算基礎，培養專注力、記憶力與計算敏銳度。</p>
-            <p>透過系統化的珠心算訓練，讓孩子在腦海中建立清晰的數碼影像，大大提升計算速度與準確度，同時鍛鍊專注力及腦力發展。</p>
-        </section>
+        
+        <div class="main-intro">
+            <h2>算盤與心算思維：兒童珠心算及數學課程 (K2至小一)</h2>
+            <p>課程專為K2至小一兒童設計的「大腦專注力與數學思維體操」。重視算理理解，並完美銜接學校體制，幫助孩子建立清晰的切換觀念，不與學校直式筆算混淆。[cite: 27]</p>
+        </div>
+
+        <div class="grade-card card-s1">
+            <h3>課程特色[cite: 27]</h3>
+            <ul>
+                <li>全腦開發與專注力：透過算盤操作與影像化訓練，同步鍛鍊專注力、記憶力與左右腦協調。[cite: 27]</li>
+                <li>思維訓練融入：不盲目追求速度，透過圖像轉化與邏輯推導，培養孩子對數字的敏銳度與數感。[cite: 27]</li>
+                <li>無縫銜接學校數學：課堂中會引導孩子區分「課外心算技巧」與「學校直式寫法」，相輔相成。[cite: 27]</li>
+                <li>生活化應用與證書：融入時鐘、貨幣等情境；可報考珠心算國際鑑定考試，證書有助升小面試。[cite: 27]</li>
+            </ul>
+        </div>
+
+        <div class="grade-card card-s2">
+            <h3>課程內容[cite: 27]</h3>
+            <p>珠心算概念、算盤運用、加減乘除、滿五/進十/破五進十口訣（情境化遊戲記憶）、心算原理、基礎數學邏輯推理。[cite: 27]</p>
+        </div>
+
     </div>
     <footer>
         <p>&copy; Miss Emily Teaching Studio. All Rights Reserved.</p>
