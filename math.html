@@ -5,113 +5,311 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>📘 小學數學基礎課程 | Miss Emily</title>
     <style>
-        :root { --primary-color: #4A86E8; --bg-color: #F0F6FC; --card-bg: #FFFFFF; --text-color: #2C3E50; --accent-bg: #E8F2FC; --nav-bg: #3B72C4; }
-        html { font-size: 26px; }
+        :root {
+            --bg-color: #E6F2FF;        /* 粉藍色背景 */
+            --card-bg: #FFFFFF;          /* 純白卡片背景 */
+            --primary-color: #1E56A0;    /* 深藍主色 */
+            --secondary-color: #3D84C6;  /* 柔和藍色 */
+            --text-main: #2C3E50;       /* 主要文字顏色 */
+            --nav-bg: #2B6CB0;           /* 導航欄背景 */
+        }
+
+        /* 頁面整體基礎字體大小 */
+        html { font-size: 30px; }
+
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; padding-bottom: 40px; font-size: 1rem; }
-        header { background: linear-gradient(135deg, #5B92E5, #4A86E8); color: white; text-align: center; padding: 30px 20px; }
-        header h1 { font-size: 1.8rem; margin-bottom: 8px; }
-        nav { position: sticky; top: 0; background-color: var(--nav-bg); z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; overflow-x: auto; white-space: nowrap; padding: 0 10px; }
-        .nav-container a { color: white; padding: 14px 16px; text-decoration: none; font-weight: 600; font-size: 0.9rem; flex-shrink: 0; }
-        .nav-container a:hover, .nav-container a.active { background-color: rgba(255, 255, 255, 0.2); }
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
-        h2 { color: var(--primary-color); border-bottom: 3px solid var(--accent-bg); padding-bottom: 8px; margin-bottom: 18px; font-size: 1.4rem; }
-        .grade-block { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #D0D7DE; }
-        .grade-block:last-child { border-bottom: none; }
-        .grade-title { color: #2B5288; font-weight: bold; font-size: 1.15rem; margin-bottom: 8px; }
-        ul { list-style-type: none; padding-left: 0; }
-        ul li { position: relative; padding-left: 24px; margin-bottom: 8px; }
-        ul li::before { content: "•"; color: var(--primary-color); font-weight: bold; font-size: 1.2rem; position: absolute; left: 0; top: -2px; }
-        .cta-button { display: inline-block; background-color: var(--primary-color); color: white; padding: 12px 24px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1rem; margin-top: 15px; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; padding-bottom: 50px; font-size: 30px; }
+
+        /* 頂部 Header */
+        header {
+            background: linear-gradient(135deg, #3B82F6, #1E40AF);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        header h1 { font-size: 40px; margin-bottom: 15px; font-weight: bold; line-height: 1.3; }
+        header p { font-size: 32px; opacity: 0.95; font-weight: 500; }
+
+        /* 導覽列 */
+        nav { 
+            position: sticky; 
+            top: 0; 
+            background-color: var(--nav-bg); 
+            z-index: 1000; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 左側選單按鈕 */
+        .menu-btn {
+            background-color: #1A4980;
+            color: white;
+            border: 2px solid #63B3ED;
+            padding: 10px 24px;
+            font-size: 32px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .menu-btn:hover { background-color: #153E6C; }
+
+        /* 左側側邊選單 (Side Menu) */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -380px;
+            width: 360px;
+            height: 100%;
+            background-color: var(--nav-bg);
+            box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+            transition: left 0.3s ease;
+            z-index: 2000;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .side-menu.active { left: 0; }
+
+        .side-menu .close-btn {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            padding: 10px 25px;
+            cursor: pointer;
+        }
+
+        .side-menu a {
+            color: white;
+            padding: 20px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+        .side-menu a:hover, .side-menu a.active { background-color: rgba(255, 255, 255, 0.2); }
+
+        /* 遮罩背景 */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            z-index: 1500;
+        }
+        .overlay.active { display: block; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+
+        /* 簡介主卡片 */
+        .main-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            border: 2px solid #D0E3FF;
+        }
+        .main-card h2 {
+            color: var(--primary-color);
+            border-bottom: 4px solid #BEE3F8;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        /* 網格佈局：讓各年級卡片大小適中並能包住文字 */
+        .grade-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        /* 個別年級卡片通用樣式 (字體 18px - 20px，大小包住文字) */
+        .grade-card {
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            height: fit-content; /* 剛好包住文字 */
+            font-size: 18px;     /* 要求 18px - 20px */
+            line-height: 1.6;
+        }
+
+        .grade-card h3 {
+            font-size: 20px;     /* 標題 20px */
+            font-weight: bold;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .grade-card .section-title {
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 19px;
+            display: block;
+        }
+
+        .grade-card p {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        /* 6 種獨立淺色背景與邊框設定 */
+        .card-p1 { background-color: #FFF0F2; border: 2px solid #FFB6C1; color: #4A1525; } /* 淺粉紅 */
+        .card-p2 { background-color: #FFF7ED; border: 2px solid #FBD38D; color: #5C3317; } /* 淺杏黃 */
+        .card-p3 { background-color: #FEFCBF; border: 2px solid #ECC94B; color: #4A4200; } /* 淺檸黃 */
+        .card-p4 { background-color: #E6FFFA; border: 2px solid #81E6D9; color: #044E46; } /* 淺薄荷綠 */
+        .card-p5 { background-color: #EBF8FF; border: 2px solid #90CDF4; color: #0D47A1; } /* 淺天空藍 */
+        .card-p6 { background-color: #FAF5FF; border: 2px solid #D6BCFA; color: #44337A; } /* 淺淡紫 */
+
+        footer { text-align: center; padding: 30px 20px; font-size: 30px; color: #4A5568; }
     </style>
 </head>
 <body>
+
     <header>
         <h1>📘 小學數學基礎課程</h1>
-        <p>P1 至 P6 數理邏輯、圖形幾何與應用題拆解</p>
+        <p>小一至小六 | 由基礎起步，循序漸進銜接至小六</p>
     </header>
+
+    <!-- 導覽列：左側選單按鈕 -->
     <nav>
-        <div class="nav-container">
-            <a href="index.html">🏠 返回首頁</a>
-            <a href="abacus.html">🧮 珠心算</a>
-            <a href="finger-math.html">✋ 手指速算</a>
-            <a href="phonics.html">🔤 英文拼音</a>
-            <a href="english.html">📖 小學英文</a>
-            <a href="chinese.html">📚 小學中文</a>
-            <a href="math.html" class="active">📘 小學數學</a>
-        </div>
+        <button class="menu-btn" onclick="toggleMenu()">☰ 選單</button>
     </nav>
-    <div class="container">
-        <div class="card">
-            <h2>P1 - P6 數學科課程大綱</h2>
 
-            <div class="grade-block">
-                <div class="grade-title">小一數學 (P1 Math)</div>
-                <ul>
-                    <li>10以內的數、18以內的加法和減法、20以內的數、100以內的數、兩位加法（進位、不退位）、數物和次序、數的基本組合（1-18）、奇數與偶數（單雙數）、數的分解合成。</li>
-                    <li><strong>度量：</strong>日期、星期月份、月曆、硬幣認識與價錢牌、長度與距離比較、時鐘報時（時/半時）。</li>
-                    <li><strong>圖形與空間：</strong>平面圖形（點、直線、曲線、三角形、四邊形、五邊形、六邊形、圓形）、立體圖形（角柱、圓柱、角錐、圓錐、球）、位置（上下左右前後之間）。</li>
-                    <li><strong>數據處理與增潤：</strong>初步統計、分類方法；增潤（簡單數獨）。</li>
-                </ul>
-            </div>
-
-            <div class="grade-block">
-                <div class="grade-title">小二數學 (P2 Math)</div>
-                <ul>
-                    <li>三位數、四位數、百位概念、加減法、兩位/三位加法與減法、兩步加法應用題、基本乘法、基本除法。</li>
-                    <li><strong>度量：</strong>長度（米 m / 厘米 cm / 毫米 mm）、時間、貨幣找贖。</li>
-                    <li><strong>圖形與空間：</strong>立體圖形、角（直角）、四邊形、方向與位置。</li>
-                    <li>象形圖、方塊圖。</li>
-                </ul>
-            </div>
-
-            <div class="grade-block">
-                <div class="grade-title">小三數學 (P3 Math)</div>
-                <ul>
-                    <li>五位數、乘法（兩位數×一位數 / 兩位數×兩位數）、除法（三位數÷一位數 / 短除法 / 直式有餘數）、分數初步（部分概念）、四則計算（含小括號 / 先乘除後加減）、倍數與因數概念。</li>
-                    <li><strong>度量：</strong>長度（毫米 / 公里 km）、重量（克 g / 公斤 kg）、容量（毫升 mL / 升 L）、時間（秒 / 24小時報時制與時間加減）。</li>
-                    <li><strong>圖形與空間：</strong>平行線、垂直線、角與量角器使用、對稱圖形、三角形（等腰、等邊、直角）及其包含關係、四邊形（平行四邊形）。</li>
-                    <li><strong>數據處理與代數：</strong>棒形圖；簡易方程（初步）。</li>
-                </ul>
-            </div>
-
-            <div class="grade-block">
-                <div class="grade-title">小四數學 (P4 Math)</div>
-                <ul>
-                    <li>六位數以上、因數與倍數（公因數、公倍數）、多位數加減乘除四則運算、分數（等值分數、比較大小、加減）、小數初步（讀寫、加減）。</li>
-                    <li><strong>度量：</strong>周界與面積（正方形、長方形、平方厘米）、四邊形周界、體積（初步）、時間計算（秒 / 24小時制）。</li>
-                    <li><strong>圖形與空間：</strong>三角形分類與角度和、四邊形性質（平行四邊形、梯形）、立體圖形（柱體、錐體）、對稱（對稱軸畫圖）。</li>
-                    <li><strong>數據處理與代數：</strong>棒形圖（進階）、折線圖入門；簡易方程（加減）。</li>
-                </ul>
-            </div>
-
-            <div class="grade-block">
-                <div class="grade-title">小五數學 (P5 Math)</div>
-                <ul>
-                    <li>分數（約分、擴分、異分母加減、整數乘除分數、分數除法）、小數（加減乘除、小數化分數）、四則混合計算、百分數（初步/認識）、比例。</li>
-                    <li><strong>度量：</strong>面積（平行四邊形、三角形、梯形）、體積（長方體、正方體、立方厘米）、容積、時間應用。</li>
-                    <li><strong>圖形與空間：</strong>圓（圓心、半徑、直徑）、立體圖形（頂/棱/面/展開圖）、線對稱與旋轉對稱。</li>
-                    <li><strong>數據處理與代數：</strong>平均數、棒形圖、折線圖、圓形圖入門；簡易方程（乘除/用字母表示數）、代數式（初步）。</li>
-                </ul>
-            </div>
-
-            <div class="grade-block">
-                <div class="grade-title">小六數學 (P6 Math)</div>
-                <ul>
-                    <li>百分數（增減、折扣、利息、盈虧等應用）、分數/小數/百分數互換與綜合運算、比和比例、速率（速度/距離/時間）、估算。</li>
-                    <li><strong>度量：</strong>圓周與圓面積、扇形、體積綜合（組合立體）、速率。</li>
-                    <li><strong>圖形與空間：</strong>圓的性質、立體圖形（截面/表面積/體積）、三角形全等與相似概念、座標平面、旋轉對稱與縮放。</li>
-                    <li><strong>數據處理與代數：</strong>折線圖、圓形百分圖、數據分析與統計圖選擇；方程（兩步方程/綜合）、代數式（化簡與求值）、簡易不等式（初步）。</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card" style="text-align: center; background: #E8F2FC;">
-            <h2>想為孩子報名或查詢詳情？</h2>
-            <a href="https://www.facebook.com" target="_blank" class="cta-button">👉 點擊 PM Miss Emily Facebook 專頁</a>
-        </div>
+    <!-- 左側彈出選單 -->
+    <div class="side-menu" id="sideMenu">
+        <button class="close-btn" onclick="toggleMenu()">✕</button>
+        <a href="index.html">🏠 返回首頁</a>
+        <a href="abacus.html">🧮 珠心算</a>
+        <a href="finger-math.html">✋ 手指速算</a>
+        <a href="phonics.html">🔤 英文拼音</a>
+        <a href="english.html">📖 小學英文</a>
+        <a href="chinese.html">📚 小學中文</a>
+        <a href="math.html" class="active">📘 小學數學</a>
     </div>
+
+    <!-- 點擊背景關閉選單遮罩 -->
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <div class="container">
+
+        <!-- 課程總覽簡介卡片 -->
+        <div class="main-card">
+            <h2>課程簡介與特色</h2>
+            <p>本課程由基礎起步，循序漸進銜接至小六。課程以遊戲式教學為主，融入不同教學元素，讓學習變得生動有趣。透過結構化引導與思維訓練，培養孩子的解題策略、空間想像力與邏輯推理能力，輕鬆應付學校的應用題挑戰。</p>
+        </div>
+
+        <h2 style="color: var(--primary-color); font-size: 36px; margin-bottom: 20px;">各年級課程內容詳情</h2>
+
+        <!-- 各年級獨立卡片網格 -->
+        <div class="grade-grid">
+
+            <!-- 小一卡片 (淺粉紅) -->
+            <div class="grade-card card-p1">
+                <h3>✏️ 小一數學 (P1 Math)</h3>
+                <span class="section-title">🔢 數與計算：</span>
+                <p>10以內的數、18以內的加法和減法、20以內的數、100以內的數、兩位加法(進位、不退位)、數物和次序、數的基本組合(1-18)、奇數與偶數(單雙數)、數的分解合成。</p>
+                <span class="section-title">📏 度量：</span>
+                <p>日期、星期月份、月曆、硬幣認識與價錢牌、長度與距離比較、時鐘報時(時/半時)。</p>
+                <span class="section-title">📐 圖形與空間：</span>
+                <p>平面圖形(點、直線、曲線、三角形、四邊形、五邊形、六邊形、圓形)、立體圖形(角柱、圓柱、角錐、圓錐、球)、位置(上下左右前後之間)。</p>
+                <span class="section-title">📊 數據與增潤：</span>
+                <p>初步統計、分類方法；增潤(簡單數獨)。</p>
+            </div>
+
+            <!-- 小二卡片 (淺杏黃) -->
+            <div class="grade-card card-p2">
+                <h3>✏️ 小二數學 (P2 Math)</h3>
+                <span class="section-title">🔢 數與計算：</span>
+                <p>三位數、四位數、百位概念、加減法、兩位/三位加法與減法、兩步加法應用題、基本乘法、基本除法。</p>
+                <span class="section-title">📏 度量：</span>
+                <p>長度(米m/厘米cm/毫米mm)、時間、貨幣找贖。</p>
+                <span class="section-title">📐 圖形與空間：</span>
+                <p>立體圖形、角(直角)、四邊形、方向與位置。</p>
+                <span class="section-title">📊 數據處理：</span>
+                <p>象形圖、方塊圖。</p>
+            </div>
+
+            <!-- 小三卡片 (淺檸黃) -->
+            <div class="grade-card card-p3">
+                <h3>✏️ 小三數學 (P3 Math)</h3>
+                <span class="section-title">🔢 數與計算：</span>
+                <p>五位數、乘法(兩位數×一位數/兩位數×兩位數)、除法(三位數÷一位數/短除法/直式有餘數)、分數初步(部分概念)、四則計算(含小括號/先乘除後加減)、倍數與因數概念。</p>
+                <span class="section-title">📏 度量：</span>
+                <p>長度(毫米/公里km)、重量(克g/公斤kg)、容量(毫升mL/升L)、時間(秒/24小時報時制與時間加減)。</p>
+                <span class="section-title">📐 圖形與空間：</span>
+                <p>平行線、垂直線、角與量角器使用、對稱圖形、三角形(等腰、等邊、直角)及其包含關係、四邊形(平行四邊形)。</p>
+                <span class="section-title">📊 數據與代數：</span>
+                <p>棒形圖；簡易方程(初步)。</p>
+            </div>
+
+            <!-- 小四卡片 (淺薄荷綠) -->
+            <div class="grade-card card-p4">
+                <h3>✏️ 小四數學 (P4 Math)</h3>
+                <span class="section-title">🔢 數與計算：</span>
+                <p>六位數以上、因數與倍數(公因數、公倍數)、多位數加減乘除四則運算、分數(等值分數、比較大小、加減)、小數初步(讀寫、加減)。</p>
+                <span class="section-title">📏 度量：</span>
+                <p>周界與面積(正方形、長方形、平方厘米)、四邊形周界、體積(初步)、時間計算(秒/24小時制)。</p>
+                <span class="section-title">📐 圖形與空間：</span>
+                <p>三角形分類與角度和、四邊形性質(平行四邊形、梯形)、立體圖形(柱體、錐體)、對稱(對稱軸畫圖)。</p>
+                <span class="section-title">📊 數據與代數：</span>
+                <p>棒形圖(進階)、折線圖入門；簡易方程(加減)。</p>
+            </div>
+
+            <!-- 小五卡片 (淺天空藍) -->
+            <div class="grade-card card-p5">
+                <h3>✏️ 小五數學 (P5 Math)</h3>
+                <span class="section-title">🔢 數與計算：</span>
+                <p>分數(約分、擴分、異分母加減、整數乘除分數、分數除法)、小數(加減乘除、小數化分數)、四則混合計算、百分數(初步/認識)、比例。</p>
+                <span class="section-title">📏 度量：</span>
+                <p>面積(平行四邊形、三角形、梯形)、體積(長方體、正方體、立方厘米)、容積、時間應用。</p>
+                <span class="section-title">📐 圖形與空間：</span>
+                <p>圓(圓心、半徑、直徑)、立體圖形(頂/棱/面/展開圖)、線對稱與旋轉對稱。</p>
+                <span class="section-title">📊 數據與代數：</span>
+                <p>平均數、棒形圖、折線圖、圓形圖入門；簡易方程(乘除/用字母表示數)、代數式(初步)。</p>
+            </div>
+
+            <!-- 小六卡片 (淺淡紫) -->
+            <div class="grade-card card-p6">
+                <h3>✏️ 小六數學 (P6 Math)</h3>
+                <span class="section-title">🔢 數與計算：</span>
+                <p>百分數(增減、折扣、利息、盈虧等應用)、分數/小數/百分數互換與綜合運算、比和比例、速率(速度/距離/時間)、估算。</p>
+                <span class="section-title">📏 度量：</span>
+                <p>圓周與圓面積、扇形、體積綜合(組合立體)、速率。</p>
+                <span class="section-title">📐 圖形與空間：</span>
+                <p>圓的性質、立體圖形(截面/表面積/體積)、三角形全等與相似概念、座標平面、旋轉對稱與縮放。</p>
+                <span class="section-title">📊 數據與代數：</span>
+                <p>折線圖、圓形百分圖、數據分析與統計圖選擇；方程(兩步方程/綜合)、代數式(化簡與求值)、簡易不等式(初步)。</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Miss Emily 專業上門輔導. All Rights Reserved.</p>
+    </footer>
+
+    <!-- 開關選單控制腳本 -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('sideMenu').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+        }
+    </script>
+
 </body>
 </html>
