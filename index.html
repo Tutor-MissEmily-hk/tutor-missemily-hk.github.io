@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全職經驗上門女導師 Miss Emily</title>
+    <title>Miss Emily 課程介紹</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800;900&display=swap" rel="stylesheet">
@@ -24,7 +24,6 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
         
         body { 
             font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif; 
@@ -33,7 +32,7 @@
             color: var(--text-main); 
             font-size: 35px; 
         }
-        
+
         header { 
             background: rgba(255, 255, 255, 0.95); 
             backdrop-filter: blur(10px); 
@@ -41,30 +40,8 @@
             position: sticky; 
             top: 0; 
             z-index: 1000; 
-            padding: 20px 30px;
-            display: flex; 
-            align-items: center; 
-            justify-content: space-between; 
+            padding: 20px 40px;
             box-shadow: var(--shadow-sm);
-        }
-        
-        .menu-btn { 
-            background: var(--primary-light); 
-            color: var(--primary); 
-            border: 2px solid #DBEAFE; 
-            padding: 16px 28px; 
-            border-radius: 40px; 
-            cursor: pointer; 
-            font-size: 35px; 
-            font-weight: 700;
-            display: flex; 
-            align-items: center; 
-            gap: 12px; 
-            transition: all 0.2s ease; 
-        }
-        .menu-btn:hover { 
-            background: var(--primary); 
-            color: #ffffff; 
         }
 
         .top-title { 
@@ -72,206 +49,85 @@
             font-weight: 900; 
             color: var(--primary);
             letter-spacing: -1px;
-            line-height: 1.2;
         }
 
-        .sidebar { 
-            position: fixed; 
-            top: 0; 
-            left: -500px; 
-            width: 500px; 
-            height: 100%; 
-            background-color: #ffffff; 
-            box-shadow: 10px 0 30px rgba(0, 0, 0, 0.2); 
-            z-index: 1100; 
-            transition: left 0.3s ease; 
-            overflow-y: auto; 
-        }
-        .sidebar.active { left: 0; }
-        .sidebar-header { 
-            background: var(--primary); 
-            color: #fff; 
-            padding: 30px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-        }
-        .sidebar-header h3 { font-size: 35px; font-weight: 700; }
-        .close-btn { 
-            background: rgba(255,255,255,0.2); 
-            border: none; 
-            color: #fff; 
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 35px; 
-            cursor: pointer; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .container { 
+            max-width: 1200px; 
+            margin: 40px auto; 
+            padding: 0 24px; 
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 40px;
         }
 
-        .sidebar-menu { list-style: none; padding: 20px 0; }
-        .sidebar-menu li a { 
-            display: block; 
-            padding: 18px 30px; 
-            color: var(--text-main); 
-            text-decoration: none; 
-            font-size: 35px; 
-            font-weight: 500;
-            border-left: 6px solid transparent;
-            transition: all 0.2s; 
-        }
-        .sidebar-menu li a:hover { 
-            background-color: var(--primary-light); 
-            color: var(--primary); 
-            border-left-color: var(--primary);
-            font-weight: 700; 
-        }
-        .sidebar-menu li.back-top a {
-            color: var(--accent);
-            font-weight: 700;
-            background: var(--accent-bg);
-            margin-top: 20px;
-        }
-
-        .overlay { 
-            position: fixed; 
-            top: 0; left: 0; 
-            width: 100%; height: 100%; 
-            background: rgba(15, 23, 42, 0.4); 
-            backdrop-filter: blur(4px);
-            z-index: 1050; 
-            display: none; 
-        }
-        .overlay.active { display: block; }
-
-        .container { max-width: 1200px; margin: 40px auto; padding: 0 24px; }
-
-        .hero-container {
-            background: #FFFFFF;
+        /* 側邊導覽列 */
+        .sidebar {
+            background: var(--card-bg);
             border-radius: var(--radius);
+            padding: 30px;
             border: 2px solid var(--border-color);
-            box-shadow: var(--shadow-md);
-            overflow: hidden;
-            margin-bottom: 40px;
-        }
-        .hero-banner { 
-            background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%); 
-            color: #FFFFFF;
-            padding: 60px 40px; 
-            text-align: center; 
-        }
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            color: #FFFFFF;
-            font-size: 35px;
-            font-weight: 700;
-            padding: 10px 24px;
-            border-radius: 40px;
-            margin-bottom: 24px;
-        }
-        
-        .hero-banner h1 { 
-            font-size: 50px; 
-            font-weight: 900;
-            line-height: 1.2; 
-            margin-bottom: 20px; 
-            letter-spacing: -1px;
-        }
-        .hero-subtitle { 
-            font-size: 35px; 
-            font-weight: 500; 
-            opacity: 0.95;
-            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
         }
 
-        .card { 
-            background: var(--card-bg); 
-            border-radius: var(--radius); 
-            padding: 40px; 
-            margin-bottom: 36px; 
-            border: 2px solid var(--border-color);
-            box-shadow: var(--shadow-sm); 
-        }
-        .card h2 { 
-            color: var(--primary); 
-            font-size: 35px; 
-            font-weight: 800;
-            margin-bottom: 24px; 
-            padding-bottom: 16px;
-            border-bottom: 4px solid var(--primary-light);
-        }
-        .card h3 {
+        .sidebar h3 {
+            font-size: 38px;
             color: var(--primary);
-            font-size: 35px;
-            font-weight: 700;
-            margin-top: 30px;
-            margin-bottom: 16px;
-        }
-        .card p {
-            font-size: 35px;
             margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-light);
         }
 
-        .cert-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(max-content, 1fr)); 
-            gap: 20px; 
-            list-style: none; 
-            padding: 0; 
+        .sidebar ul {
+            list-style: none;
         }
-        .cert-grid li { 
-            background-color: var(--primary-light); 
-            color: var(--primary);
-            border: 2px solid #DBEAFE;
-            padding: 18px 24px; 
-            border-radius: 12px; 
-            font-size: 32px; 
+
+        .sidebar li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 32px;
             font-weight: 700;
-            white-space: nowrap;
+            border-radius: 12px;
+            background: var(--bg-main);
+            border: 2px solid var(--border-color);
+            transition: all 0.2s ease;
         }
 
-        .award-list { list-style: none; padding: 0; }
-        .award-list > li { 
-            background: #FAF8F5;
-            border: 2px solid #F3EAD8;
-            border-radius: 16px;
-            padding: 24px 28px;
-            margin-bottom: 20px; 
-        }
-        .award-title {
-            font-weight: 800;
-            color: #92400E;
-            margin-bottom: 10px;
-            font-size: 35px;
-        }
-        .award-list p {
-            font-size: 35px;
-            margin-bottom: 8px;
+        .sidebar a:hover, .sidebar a.active {
+            background: var(--primary-light);
+            color: var(--primary);
+            border-color: #DBEAFE;
+            transform: translateX(5px);
         }
 
-        /* 聯絡方法卡片 */
-        .contact-box {
-            background: linear-gradient(135deg, #FEF3C7 0%, #FFFBEB 100%);
-            border: 3px solid #FDE68A;
+        /* 主內容區 */
+        .main-content {
+            background: var(--card-bg);
             border-radius: var(--radius);
             padding: 40px;
-            text-align: center;
-            margin-top: 40px;
+            border: 2px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
         }
-        .contact-box h2 {
-            color: #92400E;
-            font-size: 35px;
-            border-bottom: none;
-            margin-bottom: 16px;
+
+        .main-content h1 {
+            color: var(--primary);
+            font-size: 45px;
+            font-weight: 900;
+            margin-bottom: 24px;
         }
-        .contact-box p {
+
+        .main-content p {
             font-size: 35px;
-            color: #78350F;
-            font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
+            color: var(--text-muted);
         }
 
         footer { 
@@ -281,153 +137,45 @@
             font-size: 35px; 
             margin-top: 50px; 
         }
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+            }
+        }
     </style>
 </head>
-<body id="top">
+<body>
 
-    <!-- 頂部導覽列 -->
     <header>
-        <button class="menu-btn" onclick="toggleMenu()">
-            <span>☰</span> 目錄
-        </button>
-        <div class="top-title">全職經驗上門女導師 Miss Emily</div>
+        <div class="top-title">Miss Emily 課程介紹</div>
     </header>
 
-    <!-- 左側選單 -->
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h3>目錄選單</h3>
-            <button class="close-btn" onclick="toggleMenu()">&times;</button>
-        </div>
-        <ul class="sidebar-menu">
-            <li><a href="#about" onclick="toggleMenu()">關於 Miss Emily</a></li>
-            
-            <!-- 珠心算及手指速算已加入銜接小一數學課程描述 -->
-            <li><a href="abacus.html">兒童珠心算及數學課程（銜接小一數學課程）</a></li>
-            <li><a href="finger-math.html">兒童手指速算及數學課程（銜接小一數學課程）</a></li>
-            
-            <li><a href="phonics.html">兒童英文拼音課程</a></li>
-            <li><a href="english-base.html">兒童英文拼音及基礎課程</a></li>
-            <li><a href="math-base.html">小學數學基礎課程</a></li>
-            <li><a href="k3-chinese.html">K3 – 小一 中文課程</a></li>
-            <li><a href="chinese.html">小學中文基礎課程</a></li>
-            
-            <li><a href="contact.html">聯絡方法</a></li>
-            <li class="back-top"><a href="#top" onclick="toggleMenu()">↑ 返回頁面</a></li>
-        </ul>
-    </div>
-
-    <!-- 背景遮罩 -->
-    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
-
     <div class="container">
-        
-        <!-- 頂部 Banner -->
-        <div class="hero-container">
-            <div class="hero-banner">
-                <span class="hero-badge">貼心1對1上門教學(學生家中)</span>
-                <h1>全職經驗上門女導師 Miss Emily</h1>
-                <p class="hero-subtitle">專注 K2 至小學，點燃學習自信</p>
-                <p style="font-size: 35px; margin-top: 15px;">基礎扎實 循序漸進 · 愉快學習</p>
-            </div>
-            <div style="padding: 30px; background: #FFFFFF;">
-                <p>您的孩子正面臨升小適應期，或是需要打好數學、英文與中文基礎嗎？</p>
-                <p style="margin-top: 10px;">Miss Emily 擁有多年幼稚園及小學教學經驗，專注引導 K2 至小學生，陪伴孩子穩步走好每一步學習路。</p>
-            </div>
-        </div>
-
-        <!-- 關於 Miss Emily -->
-        <section id="about" class="card">
-            <h2>👩‍🏫 關於 Miss Emily</h2>
-            <p>我是 Miss Emily，全職上門女導師，多年教學經驗，持有專業認證，曾於幼稚園及小學任教珠心算及功課輔導班，專注教導K2至小學生。</p>
-            <p>我重視基礎訓練，因材施教，擅長針對學生弱點，幫助學生建立自信與學習興趣，與家長同心協力，引導孩子循序漸進地成長。</p>
-            <p>我會觀察每個孩子的學習狀況，用適合他們的方式引導，採用活動教學方式，融入不同教學元素，讓學習變得生動有趣。我重視時間觀念、責任感與互相尊重，期望與同樣重視這些理念的家長攜手，陪伴孩子穩步成長。</p>
-            <p>多年教學讓我體會到，孩子的進步需要穩定節奏、家長陪伴，以及足夠的成長時間。學習是累積的過程，穩定上課建立習慣，溫故知新鞏固所學，家長輕輕扶持，孩子走得更穩。</p>
-            
-            <h3>💡 教學理念</h3>
-            <p style="font-weight: 700; color: var(--primary); background: var(--primary-light); padding: 20px; border-radius: 12px; border-left: 8px solid var(--primary);">
-                融匯創新，奠基扎實；<br>
-                因材施教，穩健前行；<br>
-                多元啟發，<span style="white-space: nowrap;">循序漸進</span>；<br>
-                學術為本，家長同心。<br>
-                期待與您一起陪孩子走過學習之路。
-            </p>
-        </section>
-
-        <!-- 專業資格證書 -->
-        <section class="card">
-            <h2>📜 Miss Emily 專業資格證書</h2>
-            <ul class="cert-grid">
-                <li>珠心算導師證書</li>
-                <li>實用英語語音學證書(IPA)</li>
-                <li>課餘託管導師證書</li>
-                <li>Playgroup 導師證書</li>
-                <li>小學生涯規劃導師證書</li>
-                <li>蒙特梭利教學應用基礎證書</li>
-                <li>讀寫障礙治療證書</li>
-                <li>特殊學習需要青年支援證書</li>
-                <li>幼兒 Messy play 導師證書</li>
-                <li>進階會計 Book-keeping And Accounting Level 2 證書</li>
-                <li>中文字母教學導師證書</li>
+        <!-- 側邊選單 -->
+        <aside class="sidebar">
+            <h3>課程導覽</h3>
+            <ul>
+                <li><a href="abacus.html">兒童珠心算及數學課程</a></li>
+                <li><a href="finger-math.html">兒童手指速算及數學課程</a></li>
+                <li><a href="abacus-benefits.html">💡 學珠心算的好處</a></li>
             </ul>
-        </section>
+        </aside>
 
-        <!-- 獲獎紀錄 -->
-        <section class="card">
-            <h2>🏆 Miss Emily 獲獎紀錄</h2>
-            <ul class="award-list">
-                <li>
-                    <div class="award-title">🥈 第十三屆香港青少年及兒童微文大賽</div>
-                    <p>英文組(愛護地球) 公開組亞軍</p>
-                </li>
-                <li>
-                    <div class="award-title">🥉 第七屆全港青少年及兒童微文大賽</div>
-                    <p>公開組季軍</p>
-                </li>
-                <li>
-                    <div class="award-title">🥇 亞太兒童及青少年優才協會</div>
-                    <p>「2026亞太當代文學獎」金獎及全組別冠軍</p>
-                </li>
-                <li>
-                    <div class="award-title">🥇 HKAOCU 香港文化協會</div>
-                    <p>第二屆全港十八區校網傑出作家比賽 元朗區 72,73,74 校網</p>
-                    <p>公開組金獎</p>
-                </li>
-                <li>
-                    <div class="award-title">🥈 Asia Kids Talent</div>
-                    <p>兒童及青少年英文寫作比賽公開組銀獎</p>
-                </li>
-                <li>
-                    <div class="award-title">🥇 第十一屆粵港澳大灣區比賽-第六屆微文比賽公開組：</div>
-                    <p>• 大灣區總分組(粵港澳區) 冠軍</p>
-                    <p>• 香港及澳門分組亞軍</p>
-                    <p>• 廣東分組亞軍</p>
-                </li>
-            </ul>
-        </section>
-
-        <!-- 聯絡方法 (已移除連結按鈕) -->
-        <section id="contact" class="contact-box">
-            <h2>📞 聯絡方法</h2>
-            <p>歡迎家長查詢上門授課時間與詳情</p>
-            <p>專注 1對1 ‧ 陪伴孩子穩步成長</p>
-        </section>
-
+        <!-- 主頁歡迎內容 -->
+        <main class="main-content">
+            <h1>歡迎來到 Miss Emily 課程專頁</h1>
+            <p>我們致力於為 K2 至小一的兒童提供最優質的數學思維與心算啟蒙教育。</p>
+            <p>請從左側選單選擇您想了解的課程內容或專題文章，為孩子的數學根基打好基礎！</p>
+        </main>
     </div>
 
     <footer>
         <p>&copy; Miss Emily Teaching Studio. All Rights Reserved.</p>
     </footer>
-
-    <!-- 開關選單 JavaScript -->
-    <script>
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
-    </script>
 
 </body>
 </html>
