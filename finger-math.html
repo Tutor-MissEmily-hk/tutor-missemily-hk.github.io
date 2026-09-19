@@ -5,59 +5,229 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>✋ 兒童手指速算及數學課程 | Miss Emily</title>
     <style>
-        :root { --primary-color: #4A86E8; --bg-color: #F0F6FC; --card-bg: #FFFFFF; --text-color: #2C3E50; --accent-bg: #E8F2FC; --nav-bg: #3B72C4; }
-        html { font-size: 17px; }
+        :root {
+            --bg-color: #E6F2FF;        /* 粉藍色背景 */
+            --card-bg: #FFFFFF;          /* 純白卡片背景 */
+            --primary-color: #1E56A0;    /* 深藍主色 */
+            --secondary-color: #3D84C6;  /* 柔和藍色 */
+            --accent-color: #0056B3;     /* 強調色 */
+            --text-main: #2C3E50;       /* 主要文字顏色 */
+            --nav-bg: #2B6CB0;           /* 導航欄背景 */
+        }
+
+        /* 控制整體字體大小於 30px - 40px */
+        html { font-size: 30px; }
+
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; padding-bottom: 40px; }
-        header { background: linear-gradient(135deg, #5B92E5, #4A86E8); color: white; text-align: center; padding: 40px 20px; }
-        header h1 { font-size: 2.2rem; }
-        nav { position: sticky; top: 0; background-color: var(--nav-bg); z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
-        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; overflow-x: auto; white-space: nowrap; padding: 0 10px; }
-        .nav-container a { color: white; padding: 14px 16px; text-decoration: none; font-weight: 600; font-size: 0.98rem; flex-shrink: 0; }
-        .nav-container a:hover, .nav-container a.active { background-color: rgba(255, 255, 255, 0.2); }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        .card { background: var(--card-bg); border-radius: 12px; padding: 30px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
-        h2 { color: var(--primary-color); border-bottom: 3px solid var(--accent-bg); padding-bottom: 8px; margin-bottom: 20px; font-size: 1.6rem; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; padding-bottom: 50px; font-size: 30px; }
+
+        /* 頂部 Header */
+        header {
+            background: linear-gradient(135deg, #3B82F6, #1E40AF);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        header h1 { font-size: 40px; margin-bottom: 15px; font-weight: bold; line-height: 1.3; }
+        header p { font-size: 32px; opacity: 0.95; font-weight: 500; }
+
+        /* 導覽列 */
+        nav { 
+            position: sticky; 
+            top: 0; 
+            background-color: var(--nav-bg); 
+            z-index: 1000; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 左側選單按鈕 */
+        .menu-btn {
+            background-color: #1A4980;
+            color: white;
+            border: 2px solid #63B3ED;
+            padding: 10px 24px;
+            font-size: 32px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .menu-btn:hover { background-color: #153E6C; }
+
+        /* 左側側邊選單 (Side Menu) */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -380px;
+            width: 360px;
+            height: 100%;
+            background-color: var(--nav-bg);
+            box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+            transition: left 0.3s ease;
+            z-index: 2000;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .side-menu.active { left: 0; }
+
+        .side-menu .close-btn {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            padding: 10px 25px;
+            cursor: pointer;
+        }
+
+        .side-menu a {
+            color: white;
+            padding: 20px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+        .side-menu a:hover, .side-menu a.active { background-color: rgba(255, 255, 255, 0.2); }
+
+        /* 遮罩背景 */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            z-index: 1500;
+        }
+        .overlay.active { display: block; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+
+        /* 卡片樣式 */
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            border: 2px solid #D0E3FF;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 4px solid #BEE3F8;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            font-size: 36px;
+        }
+
+        .highlight-box {
+            background-color: #F0F7FF;
+            border-left: 8px solid var(--secondary-color);
+            padding: 20px 25px;
+            margin: 20px 0;
+            border-radius: 0 12px 12px 0;
+            font-size: 30px;
+            font-weight: 600;
+        }
+
         ul { list-style-type: none; padding-left: 0; }
-        ul li { position: relative; padding-left: 22px; margin-bottom: 12px; }
-        ul li::before { content: "•"; color: var(--primary-color); font-weight: bold; font-size: 1.3rem; position: absolute; left: 0; top: -2px; }
-        .cta-button { display: inline-block; background-color: var(--primary-color); color: white; padding: 14px 28px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.1rem; margin-top: 15px; }
+        ul li { position: relative; padding-left: 35px; margin-bottom: 15px; font-size: 30px; }
+        ul li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 40px;
+            position: absolute;
+            left: 5px;
+            top: -8px;
+        }
+
+        footer { text-align: center; padding: 30px 20px; font-size: 30px; color: #4A5568; }
     </style>
 </head>
 <body>
+
     <header>
         <h1>✋ 兒童手指速算及數學課程</h1>
-        <p>專為 K2 至 小一 學生設計的隨身數學工具箱</p>
+        <p>適合 K2 至小一 | 擺脫工具依賴，手腦協調雙向提升</p>
     </header>
+
+    <!-- 導覽列：左側選單按鈕 -->
     <nav>
-        <div class="nav-container">
-            <a href="index.html">🏠 返回網站首頁</a>
-            <a href="abacus.html">🧮 珠心算</a>
-            <a href="finger-math.html" class="active">✋ 手指速算</a>
-            <a href="phonics.html">🔤 英文拼音</a>
-            <a href="english.html">📖 小學英文</a>
-            <a href="chinese.html">📚 小學中文</a>
-            <a href="math.html">📘 小學數學</a>
-        </div>
+        <button class="menu-btn" onclick="toggleMenu()">☰ 選單</button>
     </nav>
+
+    <!-- 左側彈出選單 -->
+    <div class="side-menu" id="sideMenu">
+        <button class="close-btn" onclick="toggleMenu()">✕</button>
+        <a href="index.html">🏠 返回首頁</a>
+        <a href="abacus.html">🧮 珠心算</a>
+        <a href="finger-math.html" class="active">✋ 手指速算</a>
+        <a href="phonics.html">🔤 英文拼音</a>
+        <a href="english.html">📖 小學英文</a>
+        <a href="chinese.html">📚 小學中文</a>
+        <a href="math.html">📘 小學數學</a>
+    </div>
+
+    <!-- 點擊背景關閉選單遮罩 -->
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
     <div class="container">
+
+        <!-- 課程簡介 -->
         <div class="card">
             <h2>課程簡介</h2>
-            <p>擺脫工具依賴，隨時可用手指練習，無須額外工具。從具體手指操作逐步過渡至心算與思維建模。</p>
+            <p>本課程專為 K2 至小一兒童設計，幫助孩子擺脫工具依賴，從具體的手指操作逐步過渡至心算與思維建模。小朋友隨時可用雙手練習，無需攜帶額外工具。</p>
         </div>
+
+        <!-- 課程特色 -->
         <div class="card">
-            <h2>核心學習內容</h2>
+            <h2>課程特色</h2>
             <ul>
-                <li><strong>手指速算基礎：</strong>手腦並用，快速進行加減運算與反應。</li>
-                <li><strong>數念守恆：</strong>建立數量守恆概念與直覺數感。</li>
-                <li><strong>圖形空間：</strong>建立圖形與空間初階邏輯拆解能力。</li>
-                <li><strong>應用題拆解：</strong>生活化應用題拆解與思維引導。</li>
+                <li><strong>擺脫工具依賴：</strong>靈活運用雙手，隨時隨地進行計算練習，無須攜帶額外教具。</li>
+                <li><strong>理解算理背後邏輯：</strong>結合數學思維訓練，引導孩子理解「為什麼這樣算」，而不僅僅是給出答案。</li>
+                <li><strong>手腦協調與計算反應：</strong>透過手指靈活運作刺激大腦神經，全面提升計算反應力與手腦協調能力。</li>
+                <li><strong>具體到抽象過渡：</strong>以實體手指動作作為橋樑，建立清晰的數感概念，輕鬆過渡至純心算模式。</li>
             </ul>
         </div>
-        <div class="card" style="text-align: center; background: #E8F2FC;">
-            <h2>想為孩子報名或查詢詳情？</h2>
-            <a href="https://www.facebook.com" target="_blank" class="cta-button">👉 點擊 PM Miss Emily Facebook 專頁</a>
+
+        <!-- 課程內容 -->
+        <div class="card">
+            <h2>課程內容</h2>
+            <div class="highlight-box">
+                <ul>
+                    <li>手指速算基礎概念與指法</li>
+                    <li>具體至抽象心算過渡訓練</li>
+                    <li>數量守恆概念建立</li>
+                    <li>圖形與空間初階邏輯推理</li>
+                    <li>生活化應用題拆解與實踐</li>
+                </ul>
+            </div>
         </div>
+
     </div>
+
+    <footer>
+        <p>© 2026 Miss Emily 專業上門輔導. All Rights Reserved.</p>
+    </footer>
+
+    <!-- 開關選單控制腳本 -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('sideMenu').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+        }
+    </script>
+
 </body>
 </html>
