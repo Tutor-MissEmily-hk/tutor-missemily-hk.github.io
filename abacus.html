@@ -26,13 +26,13 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         
-        /* 全局字體設定：36px */
+        /* 大字體設計：基準 35px */
         body { 
             font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif; 
             line-height: 1.6; 
             background-color: var(--bg-main); 
             color: var(--text-main); 
-            font-size: 36px; 
+            font-size: 35px; 
         }
         
         /* 頂部導覽列 */
@@ -57,7 +57,7 @@
             padding: 16px 28px; 
             border-radius: 40px; 
             cursor: pointer; 
-            font-size: 36px; 
+            font-size: 35px; 
             font-weight: 700;
             display: flex; 
             align-items: center; 
@@ -69,7 +69,7 @@
             color: #ffffff; 
         }
 
-        /* 頂部標題：50px */
+        /* 頁首標題：50px */
         .top-title { 
             font-size: 50px; 
             font-weight: 900; 
@@ -100,7 +100,7 @@
             justify-content: space-between; 
             align-items: center; 
         }
-        .sidebar-header h3 { font-size: 38px; font-weight: 700; }
+        .sidebar-header h3 { font-size: 35px; font-weight: 700; }
         .close-btn { 
             background: rgba(255,255,255,0.2); 
             border: none; 
@@ -108,7 +108,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            font-size: 38px; 
+            font-size: 35px; 
             cursor: pointer; 
             display: flex;
             align-items: center;
@@ -121,7 +121,7 @@
             padding: 18px 30px; 
             color: var(--text-main); 
             text-decoration: none; 
-            font-size: 36px; 
+            font-size: 35px; 
             font-weight: 500;
             border-left: 6px solid transparent;
             transition: all 0.2s; 
@@ -133,7 +133,7 @@
             font-weight: 700; 
         }
 
-        /* 當前頁面高亮樣式 */
+        /* 當前頁面高亮 */
         .sidebar-menu li.active-page a {
             background-color: var(--primary-light);
             color: var(--primary);
@@ -154,7 +154,7 @@
             margin-top: 20px;
         }
 
-        /* 遮罩層 */
+        /* 背景遮罩 */
         .overlay { 
             position: fixed; 
             top: 0; left: 0; 
@@ -169,7 +169,7 @@
         /* 主容器 */
         .container { max-width: 1200px; margin: 40px auto; padding: 0 24px; }
 
-        /* 頂部 Banner */
+        /* Banner */
         .hero-container {
             background: #FFFFFF;
             border-radius: var(--radius);
@@ -188,26 +188,26 @@
             display: inline-block;
             background: rgba(255, 255, 255, 0.2);
             color: #FFFFFF;
-            font-size: 36px;
+            font-size: 35px;
             font-weight: 700;
             padding: 10px 24px;
             border-radius: 40px;
             margin-bottom: 24px;
         }
         .hero-banner h1 { 
-            font-size: 48px; 
+            font-size: 50px; 
             font-weight: 900;
             line-height: 1.25; 
             margin-bottom: 20px; 
             letter-spacing: -1px;
         }
         .hero-subtitle { 
-            font-size: 38px; 
+            font-size: 35px; 
             font-weight: 500; 
             opacity: 0.95;
         }
 
-        /* 卡片設定：標題 40px，內文 36px */
+        /* 卡片與內容 */
         .card { 
             background: var(--card-bg); 
             border-radius: var(--radius); 
@@ -218,14 +218,14 @@
         }
         .card h2 { 
             color: var(--primary); 
-            font-size: 40px; 
+            font-size: 35px; 
             font-weight: 800;
             margin-bottom: 24px; 
             padding-bottom: 16px;
             border-bottom: 4px solid var(--primary-light);
         }
         .card p {
-            font-size: 36px;
+            font-size: 35px;
             margin-bottom: 20px;
         }
 
@@ -239,7 +239,7 @@
             margin-bottom: 24px;
         }
         .feature-title {
-            font-size: 38px;
+            font-size: 35px;
             font-weight: 800;
             color: var(--primary);
             margin-bottom: 12px;
@@ -248,7 +248,7 @@
             gap: 12px;
         }
         .feature-desc {
-            font-size: 36px;
+            font-size: 35px;
             color: var(--text-main);
             line-height: 1.6;
         }
@@ -266,7 +266,7 @@
             border: 2px solid #F3EAD8;
             padding: 24px;
             border-radius: 12px;
-            font-size: 36px;
+            font-size: 35px;
             font-weight: 700;
             color: #92400E;
             display: flex;
@@ -274,7 +274,7 @@
             gap: 12px;
         }
 
-        /* 聯絡資訊區 */
+        /* 聯絡區 */
         .contact-box {
             background: linear-gradient(135deg, #FEF3C7 0%, #FFFBEB 100%);
             border: 3px solid #FDE68A;
@@ -285,12 +285,12 @@
         }
         .contact-box h2 {
             color: #92400E;
-            font-size: 40px;
+            font-size: 35px;
             border-bottom: none;
             margin-bottom: 16px;
         }
         .contact-box p {
-            font-size: 36px;
+            font-size: 35px;
             color: #78350F;
             font-weight: 700;
             margin-bottom: 12px;
@@ -300,7 +300,7 @@
             text-align: center; 
             padding: 40px; 
             color: var(--text-muted); 
-            font-size: 36px; 
+            font-size: 35px; 
             margin-top: 50px; 
         }
     </style>
@@ -315,7 +315,7 @@
         <div class="top-title">Miss Emily 專業課程</div>
     </header>
 
-    <!-- 左側邊欄選單 -->
+    <!-- 左側選單 -->
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <h3>目錄選單</h3>
@@ -324,10 +324,10 @@
         <ul class="sidebar-menu">
             <li class="home-link"><a href="index.html">🏠 返回網站主頁</a></li>
             
-            <!-- 點擊此項目直接切換至 abacus.html -->
+            <!-- 目前頁面標示 active-page -->
             <li class="active-page"><a href="abacus.html">🧮 兒童珠心算及數學課程</a></li>
             
-            <!-- 其他課程頁面連結 (可根據您日後的檔名修改) -->
+            <!-- 其他課程分頁連結 -->
             <li><a href="finger-math.html">🖐️ 兒童手指速算及數學課程</a></li>
             <li><a href="phonics.html">🔤 兒童英文拼音課程</a></li>
             <li><a href="english-base.html">📚 兒童英文拼音及基礎課程</a></li>
@@ -336,7 +336,7 @@
             <li><a href="chinese-primary.html">📖 小學中文基礎課程</a></li>
             
             <li><a href="#contact" onclick="toggleMenu()">📞 聯絡與查詢</a></li>
-            <li class="back-top"><a href="#top" onclick="toggleMenu()">↑ 返回頂部</a></li>
+            <li class="back-top"><a href="#top" onclick="toggleMenu()">↑ 返回頁面頂部</a></li>
         </ul>
     </div>
 
@@ -355,53 +355,53 @@
         </div>
 
         <!-- 課程簡介 -->
-        <section id="intro" class="card">
+        <section class="card">
             <h2>💡 課程簡介</h2>
-            <p>課程專為 K2 至小一兒童設計的「大腦專注力與數學思維體操」[cite: 3]。</p>
-            <p>重視算理理解，並完美銜接學校體制，幫助孩子建立清晰的切換觀念，不與學校直式筆算混淆[cite: 3]。</p>
+            <p>課程專為 K2 至小一兒童設計，被譽為「大腦專注力與數學思維體操」。</p>
+            <p>課堂特別重視算理理解，並完美銜接學校體制，幫助孩子建立清晰的切換觀念，完全不與學校直式筆算產生混淆。</p>
         </section>
 
         <!-- 課程特色 -->
-        <section id="features" class="card">
+        <section class="card">
             <h2>✨ 課程特色</h2>
             <ul class="feature-list">
                 <li class="feature-item">
                     <div class="feature-title">🧠 全腦開發與專注力</div>
-                    <div class="feature-desc">透過算盤操作與影像化訓練，同步鍛鍊專注力、記憶力與左右腦協調[cite: 3]。</div>
+                    <div class="feature-desc">透過雙手撥珠操作與影像化心算訓練，同步鍛鍊專注力、記憶力與左右腦協調能力。</div>
                 </li>
                 <li class="feature-item">
                     <div class="feature-title">🧩 思維訓練融入</div>
-                    <div class="feature-desc">不盲目追求速度，透過圖像轉化與邏輯推導，培養孩子對數字的敏銳度與數感[cite: 3]。</div>
+                    <div class="feature-desc">不盲目追求盲目快算，而是透過圖像轉化與邏輯推導，培養孩子對數字的敏銳度與靈活數感。</div>
                 </li>
                 <li class="feature-item">
                     <div class="feature-title">🏫 無縫銜接學校數學</div>
-                    <div class="feature-desc">課堂中會引導孩子區分「課外心算技巧」與「學校直式寫法」，相輔相成[cite: 3]。</div>
+                    <div class="feature-desc">課堂中會清楚引導孩子區分「課外心算技巧」與「學校直式寫法」，兩者相輔相成、不混淆。</div>
                 </li>
                 <li class="feature-item">
                     <div class="feature-title">🏆 生活化應用與證書</div>
-                    <div class="feature-desc">融入時鐘、貨幣等情境；可報考珠心算國際鑑定考試，證書有助升小面試[cite: 3]。</div>
+                    <div class="feature-desc">融入時鐘、貨幣等實體情境；更可輔導報考珠心算國際鑑定考試，獲取證書有助升小面試履歷。</div>
                 </li>
             </ul>
         </section>
 
         <!-- 課程內容 -->
-        <section id="content" class="card">
+        <section class="card">
             <h2>📚 課程內容</h2>
             <ul class="content-grid">
-                <li class="content-card">🔸 珠心算概念[cite: 3]</li>
-                <li class="content-card">🔸 算盤運用[cite: 3]</li>
-                <li class="content-card">🔸 加減乘除[cite: 3]</li>
-                <li class="content-card">🔸 滿五 / 進十 / 破五進十口訣 (情境化遊戲記憶)[cite: 3]</li>
-                <li class="content-card">🔸 心算原理[cite: 3]</li>
-                <li class="content-card">🔸 基礎數學邏輯推理[cite: 3]</li>
+                <li class="content-card">🔸 珠心算基礎概念</li>
+                <li class="content-card">🔸 實體算盤熟練運用</li>
+                <li class="content-card">🔸 多位數加減乘除技巧</li>
+                <li class="content-card">🔸 滿五 / 進十 / 破五進十口訣 (情境化遊戲記憶)</li>
+                <li class="content-card">🔸 影像化心算原理</li>
+                <li class="content-card">🔸 基礎數學邏輯推理與應用</li>
             </ul>
         </section>
 
         <!-- 聯絡與報名 -->
         <section id="contact" class="contact-box">
             <h2>📞 聯絡與查詢</h2>
-            <p>歡迎家長查詢上門授課時間與詳情</p>
-            <p>專注 1對1 家長信任之選 ‧ 陪伴孩子穩步成長</p>
+            <p>歡迎家長查詢 1對1 上門授課時間與詳情</p>
+            <p>家長信任之選 ‧ 陪伴孩子穩步成長</p>
         </section>
 
     </div>
@@ -410,7 +410,7 @@
         <p>&copy; Miss Emily Teaching Studio. All Rights Reserved.</p>
     </footer>
 
-    <!-- 開關選單 JavaScript -->
+    <!-- 選單控制 JavaScript -->
     <script>
         function toggleMenu() {
             const sidebar = document.getElementById('sidebar');
