@@ -242,9 +242,6 @@
             margin-bottom: 20px;
         }
 
-        /* 課程卡片 */
-        .course-card { border-left: 10px solid var(--primary); }
-
         /* 證書 Grid 列表 (設為不換行，字體 32px) */
         .cert-grid { 
             display: grid; 
@@ -325,7 +322,7 @@
         <div class="top-title">全職經驗上門女導師 Miss Emily</div>
     </header>
 
-    <!-- 左側選單 (四大類) -->
+    <!-- 左側選單 (已改為獨立分頁連結) -->
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <h3>目錄選單</h3>
@@ -334,14 +331,14 @@
         <ul class="sidebar-menu">
             <li><a href="#about" onclick="toggleMenu()">關於 Miss Emily</a></li>
             
-            <!-- 每個課程名 -->
-            <li><a href="#course1" onclick="toggleMenu()">兒童珠心算及數學課程</a></li>
-            <li><a href="#course2" onclick="toggleMenu()">兒童手指速算及數學課程</a></li>
-            <li><a href="#course3" onclick="toggleMenu()">兒童英文拼音課程</a></li>
-            <li><a href="#course4" onclick="toggleMenu()">兒童英文拼音及基礎課程</a></li>
-            <li><a href="#course5" onclick="toggleMenu()">小學數學基礎課程</a></li>
-            <li><a href="#course6" onclick="toggleMenu()">K3 – 小一 中文課程</a></li>
-            <li><a href="#course7" onclick="toggleMenu()">小學中文基礎課程</a></li>
+            <!-- 已經改去獨立分頁檔案 -->
+            <li><a href="abacus.html">兒童珠心算及數學課程</a></li>
+            <li><a href="finger-math.html">兒童手指速算及數學課程</a></li>
+            <li><a href="phonics.html">兒童英文拼音課程</a></li>
+            <li><a href="english-base.html">兒童英文拼音及基礎課程</a></li>
+            <li><a href="math-base.html">小學數學基礎課程</a></li>
+            <li><a href="chinese-p1p6.html">K3 – 小一 中文課程</a></li>
+            <li><a href="chinese.html">小學中文基礎課程</a></li>
             
             <li><a href="#contact" onclick="toggleMenu()">聯絡方法</a></li>
             <li class="back-top"><a href="#top" onclick="toggleMenu()">↑ 返回頁面</a></li>
@@ -353,7 +350,7 @@
 
     <div class="container">
         
-        <!-- 頂部 Banner (大標題 50px，其餘 35px) -->
+        <!-- 頂部 Banner -->
         <div class="hero-container">
             <div class="hero-banner">
                 <span class="hero-badge">貼心1對1上門教學(學生家中)</span>
@@ -383,42 +380,6 @@
                 學術為本，家長同心。<br>
                 期待與您一起陪孩子走過學習之路。
             </p>
-        </section>
-
-        <!-- 各個課程 (1-7) -->
-        <section id="course1" class="card course-card">
-            <h2>🧮 兒童珠心算及數學課程</h2>
-            <p>奠定數學邏輯與心算基礎，培養專注力、記憶力與計算敏銳度。</p>
-        </section>
-
-        <section id="course2" class="card course-card">
-            <h2>🖐️ 兒童手指速算及數學課程</h2>
-            <p>透過手腦並用方式提高靈敏度，啟發邏輯思維與快速計算能力。</p>
-        </section>
-
-        <section id="course3" class="card course-card">
-            <h2>🔤 兒童英文拼音課程</h2>
-            <p>結合實用英語語音學（IPA）拼音訓練，協助掌握發音規律與聽讀基礎。</p>
-        </section>
-
-        <section id="course4" class="card course-card">
-            <h2>📚 兒童英文拼音及基礎課程</h2>
-            <p>著重拼音活學活用的同時，鞏固英文基礎詞彙與基本句型架構。</p>
-        </section>
-
-        <section id="course5" class="card course-card">
-            <h2>📐 小學數學基礎課程</h2>
-            <p>針對小學數學概念、解題技巧與應用題型進行循序漸進的紮實訓練。</p>
-        </section>
-
-        <section id="course6" class="card course-card">
-            <h2>🌱 K3 – 小一 中文課程</h2>
-            <p>專為升小適應期設計，包含中文字母教學、筆順與認字基礎訓練。</p>
-        </section>
-
-        <section id="course7" class="card course-card">
-            <h2>📖 小學中文基礎課程</h2>
-            <p>鞏固中文閱讀理解、語文知識與寫作能力，建立穩固中文底子。</p>
         </section>
 
         <!-- 專業資格證書 -->
