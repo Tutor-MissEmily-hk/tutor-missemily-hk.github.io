@@ -109,7 +109,8 @@
         }
         .overlay.active { display: block; }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+        /* 修改：改為最寬（螢幕 95%） */
+        .container { max-width: 95%; margin: 0 auto; padding: 30px 10px; }
 
         /* 簡介主卡片 */
         .main-card {
@@ -128,7 +129,7 @@
             font-size: 36px;
         }
 
-        /* 上兩格、中兩格、下兩格 (2 Columns Grid) */
+        /* 雙欄佈局：左右平分最寬空間 (上兩格、中兩格、下兩格) */
         .grade-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -141,6 +142,7 @@
             .grade-grid {
                 grid-template-columns: 1fr;
             }
+            .container { max-width: 98%; }
         }
 
         /* 個別年級卡片通用樣式 (字體 28px) */
@@ -228,7 +230,7 @@
 
         <h2 style="color: var(--primary-color); font-size: 36px; margin-bottom: 20px;">各年級課程內容詳情</h2>
 
-        <!-- 各年級獨立卡片網格（上兩格、中兩格、下兩格） -->
+        <!-- 各年級獨立卡片網格 (上兩格、中兩格、下兩格，滿版拉長) -->
         <div class="grade-grid">
 
             <!-- 排列 1 (上左)：小一 (淺粉紅) -->
