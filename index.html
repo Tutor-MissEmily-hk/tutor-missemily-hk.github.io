@@ -3,47 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miss Emily 1對1上門教學 | 課程總覽</title>
+    <title>全職經驗上門女導師 Miss Emily 招生</title>
     <style>
         :root {
-            --primary-color: #4A86E8;
-            --bg-color: #F0F6FC;
-            --card-bg: #FFFFFF;
-            --text-color: #2C3E50;
-            --accent-bg: #E8F2FC;
-            --nav-bg: #3B72C4;
+            --bg-color: #E6F2FF;        /* 粉藍色背景 */
+            --card-bg: #FFFFFF;          /* 純白卡片背景 */
+            --primary-color: #1E56A0;    /* 深藍主色 */
+            --secondary-color: #3D84C6;  /* 柔和藍色 */
+            --accent-color: #0056B3;     /* 強調色 */
+            --text-main: #2C3E50;       /* 主要文字顏色 */
+            --nav-bg: #2B6CB0;           /* 導航欄背景 */
         }
-        html { font-size: 17px; }
+
+        /* 嚴格控制字體大小於 30px - 40px 之間 */
+        html { font-size: 30px; }
+
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; padding-bottom: 40px; }
-        header { background: linear-gradient(135deg, #5B92E5, #4A86E8); color: white; text-align: center; padding: 45px 20px 35px 20px; }
-        header h1 { font-size: 2.2rem; margin-bottom: 10px; }
-        nav { position: sticky; top: 0; background-color: var(--nav-bg); z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
-        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; overflow-x: auto; white-space: nowrap; padding: 0 10px; }
-        .nav-container a { color: white; padding: 14px 16px; text-decoration: none; font-weight: 600; font-size: 0.98rem; flex-shrink: 0; }
-        .nav-container a:hover, .nav-container a.active { background-color: rgba(255, 255, 255, 0.2); }
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .card { background: var(--card-bg); border-radius: 12px; padding: 28px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
-        .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 15px; }
-        .course-card { background: var(--card-bg); border-radius: 12px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); border-top: 5px solid var(--primary-color); display: flex; flex-direction: column; justify-content: space-between; }
-        h2 { color: var(--primary-color); border-bottom: 3px solid var(--accent-bg); padding-bottom: 8px; margin-bottom: 20px; font-size: 1.65rem; }
-        h3 { color: #2C4A6F; margin: 8px 0 10px 0; font-size: 1.35rem; }
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
-        .qual-badge { background: var(--accent-bg); padding: 10px 14px; border-radius: 8px; font-size: 1rem; color: #2B5288; font-weight: 600; }
-        .tag { display: inline-block; background: var(--primary-color); color: white; padding: 3px 12px; border-radius: 12px; font-size: 0.88rem; font-weight: 500; }
-        .btn-page { display: block; text-align: center; background-color: var(--primary-color); color: white; padding: 10px 18px; text-decoration: none; border-radius: 20px; font-weight: bold; margin-top: 15px; }
-        .btn-page:hover { background-color: #3572CC; }
-        .cta-button { display: inline-block; background-color: var(--primary-color); color: white; padding: 15px 32px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.15rem; margin-top: 12px; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; padding-bottom: 50px; font-size: 30px; }
+
+        /* 頂部 Header */
+        header {
+            background: linear-gradient(135deg, #3B82F6, #1E40AF);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        header h1 { font-size: 40px; margin-bottom: 15px; font-weight: bold; line-height: 1.3; }
+        header p { font-size: 32px; opacity: 0.95; font-weight: 500; }
+
+        /* 導覽列 */
+        nav { position: sticky; top: 0; background-color: var(--nav-bg); z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; overflow-x: auto; white-space: nowrap; padding: 0 10px; }
+        .nav-container a { color: white; padding: 18px 22px; text-decoration: none; font-weight: bold; font-size: 30px; flex-shrink: 0; }
+        .nav-container a:hover, .nav-container a.active { background-color: rgba(255, 255, 255, 0.25); }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+
+        /* 卡片設計 */
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            border: 2px solid #D0E3FF;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 4px solid #BEE3F8;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            font-size: 36px;
+        }
+
+        .highlight-box {
+            background-color: #F0F7FF;
+            border-left: 8px solid var(--secondary-color);
+            padding: 20px 25px;
+            margin: 20px 0;
+            border-radius: 0 12px 12px 0;
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        ul { list-style-type: none; padding-left: 0; }
+        ul li { position: relative; padding-left: 35px; margin-bottom: 15px; font-size: 30px; }
+        ul li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 40px;
+            position: absolute;
+            left: 5px;
+            top: -8px;
+        }
+
+        .award-list li::before { content: "🏆"; font-size: 28px; top: -2px; }
+        .cert-list li::before { content: "📜"; font-size: 28px; top: -2px; }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 18px 36px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 32px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        footer { text-align: center; padding: 30px 20px; font-size: 30px; color: #4A5568; }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>全職經驗上門女導師 Miss Emily</h1>
-        <p>專注 K2 至小學 | 點燃學習自信 | 貼心 1 對 1 上門教學</p>
+        <h1>全職經驗上門女導師 Miss Emily 招生</h1>
+        <p>專注 K2 至小學，點燃學習自信</p>
     </header>
+
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="active">🏠 首頁</a>
+            <a href="index.html" class="active">🏠 返回首頁</a>
             <a href="abacus.html">🧮 珠心算</a>
             <a href="finger-math.html">✋ 手指速算</a>
             <a href="phonics.html">🔤 英文拼音</a>
@@ -52,82 +116,78 @@
             <a href="math.html">📘 小學數學</a>
         </div>
     </nav>
+
     <div class="container">
+
+        <!-- 服務特色 -->
+        <div class="card">
+            <div class="highlight-box">
+                貼心 1對1 上門教學（學生家中） | 基礎扎實 循序漸進 · 愉快學習
+            </div>
+            <p>您的孩子正面臨升小適應期，或是需要打好數學、英文與中文基礎嗎？Miss Emily 擁有多年幼稚園及小學教學經驗，專注引導 K2 至小學生，陪伴孩子穩步走好每一步學習路。</p>
+        </div>
+
+        <!-- 關於導師 -->
         <div class="card">
             <h2>關於 Miss Emily</h2>
-            <p>我是 Miss Emily，全職上門女導師，擁有多年幼兒及小學教學經驗，持有專業認證，曾於幼稚園及小學任教珠心算及功課輔導班。</p>
-            <h3 style="margin-top: 25px;">專業資格認證</h3>
-            <div class="grid-2" style="margin-top: 10px;">
-                <div class="qual-badge">✔ 珠心算導師證書</div>
-                <div class="qual-badge">✔ 實用英語語音學證書 (IPA)</div>
-                <div class="qual-badge">✔ 課餘託管導師證書</div>
-                <div class="qual-badge">✔ Playgroup 導師證書</div>
-                <div class="qual-badge">✔ 小學生涯規劃導師證書</div>
-                <div class="qual-badge">✔ 蒙特梭利教學應用基礎證書</div>
-                <div class="qual-badge">✔ 讀寫障礙治療證書</div>
-                <div class="qual-badge">✔ 特殊學習需要青年支援證書</div>
-                <div class="qual-badge">✔ 幼兒 Messy Play 導師證書</div>
-                <div class="qual-badge">✔ 進階會計 Level 2 證書</div>
-                <div class="qual-badge">✔ 中文字母教學導師證書</div>
+            <p>我是 Miss Emily，全職上門女導師，多年教學經驗，持有專業認證，曾於幼稚園及小學任教珠心算及功課輔導班，專注教導 K2 至小學生。</p>
+            <p style="margin-top: 15px;">我重視基礎訓練，因材施教，擅長針對學生弱點，幫助學生建立自信與學習興趣，與家長同心協力，引導孩子循序漸進地成長。</p>
+            <p style="margin-top: 15px;">我會觀察每個孩子的學習狀況，用適合他們的方式引導，採用活動教學方式，融入不同教學元素，讓學習變得生動有趣。我重視時間觀念、責任感與互相尊重，期望與同樣重視這些理念的家長攜手，陪伴孩子穩步成長。</p>
+            <p style="margin-top: 15px;">多年教學讓我體會到，孩子的進步需要穩定節奏、家長陪伴，以及足夠的成長時間。學習是累積的過程，穩定上課建立習慣，溫故知新鞏固所學，家長輕輕扶持，孩子走得更穩。</p>
+            
+            <div class="highlight-box" style="margin-top: 25px;">
+                <strong>教學理念：</strong>融匯創新，奠基扎實；因材施教，穩健前行；多元啟發，循序漸進；學術為本，家長同心。期待與您一起陪孩子走過學習之路。
             </div>
         </div>
-        <h2>核心專修課程列表</h2>
-        <div class="course-grid">
-            <div class="course-card">
-                <div>
-                    <span class="tag">K2 至 小一</span>
-                    <h3>🧮 兒童珠心算及數學</h3>
-                    <p>專為幼兒設計的大腦專注力與數學思維體操。</p>
-                </div>
-                <a href="abacus.html" class="btn-page">進入獨立頁面 →</a>
-            </div>
-            <div class="course-card">
-                <div>
-                    <span class="tag">K2 至 小一</span>
-                    <h3>✋ 兒童手指速算及數學</h3>
-                    <p>擺脫工具依賴，隨時用手指練習。</p>
-                </div>
-                <a href="finger-math.html" class="btn-page">進入獨立頁面 →</a>
-            </div>
-            <div class="course-card">
-                <div>
-                    <span class="tag">K2 至 K3</span>
-                    <h3>🔤 兒童英文拼音 (Phonics)</h3>
-                    <p>遊戲式教學，達到「見字能讀、聽音能辨」。</p>
-                </div>
-                <a href="phonics.html" class="btn-page">進入獨立頁面 →</a>
-            </div>
-            <div class="course-card">
-                <div>
-                    <span class="tag">K3 至 小六</span>
-                    <h3>📖 兒童英文拼音及小學英文</h3>
-                    <p>結合拼音與文法，包含 P1 至 P6 英文大綱。</p>
-                </div>
-                <a href="english.html" class="btn-page">進入獨立頁面 →</a>
-            </div>
-            <div class="course-card">
-                <div>
-                    <span class="tag">K3 至 小六</span>
-                    <h3>📚 小學中文課程</h3>
-                    <p>涵蓋漢字結構、筆順、造句與閱讀理解。</p>
-                </div>
-                <a href="chinese.html" class="btn-page">進入獨立頁面 →</a>
-            </div>
-            <div class="course-card">
-                <div>
-                    <span class="tag">小一 至 小六</span>
-                    <h3>📘 小學數學基礎課程</h3>
-                    <p>培養解題策略與邏輯推理，含 P1 至 P6 大綱。</p>
-                </div>
-                <a href="math.html" class="btn-page">進入獨立頁面 →</a>
-            </div>
+
+        <!-- 專業資格證書 -->
+        <div class="card">
+            <h2>Miss Emily 專業資格證書</h2>
+            <ul class="cert-list">
+                <li>珠心算導師證書</li>
+                <li>實用英語語音學證書 (IPA)</li>
+                <li>課餘託管導師證書</li>
+                <li>Playgroup 導師證書</li>
+                <li>小學生涯規劃導師證書</li>
+                <li>蒙特梭利教學應用基礎證書</li>
+                <li>讀寫障礙治療證書</li>
+                <li>特殊學習需要青年支援證書</li>
+                <li>幼兒 Messy play 導師證書</li>
+                <li>進階會計 Book-keeping And Accounting Level 2 證書</li>
+                <li>中文字母教學導師證書</li>
+            </ul>
         </div>
-        <div class="card" style="text-align: center; background: #E8F2FC; border: 2px dashed #4A86E8; margin-top: 30px;">
-            <h2>上門授課地區與報名</h2>
-            <p><strong>優先上門地區（輕鐵 / 西鐵沿線）：</strong></p>
-            <p style="font-size: 1.25rem; color: #4A86E8; font-weight: bold; margin: 10px 0;">天水圍 • 元朗 • 屯門</p>
-            <a href="https://www.facebook.com" target="_blank" class="cta-button">👉 點擊 PM Miss Emily Facebook 專頁</a>
+
+        <!-- 獲獎紀錄 -->
+        <div class="card">
+            <h2>Miss Emily 獲獎紀錄</h2>
+            <ul class="award-list">
+                <li>第十三屆香港青少年及兒童微文大賽英文組（愛護地球）公開組亞軍</li>
+                <li>第七屆全港青少年及兒童微文大賽公開組季軍</li>
+                <li>亞太兒童及青少年優才協會「2026亞太當代文學獎」金獎及全組別冠軍</li>
+                <li>HKAOCU 香港文化協會 第二屆全港十八區校網傑出作家比賽 元朗區 72,73,74 校網 | 公開組金獎</li>
+                <li>Asia Kids Talent 兒童及青少年英文寫作比賽公開組銀獎</li>
+                <li>第十一屆粵港澳大灣區比賽-第六屆微文比賽公開組：
+                    <ul style="padding-left: 20px; margin-top: 8px;">
+                        <li>大灣區總分組（粵港澳區）冠軍</li>
+                        <li>香港及澳門分組亞軍</li>
+                        <li>廣東分組亞軍</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
+
+        <!-- WhatsApp 報名查詢 -->
+        <div class="card" style="text-align: center; background: #EBF8FF;">
+            <h2>想為孩子預約上門導師或查詢詳情？</h2>
+            <a href="https://wa.me/85212345678" target="_blank" class="cta-button">💬 點擊 WhatsApp 預約查詢</a>
+        </div>
+
     </div>
+
+    <footer>
+        <p>© 2026 Miss Emily 專業上門輔導. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
