@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上門授課地區 - Miss Emily</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E3A8A;
+            --primary-light: #EFF6FF;
+            --text-main: #1F2937;
+            --text-muted: #4B5563;
+            --bg-main: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --border-color: #E2E8F0;
+            --shadow-sm: 0 2px 5px rgba(0,0,0,0.04);
+            --radius: 16px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Noto Sans TC', sans-serif; line-height: 1.6; background-color: var(--bg-main); color: var(--text-main); font-size: 35px; }
+        header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 2px solid var(--border-color); position: sticky; top: 0; z-index: 1000; padding: 20px 30px; display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm); }
+        .back-btn { background: var(--primary-light); color: var(--primary); border: 2px solid #DBEAFE; padding: 16px 28px; border-radius: 40px; text-decoration: none; font-size: 35px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s ease; }
+        .back-btn:hover { background: var(--primary); color: #ffffff; }
+        .top-title { font-size: 40px; font-weight: 900; color: var(--primary); letter-spacing: -1px; }
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 24px; }
+        
+        .info-card {
+            width: 100%;
+            border-radius: var(--radius);
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-sm);
+        }
+        .info-card h3 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .info-card p, .info-card li {
+            font-size: 32px;
+            line-height: 1.8;
+        }
+        .info-card ul {
+            padding-left: 30px;
+            margin-top: 15px;
+        }
+
+        .card-r1 { background: #FEF2F2; border: 3px solid #FCA5A5; }
+        .card-r1 h3 { color: #991B1B; }
+
+        .card-r2 { background: #FFFBEB; border: 3px solid #FCD34D; }
+        .card-r2 h3 { color: #92400E; }
+
+        .card-r3 { background: #F0FDF4; border: 3px solid #86EFAC; }
+        .card-r3 h3 { color: #166534; }
+
+        footer { text-align: center; padding: 40px; color: var(--text-muted); font-size: 35px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-btn">← 返回主頁</a>
+        <div class="top-title">上門授課地區</div>
+    </header>
+    <div class="container">
+        
+        <div class="info-card card-r1">
+            <h3>📍 優先上門地區 (輕鐵/西鐵沿線)[cite: 21]</h3>
+            <p>天水圍、元朗、屯門[cite: 21]</p>
+            <p style="margin-top: 15px; font-size: 30px; color: var(--text-muted);">(區內如需轉乘小巴或村巴則不設上門；巴士可直達之公車站點歡迎查詢)[cite: 21]</p>
+        </div>
+
+        <div class="info-card card-r2">
+            <h3>❌ 不設上門地區[cite: 21]</h3>
+            <p>需轉乘小巴或村巴之偏遠地區[cite: 21]</p>
+        </div>
+
+        <div class="info-card card-r3">
+            <h3>💬 立即 PM Miss Emily[cite: 21]</h3>
+            <p>如果您認同「穩定節奏、家長陪伴、扎實根基」的教育理念，歡迎直接與我聯繫了解課程詳情：[cite: 21]</p>
+            <ul>
+                <li><strong>Facebook 專頁:</strong> 香港全職經驗上門女導師 Miss Emily (或直接 PM 查詢)[cite: 21]</li>
+                <li><strong>Miss Emily 網頁:</strong> tutor-missemily-hk.github.io/[cite: 21]</li>
+            </ul>
+        </div>
+
+    </div>
+    <footer>
+        <p>&copy; Miss Emily Teaching Studio. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
