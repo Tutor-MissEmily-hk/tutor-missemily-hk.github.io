@@ -11,65 +11,161 @@
         :root {
             --primary: #1E3A8A;
             --primary-light: #EFF6FF;
+            --accent: #D97706;
+            --accent-bg: #FEF3C7;
             --text-main: #1F2937;
             --text-muted: #4B5563;
             --bg-main: #F8FAFC;
             --card-bg: #FFFFFF;
             --border-color: #E2E8F0;
             --shadow-sm: 0 2px 5px rgba(0,0,0,0.04);
+            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
             --radius: 16px;
         }
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Noto Sans TC', sans-serif; line-height: 1.6; background-color: var(--bg-main); color: var(--text-main); font-size: 35px; }
-        header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 2px solid var(--border-color); position: sticky; top: 0; z-index: 1000; padding: 20px 30px; display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm); }
-        .back-btn { background: var(--primary-light); color: var(--primary); border: 2px solid #DBEAFE; padding: 16px 28px; border-radius: 40px; text-decoration: none; font-size: 35px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s ease; }
-        .back-btn:hover { background: var(--primary); color: #ffffff; }
-        .top-title { font-size: 40px; font-weight: 900; color: var(--primary); letter-spacing: -1px; }
-        .container { max-width: 1200px; margin: 40px auto; padding: 0 24px; }
         
-        .info-card { width: 100%; border-radius: var(--radius); padding: 40px; margin-bottom: 30px; box-shadow: var(--shadow-sm); }
-        .info-card h3 { font-size: 40px; font-weight: 800; margin-bottom: 20px; }
-        .info-card p, .info-card li { font-size: 32px; line-height: 1.8; }
-        .info-card ul { padding-left: 30px; margin-top: 15px; }
+        body { 
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif; 
+            line-height: 1.6; 
+            background-color: var(--bg-main); 
+            color: var(--text-main); 
+            font-size: 35px; 
+        }
 
-        .card-f1 { background: #FEF2F2; border: 3px solid #FCA5A5; }
-        .card-f1 h3 { color: #991B1B; }
-        .card-f2 { background: #FFFBEB; border: 3px solid #FCD34D; }
-        .card-f2 h3 { color: #92400E; }
+        header { 
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(10px); 
+            border-bottom: 2px solid var(--border-color);
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            padding: 20px 30px;
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            box-shadow: var(--shadow-sm);
+        }
 
-        footer { text-align: center; padding: 40px; color: var(--text-muted); font-size: 35px; margin-top: 50px; }
+        .back-btn { 
+            background: var(--primary-light); 
+            color: var(--primary); 
+            border: 2px solid #DBEAFE; 
+            padding: 16px 28px; 
+            border-radius: 40px; 
+            cursor: pointer; 
+            font-size: 35px; 
+            font-weight: 700;
+            text-decoration: none;
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            transition: all 0.2s ease; 
+        }
+        .back-btn:hover { 
+            background: var(--primary); 
+            color: #ffffff; 
+        }
+
+        .top-title { 
+            font-size: 50px; 
+            font-weight: 900; 
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 24px; }
+
+        .card { 
+            background: var(--card-bg); 
+            border-radius: var(--radius); 
+            padding: 40px; 
+            margin-bottom: 36px; 
+            border: 2px solid var(--border-color);
+            box-shadow: var(--shadow-sm); 
+        }
+        
+        .card h1 { 
+            color: var(--primary); 
+            font-size: 45px; 
+            font-weight: 900;
+            margin-bottom: 24px; 
+            padding-bottom: 16px;
+            border-bottom: 4px solid var(--primary-light);
+            line-height: 1.3;
+        }
+
+        .card h2 { 
+            color: #92400E; 
+            font-size: 38px; 
+            font-weight: 800;
+            margin-top: 30px;
+            margin-bottom: 20px; 
+        }
+
+        .feature-box {
+            background: #FAF8F5;
+            border: 2px solid #F3EAD8;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 40px;
+        }
+
+        li {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 40px; 
+            color: var(--text-muted); 
+            font-size: 35px; 
+            margin-top: 50px; 
+        }
     </style>
 </head>
 <body>
+
     <header>
         <a href="index.html" class="back-btn">← 返回主頁</a>
-        <div class="top-title">兒童手指速算及數學課程</div>
+        <div class="top-title">Miss Emily 課程介紹</div>
     </header>
+
     <div class="container">
-        
-        <div class="info-card card-f1">
-            <h3>🖐️ 兒童手指速算及數學課程 (K2至小一)</h3>
-            <ul>
-                <li>擺脫工具依賴，從具體手指操作逐步過渡至心算與思維建模</li>
-                <li>結合數學思維訓練，引導孩子理解「為什麼這樣算」，而不僅僅是給出答案</li>
-                <li>全面提升手腦協調與計算反應，小朋友隨時可用手指練習，無須額外工具</li>
-            </ul>
-        </div>
+        <section class="card">
+            <h1>兒童手指速算及數學課程 (K2至小一)<br><span style="font-size: 38px; font-weight: 700; color: var(--accent);">── 銜接小一數學課程</span></h1>
+            
+            <div class="feature-box">
+                <h2>課程特色</h2>
+                <ul>
+                    <li>擺脫工具依賴，從具體手指操作逐步过渡至心算與思維建模</li>
+                    <li>結合數學思维訓練，引導孩子理解「為什麼這樣算」，而不仅仅是給出答案</li>
+                    <li>全面提升手腦協調與計算反應，小朋友隨時可用手指練習，無須額外工具</li>
+                </ul>
+            </div>
 
-        <div class="info-card card-f2">
-            <h3>💡 課程內容</h3>
-            <ul>
-                <li>手指速算基礎訓練</li>
-                <li>具體至抽象心算過渡</li>
-                <li>數量守恆概念建立</li>
-                <li>圖形與空間初階邏輯</li>
-                <li>生活化應用題拆解</li>
-            </ul>
-        </div>
-
+            <div class="feature-box">
+                <h2>💡 課程內容</h2>
+                <ul>
+                    <li>手指速算基礎訓練</li>
+                    <li>具體至抽象心算過渡</li>
+                    <li>數量守恆概念建立</li>
+                    <li>圖形與空間初階邏輯</li>
+                    <li>生活化應用題拆解</li>
+                </ul>
+            </div>
+        </section>
     </div>
+
     <footer>
         <p>&copy; Miss Emily Teaching Studio. All Rights Reserved.</p>
     </footer>
+
 </body>
 </html>
