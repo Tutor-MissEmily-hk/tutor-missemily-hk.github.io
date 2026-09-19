@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>學珠心算的好處 - Miss Emily</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E3A8A;
+            --primary-light: #EFF6FF;
+            --accent: #D97706;
+            --accent-bg: #FEF3C7;
+            --text-main: #1F2937;
+            --text-muted: #4B5563;
+            --bg-main: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --border-color: #E2E8F0;
+            --shadow-sm: 0 2px 5px rgba(0,0,0,0.04);
+            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+            --radius: 16px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif; 
+            line-height: 1.6; 
+            background-color: var(--bg-main); 
+            color: var(--text-main); 
+            font-size: 35px; 
+        }
+
+        header { 
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(10px); 
+            border-bottom: 2px solid var(--border-color);
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            padding: 20px 30px;
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            box-shadow: var(--shadow-sm);
+        }
+
+        .back-btn { 
+            background: var(--primary-light); 
+            color: var(--primary); 
+            border: 2px solid #DBEAFE; 
+            padding: 16px 28px; 
+            border-radius: 40px; 
+            cursor: pointer; 
+            font-size: 35px; 
+            font-weight: 700;
+            text-decoration: none;
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            transition: all 0.2s ease; 
+        }
+        .back-btn:hover { 
+            background: var(--primary); 
+            color: #ffffff; 
+        }
+
+        .top-title { 
+            font-size: 50px; 
+            font-weight: 900; 
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 24px; }
+
+        .card { 
+            background: var(--card-bg); 
+            border-radius: var(--radius); 
+            padding: 40px; 
+            margin-bottom: 36px; 
+            border: 2px solid var(--border-color);
+            box-shadow: var(--shadow-sm); 
+        }
+        
+        .card h1 { 
+            color: var(--primary); 
+            font-size: 45px; 
+            font-weight: 900;
+            margin-bottom: 24px; 
+            padding-bottom: 16px;
+            border-bottom: 4px solid var(--primary-light);
+            line-height: 1.3;
+        }
+
+        .card h2 { 
+            color: #92400E; 
+            font-size: 38px; 
+            font-weight: 800;
+            margin-top: 30px;
+            margin-bottom: 20px; 
+        }
+
+        .card p {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .feature-box {
+            background: #FAF8F5;
+            border: 2px solid #F3EAD8;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 40px;
+        }
+
+        li {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 40px; 
+            color: var(--text-muted); 
+            font-size: 35px; 
+            margin-top: 50px; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">← 返回主頁</a>
+        <div class="top-title">Miss Emily 課程介紹</div>
+    </header>
+
+    <div class="container">
+        <section class="card">
+            <h1>💡 學珠心算的好處</h1>
+            
+            <div class="feature-box">
+                <h2>兒童學習珠心算的核心優勢</h2>
+                <ul>
+                    <li><strong>全腦開發與左右腦協調</strong>：透過手指撥動算盤的實體操作，刺激左右腦同步運作，促進幼兒感官與邏輯思維的綜合發展。</li>
+                    <li><strong>強化專注力與記憶力</strong>：在看算、聽算及心算轉換的訓練過程中，孩子必須高度集中精神，有助於延長專注時間並提升短期記憶能力。</li>
+                    <li><strong>建立紮實的數學數感</strong>：透過算盤具體展現滿五、進十及補數等原理，讓孩子擺脫機械式死記硬背，從根本理解數量關係。</li>
+                    <li><strong>無縫銜接學校小學數學</strong>：課程注重算理理解與清晰的切換觀念，幫助孩子在升上小一時適應正規數學體制，避免與學校直式筆算產生混淆。</li>
+                    <li><strong>提升心理素質與自信心</strong>：透過國際鑑定考試的目標設定與階段性成就，培養面對挑戰的抗逆力，並在日常計算中建立自信。</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; Miss Emily Teaching Studio. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
