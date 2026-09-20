@@ -19,17 +19,20 @@
             --shadow-sm: 0 2px 5px rgba(0,0,0,0.04);
             --radius: 16px;
         }
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Noto Sans TC', sans-serif; line-height: 1.6; background-color: var(--bg-main); color: var(--text-main); font-size: 35px; }
         header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 2px solid var(--border-color); position: sticky; top: 0; z-index: 1000; padding: 20px 30px; display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm); }
+        
         .back-btn { background: var(--primary-light); color: var(--primary); border: 2px solid #DBEAFE; padding: 16px 28px; border-radius: 40px; text-decoration: none; font-size: 35px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s ease; }
         .back-btn:hover { background: var(--primary); color: #ffffff; }
+        
         .top-title { font-size: 40px; font-weight: 900; color: var(--primary); letter-spacing: -1px; }
         .container { max-width: 1200px; margin: 40px auto; padding: 0 24px; }
         
         .main-intro { background: var(--card-bg); border-radius: var(--radius); padding: 40px; margin-bottom: 36px; border: 2px solid var(--border-color); box-shadow: var(--shadow-sm); }
         .main-intro h2 { color: var(--primary); font-size: 40px; font-weight: 800; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 4px solid var(--primary-light); }
-        .main-intro p { font-size: 35px; }
+        .main-intro p { font-size: 35px; margin-bottom: 20px; }
 
         .grade-card { width: 100%; border-radius: var(--radius); padding: 35px; margin-bottom: 30px; box-shadow: var(--shadow-sm); }
         .grade-card h3 { font-size: 40px; font-weight: 800; margin-bottom: 20px; }
@@ -51,18 +54,22 @@
     </style>
 </head>
 <body>
+
     <header>
         <a href="index.html" class="back-btn">← 返回主頁</a>
         <div class="top-title">K3-小一中文課程</div>
     </header>
+
     <div class="container">
-        
+
         <div class="main-intro">
             <h2>📖 K3-小一中文課程 (打好根基·輕鬆銜接。由基礎起步，循序漸進銜接至小六)</h2>
+            <p>本課程專為K3至小一階段的兒童設計，為小學中文學習打好穩固根基。課程以遊戲式教學為主，融入多元化的互動與教學元素，讓學習變得生動有趣。</p>
+            <p>在輕鬆愉快的氛圍中，透過趣味識字、筆順結構拆解及基礎句型練習，循序漸進地引導孩子掌握認字、寫字及簡單閱讀理解的能力，幫助小朋友提前適應小學的中文課程，建立良好的語文自信，輕鬆銜接小一學習生活。</p>
         </div>
 
         <div class="grade-card card-kc1">
-            <h3>K3 中文預備班 (K3升小一)</h3>
+            <h3>K3 中文預備班(K3升小一)</h3>
             <ul>
                 <li>漢字筆劃、筆順、部件加減法</li>
                 <li>漢字結構：上下、左中右、包圍結構</li>
@@ -77,14 +84,14 @@
             <ul>
                 <li>量詞運用訓練</li>
                 <li>近義詞與反義詞擴充、同義詞/近義詞替換</li>
-                <li>重疊詞運用：AAB、ABB、AABB 疊字形式</li>
+                <li>重疊詞運用：AAB、ABB、AABB疊字形式</li>
             </ul>
         </div>
 
         <div class="grade-card card-kc3">
             <h3>語法與句型進階</h3>
             <ul>
-                <li>關聯詞（連詞）運用：「因為.......所以」、「不但......而且......」等</li>
+                <li>關聯詞（連詞）運用：「because.......所以」、「不但......而且......」等</li>
                 <li>句型擴寫與改寫</li>
                 <li>把字句與被字句初步認識</li>
                 <li>句型擴寫（加修飾詞/形容詞）</li>
@@ -106,8 +113,10 @@
         </div>
 
     </div>
+
     <footer>
         <p>&copy; Miss Emily Teaching Studio. All Rights Reserved.</p>
     </footer>
+
 </body>
 </html>
